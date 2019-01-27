@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const lost = require('lost')
 const pxtorem = require('postcss-pxtorem')
 
