@@ -8,7 +8,7 @@ category: "Programowanie"
 tags:
   - "TDD"
   - "Kurs TDD"
-description: "Swój pierwszy wpis na blogu zacznę od części _numeros unos_ cyklu poświęconemu Test-Driven Development. TDD w ostatnim czasie święci triumfy i to nie bez powodu. Dlaczego tak jest i czy gra jest warta świeczki?"
+description: "Swój pierwszy wpis na blogu zacznę od części numeros unos cyklu poświęconemu Test-Driven Development. TDD w ostatnim czasie święci triumfy i to nie bez powodu. Dlaczego tak jest i czy gra jest warta świeczki?"
 ---
 
 Swój pierwszy wpis na blogu zacznę od części _numeros unos_ cyklu poświęconemu Test-Driven Development. TDD w ostatnim czasie święci triumfy i to nie bez powodu. Dlaczego tak jest i czy gra jest warta świeczki?
@@ -17,17 +17,18 @@ W tym kursie znajdzie się miejsce na przedstawienie czym jest TDD, jak powinno 
 
 # Czym TDD jest, a czym nie jest?
 
-Na początek bardzo ważna kwestia, która może być niezwykle myląca—wbrew swojej nazwie, Test-Driven Development **nie jest techniką służącą testowaniu**. Nie chodzi o samo w sobie pisanie testów do kodu czy też powielanie pracy testera. **TDD jest** **techniką programowania**, jest techniką pisania i budowania kodu. W następnych akapitach wyjaśnię dlaczego. Głównym celem _test-driven_ jest:
+Na początek bardzo ważna kwestia, która może być niezwykle myląca—wbrew swojej nazwie, Test-Driven Development **nie jest techniką służącą testowaniu**. Nie chodzi o samo w sobie pisanie testów do kodu czy też powielanie pracy testera. **TDD jest techniką programowania**, jest techniką pisania i budowania kodu. W następnych akapitach wyjaśnię dlaczego. Głównym celem _test-driven_ jest:
 
 1.  Zachowanie wysokiej jakości designu w swoich klasach.
-2.  Uniknięcie złej interpretacji wymagań biznesowych.
-3.  Zachowanie prostoty w kodzie: YAGNI + KISS.
+1.  Uniknięcie złej interpretacji wymagań biznesowych.
+1.  Zachowanie prostoty w kodzie: YAGNI + KISS.
 
 W TDD nie chodzi o testowanie. Testowalny kod, a w konsekwencji automatyczny i natychmiastowy _feedback_ o błędzie w systemie jest w TDD rzeczą dodatkową, ale nie nadrzędną. Kluczowym aspektem TDD jest pisanie testu przed napisaniem docelowego kodu. Można pisać testy równolegle w trakcie pisania logiki biznesowej, można też pisać testy po implementacji, ale to już wtedy nie jest Test-Driven Development. W TDD testy piszemy zawsze jako pierwsze, przed kodem. Przyjrzyjmy się jeszcze raz powyższym trzem celom i rozwińmy je w kontekście tego co zostało już powiedziane.
 
 1.  Napisanie testu przed implementacją kodu wymusza przemyślenie designu w naszym projekcie. Klasa w teście jednostkowym powinna być odizolowana od innych klas. Programista musi zatem zidentyfikować te miejsca, gdzie zależności (_shims_) występują i zaprojektować klasy z ich uwzględnieniem. TDD wymusza dobry design poprzez rozpoznanie interakcji i interfejsów między klasami. Uzyskujemy dzięki temu klasy luźno związane ze sobą (_loosely coupled_).
-2.  Mówi się powszechnie, że testy jednostkowe są dokumentacją programisty. Dlaczego? Testy pisane są zawsze w kontekście dokumentacji. Dzięki temu, testujemy i implementujemy kod, który spełnia wymagania klienta (ta... ok, zgoda, ale zawsze możemy być bliżej niż nie-TDD) Niby oczywista rzecz, ale trzeba pamiętać o tym, że dokumentacja zawiera zazwyczaj wiele niejednoznaczności, które mogą być interpretowane na różne sposoby. Rozważając testy pod kątem wymagań musimy też zdefiniować punkty brzegowe każdego kryterium, np. dzielenie przez zero lub wpisanie litery zamiast liczby jako dane wejściowe do funkcji.
-3.  YAGNI jest akronimem od _You Aren’t Going to Need It_, z ang. "nie będziesz tego potrzebować", a KISS to _Keep It Simple Stupid_, czyli "to ma być proste, głupku". W TDD nie piszemy testów i nie implementujemy kodu do rzeczy, których nie potrzebujemy teraz, a które być może ktoś będzie w przyszłości potrzebować. Jeśli kiedyś zajdzie potrzeba użycia nowej funkcjonalności, wtedy to napiszesz. Simple :) _Więcej interesujących rzeczy o YAGNI możecie poczytać na [http://c2.com/cgi/wiki?YouArentGonnaNeedIt](http://c2.com/cgi/wiki?YouArentGonnaNeedIt "http://c2.com/cgi/wiki?YouArentGonnaNeedIt")._
+1.  Mówi się powszechnie, że testy jednostkowe są dokumentacją programisty. Dlaczego? Testy pisane są zawsze w kontekście dokumentacji. Dzięki temu, testujemy i implementujemy kod, który spełnia wymagania klienta (ta... ok, zgoda, ale zawsze możemy być bliżej niż nie-TDD) Niby oczywista rzecz, ale trzeba pamiętać o tym, że dokumentacja zawiera zazwyczaj wiele niejednoznaczności, które mogą być interpretowane na różne sposoby. Rozważając testy pod kątem wymagań musimy też zdefiniować punkty brzegowe każdego kryterium, np. dzielenie przez zero lub wpisanie litery zamiast liczby jako dane wejściowe do funkcji.
+2.  YAGNI jest akronimem od _You Aren’t Going to Need It_, z ang. "nie będziesz tego potrzebować", a KISS to _Keep It Simple Stupid_, czyli "to ma być proste, głupku". W TDD nie piszemy testów i nie implementujemy kodu do rzeczy, których nie potrzebujemy teraz, a które być może ktoś będzie w przyszłości potrzebować. Jeśli kiedyś zajdzie potrzeba użycia nowej funkcjonalności, wtedy to napiszesz. Simple :) 
+Więcej interesujących rzeczy o YAGNI możecie poczytać na [http://c2.com/cgi/wiki?YouArentGonnaNeedIt](http://c2.com/cgi/wiki?YouArentGonnaNeedIt).
 
 # Red-Green-Refactor
 
@@ -43,7 +44,8 @@ Kluczowym aspektem TDD jest cykl pisania testów. Najpierw piszemy testy, nastę
     1.  Po refaktoryzacji, uruchamiamy wszystkie testy by sprawdzić czy czegoś nie zepsuliśmy.
     2.  Ten punkt jest często lekceważony lub pomijany w procesie. Nie zapominajmy o tym, równie ważnym co dwa poprzednie, elemencie.
 
-[![red-green-refactor-diagram](53dbe337-da6d-407c-9260-3bea47b6057b.png)](http://dariuszwozniaknet.files.wordpress.com/2013/04/red-green-refactor-diagram.png)
+![red-green-refactor-diagram](53dbe337-da6d-407c-9260-3bea47b6057b.png)
+<div style="text-align: center">Diagram red - green - refactor</div>
 
 # Wady i zalety TDD
 
