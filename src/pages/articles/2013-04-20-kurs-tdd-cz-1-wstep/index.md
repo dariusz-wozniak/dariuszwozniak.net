@@ -47,7 +47,7 @@ Kluczowym aspektem TDD jest cykl pisania testów. Najpierw piszemy testy, nastę
 ![red-green-refactor-diagram](53dbe337-da6d-407c-9260-3bea47b6057b.png)
 <div style="text-align: center">Diagram red - green - refactor</div>
 
-# Wady i zalety TDD
+# Zalety i wady TDD
 
 Zalety TDD:
 
