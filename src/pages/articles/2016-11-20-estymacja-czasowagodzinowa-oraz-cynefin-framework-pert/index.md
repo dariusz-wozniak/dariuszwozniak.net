@@ -8,7 +8,7 @@ category: "Agile"
 tags:
   - "Agile"
   - "Estymacja"
-description: "Estymacja, czyli szacowanie projektu programistycznego to bardzo często bolączka każdego zespołu. Czego użyć do szacowania naszego projektu: estymat godzinowych, roboczodniowych, Story Pointów, koszulkowych. A może w ogóle nie korzystać z estymat #noestimates? Postaram się przedstawić sposoby oraz zalety i wady każdej z tych metod estymacji, zaczynając od tego postu i estymat czasowych."
+description: "Estymacja, czyli szacowanie projektu programistycznego to bardzo często bolączka każdego zespołu. Czego użyć do szacowania naszego projektu: estymat godzinowych, roboczodniowych, Story Pointów, koszulkowych. A może w ogóle nie korzystać z estymat (#NoEstimates)? Postaram się przedstawić sposoby oraz zalety i wady każdej z tych metod estymacji, zaczynając od tego postu i estymat czasowych."
 ---
 
 > _Hofstadter's Law: It always takes longer than you expect, even when you take into account Hofstadter's Law._
@@ -19,7 +19,7 @@ description: "Estymacja, czyli szacowanie projektu programistycznego to bardzo c
 *   roboczodniowych,
 *   Story Pointów,
 *   koszulkowych,
-*   a może w ogóle nie korzystać z estymat #noestimates?
+*   a może w ogóle nie korzystać z estymat (#NoEstimates)?
 
 Postaram się przedstawić sposoby oraz zalety i wady każdej z tych metod estymacji, zaczynając od tego postu i estymat czasowych.
 
