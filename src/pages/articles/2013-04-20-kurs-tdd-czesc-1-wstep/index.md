@@ -8,8 +8,7 @@ category: "Programowanie"
 tags:
   - "TDD"
   - "Kurs TDD"
-  - "C#"
-description: "Swój pierwszy wpis na blogu zacznę od części _numeros unos_ cyklu poświęconemu Test-Driven Development. TDD w ostatnim czasie święci triumfy i to nie bez powodu. Dlaczego tak jest i czy gra jest warta świeczki?."
+description: "Swój pierwszy wpis na blogu zacznę od części _numeros unos_ cyklu poświęconemu Test-Driven Development. TDD w ostatnim czasie święci triumfy i to nie bez powodu. Dlaczego tak jest i czy gra jest warta świeczki?"
 ---
 
 Swój pierwszy wpis na blogu zacznę od części _numeros unos_ cyklu poświęconemu Test-Driven Development. TDD w ostatnim czasie święci triumfy i to nie bez powodu. Dlaczego tak jest i czy gra jest warta świeczki?
