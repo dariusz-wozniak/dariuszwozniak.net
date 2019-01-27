@@ -4,7 +4,7 @@ date: "2013-06-18T11:55:04.000Z"
 layout: post
 draft: false
 path: "/posts/cytaty-o-tdd/"
-category: "TDD"
+category: "Programowanie"
 tags:
   - "TDD"
 description: "Garść cytatów w kontekście Test Driven Development. Można je wykorzystać przy różnych okazjach, np. przy tworzeniu prezentacji albo przy rodzinnych bankietach ;)"

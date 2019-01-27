@@ -4,7 +4,7 @@ date: "2017-01-18T19:37:25.000Z"
 layout: post
 draft: false
 path: "/posts/assert-multiple/"
-category: "TDD"
+category: "Programowanie"
 tags:
   - "TDD"
   - "C#"

@@ -4,7 +4,7 @@ date: "2015-11-21T14:21:15.000Z"
 layout: post
 draft: false
 path: "/posts/automatyczne-generowanie-testow-jednostkowych-intellitest/"
-category: "TDD"
+category: "Programowanie"
 tags:
   - "TDD"
   - "C#"

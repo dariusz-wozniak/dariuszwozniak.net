@@ -4,7 +4,7 @@ date: "2014-10-03T19:44:17.000Z"
 layout: post
 draft: false
 path: "/posts/kurs-tdd-8-testy-parametryzowane"
-category: "TDD"
+category: "Programowanie"
 tags:
   - "TDD"
   - "Kurs TDD"

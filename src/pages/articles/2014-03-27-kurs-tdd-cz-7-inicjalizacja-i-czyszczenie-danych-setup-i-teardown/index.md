@@ -4,7 +4,7 @@ date: "2014-03-27T14:51:40.000Z"
 layout: post
 draft: false
 path: "/posts/kurs-tdd-7-inicjalizacja-i-czyszczenie-danych-setup-i-teardown/"
-category: "TDD"
+category: "Programowanie"
 tags:
   - "TDD"
   - "Kurs TDD"

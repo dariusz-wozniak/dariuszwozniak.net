@@ -4,7 +4,7 @@ date: "2014-10-12T16:43:19.000Z"
 layout: post
 draft: false
 path: "/posts/csharp-nested-object-initializer-syntax/"
-category: "C#"
+category: "Programowanie"
 tags:
   - "C#"
 description: "W C# istnieje mało znana składnia do inicjalizacji zagnieżdzonych obiektów (nested object initializer syntax)."
