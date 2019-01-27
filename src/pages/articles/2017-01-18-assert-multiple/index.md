@@ -7,7 +7,7 @@ path: "/posts/assert-multiple/"
 category: "TDD"
 tags:
   - "TDD"
-  - "NUnit"
+  - "C#"
 description: "NUnit w wersji 3.6 wprowadził dość ciekawą funkcję — Assert.Multiple. Dzięki niej, dostajemy informacje na temat wszystkich testów, które nie przeszły. Przyjrzyjmy się temu bliżej… Do tej pory, używając kilku asercji naraz, jedna niespełniona asercja powodowała, że dalszy kod nie jest wykonywany."
 ---
 

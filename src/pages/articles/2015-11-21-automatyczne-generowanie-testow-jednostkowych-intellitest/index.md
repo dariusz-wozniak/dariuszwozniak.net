@@ -7,6 +7,7 @@ path: "/posts/automatyczne-generowanie-testow-jednostkowych-intellitest/"
 category: "TDD"
 tags:
   - "TDD"
+  - "C#"
 description: "IntelliTest to wewnętrzna funkcjonalność Visual Studio, która służy do generowania tabeli danych wejściowych oraz zestawu testów jednostkowych. Dla danej metody generowane są dane wejściowe, w oparciu których mogą zostać wygenerowane testy jednostkowe. Przypadki testowe tworzone są w oparciu o analizę każdego skoku warunkowego (conditional branch). Co więcej, tabela przypadków testowych zawiera scenariusze, które nie zostały obsłużone w naszej logice biznesowej, a które zwracają wyjątek (np. NullReferenceException lub dzielenie przez zero)."
 ---
 
