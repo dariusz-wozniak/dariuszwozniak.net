@@ -17,7 +17,7 @@ W tym kursie znajdzie się miejsce na przedstawienie czym jest TDD, jak powinno 
 
 # Czym TDD jest, a czym nie jest?
 
-Na początek bardzo ważna kwestia, która może być niezwykle myląca - wbrew swojej nazwie, Test-Driven Development **nie jest techniką służącą testowaniu**. Nie chodzi o samo w sobie pisanie testów do kodu czy też powielanie pracy testera. **TDD jest techniką programowania**, jest techniką pisania i budowania kodu. W następnych akapitach wyjaśnię dlaczego. Głównym celem _test-driven_ jest:
+Na początek bardzo ważna kwestia, która może być niezwykle myląca – wbrew swojej nazwie, Test-Driven Development **nie jest techniką służącą testowaniu**. Nie chodzi o samo w sobie pisanie testów do kodu czy też powielanie pracy testera. **TDD jest techniką programowania**, jest techniką pisania i budowania kodu. W następnych akapitach wyjaśnię dlaczego. Głównym celem _test-driven_ jest:
 
 1.  Zachowanie wysokiej jakości designu w swoich klasach.
 1.  Uniknięcie złej interpretacji wymagań biznesowych.
@@ -40,12 +40,12 @@ Kluczowym aspektem TDD jest cykl pisania testów. Najpierw piszemy testy, nastę
 2.  **Green**: Piszemy kod aby testy się powiodły.
     1.  Implementujemy kod (według dokumentacji).
     2.  Uruchamiamy testy. Wszystkie testy muszą się powieść.
-3.  **Refactor**: Refaktoryzacja kod—wprowadzenie zmian, które poprawiają jakość kodu (np. usunięcie duplikacji), ale nie zmieniają jego funkcjonalności.
+3.  **Refactor**: Refaktoryzacja kodu – wprowadzenie zmian, które poprawiają jakość kodu (np. usunięcie duplikacji), ale nie zmieniają jego funkcjonalności.
     1.  Po refaktoryzacji, uruchamiamy wszystkie testy by sprawdzić czy czegoś nie zepsuliśmy.
     2.  Ten punkt jest często lekceważony lub pomijany w procesie. Nie zapominajmy o tym, równie ważnym co dwa poprzednie, elemencie.
 
 ![red-green-refactor-diagram](53dbe337-da6d-407c-9260-3bea47b6057b.png)
-<div style="text-align: center">Diagram red - green - refactor</div>
+<div style="text-align: center">Diagram Red-Green-Refactor</div>
 
 # Zalety i wady TDD
 
@@ -71,7 +71,7 @@ Wady TDD:
 
 # TDD, a agile
 
-W obiegowej opinii Test-Driven Development jest częścią agile. Błąd! Agile i TDD to dwie rozłączne sprawy, obydwie istnieją niezależnie. Agile manifesto nie wspomina ani o TDD, ani o testach jednostkowych. Agile mówi o kodzie testowanym, natomiast nie określa czy kod ma być pisany przed-po-czy w trakcie pisania kodu. TDD natomiast tak—testy powinny być pierwsze. TDD może być, i bardzo często jest, procesem współbieżnym z agile, ale należy pamiętać, że nie jest i nie był jego częścią.
+W obiegowej opinii Test-Driven Development jest częścią agile. Błąd! Agile i TDD to dwie rozłączne sprawy, obydwie istnieją niezależnie. Agile manifesto nie wspomina ani o TDD, ani o testach jednostkowych. Agile mówi o kodzie testowanym, natomiast nie określa czy kod ma być pisany przed-po-czy w trakcie pisania kodu. TDD natomiast tak –testy powinny być pierwsze. TDD może być, i bardzo często jest, procesem współbieżnym z agile, ale należy pamiętać, że nie jest i nie był jego częścią.
 
 # Podsumowanie
 
