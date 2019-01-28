@@ -17,7 +17,7 @@ W tym kursie znajdzie się miejsce na przedstawienie czym jest TDD, jak powinno 
 
 # Czym TDD jest, a czym nie jest?
 
-Na początek bardzo ważna kwestia, która może być niezwykle myląca—wbrew swojej nazwie, Test-Driven Development **nie jest techniką służącą testowaniu**. Nie chodzi o samo w sobie pisanie testów do kodu czy też powielanie pracy testera. **TDD jest techniką programowania**, jest techniką pisania i budowania kodu. W następnych akapitach wyjaśnię dlaczego. Głównym celem _test-driven_ jest:
+Na początek bardzo ważna kwestia, która może być niezwykle myląca - wbrew swojej nazwie, Test-Driven Development **nie jest techniką służącą testowaniu**. Nie chodzi o samo w sobie pisanie testów do kodu czy też powielanie pracy testera. **TDD jest techniką programowania**, jest techniką pisania i budowania kodu. W następnych akapitach wyjaśnię dlaczego. Głównym celem _test-driven_ jest:
 
 1.  Zachowanie wysokiej jakości designu w swoich klasach.
 1.  Uniknięcie złej interpretacji wymagań biznesowych.
