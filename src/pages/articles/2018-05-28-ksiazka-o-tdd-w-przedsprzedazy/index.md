@@ -1,9 +1,9 @@
 ---
-title: Książka o TDD już w przedsprzedaży
+title: Książka o TDD w przedsprzedaży
 date: "2018-05-28T20:37:33.000Z"
 layout: post
 draft: false
-path: "/posts/ksiazka-o-tdd-juz-w-przedsprzedazy/"
+path: "/posts/ksiazka-o-tdd-w-przedsprzedazy/"
 category: "Książki"
 tags:
   - "TDD"
