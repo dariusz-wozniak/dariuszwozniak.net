@@ -11,7 +11,11 @@ tags:
 description: "Postanowiłem kiedyś stworzyć, na własne potrzeby, spis narzędzi dla TDD dla .NET. Z czasem, lista rozrosła się do narzędzi nie tylko związanych z TDD, ale także z testami akceptacyjnymi i BDD. Dokończyłem ten spis o pozostałe rodzaje testów i opublikowałem na GitHubie, tak żeby można było łatwiej aktualizować."
 ---
 
-Postanowiłem kiedyś stworzyć, na własne potrzeby, spis narzędzi dla TDD dla .NET. Z czasem, lista rozrosła się do narzędzi nie tylko związanych z TDD, ale także z testami akceptacyjnymi i BDD. Dokończyłem ten spis o pozostałe rodzaje testów i opublikowałem na GitHubie, tak żeby można było łatwiej aktualizować. Zestawienie znajduje się pod linkiem: [https://github.com/dariusz-wozniak/List-of-Testing-Tools-and-Frameworks-for-.NET](https://github.com/dariusz-wozniak/List-of-Testing-Tools-and-Frameworks-for-.NET). Lista zawiera narzędzia związane z testami typu:
+Postanowiłem kiedyś stworzyć, na własne potrzeby, spis narzędzi dla TDD dla .NET. Z czasem, lista rozrosła się do narzędzi nie tylko związanych z TDD, ale także z testami akceptacyjnymi i BDD. Dokończyłem ten spis o pozostałe rodzaje testów i opublikowałem na GitHubie, tak żeby można było łatwiej aktualizować.
+
+Pełne zestawienie znajduje się pod linkiem: [https://github.com/dariusz-wozniak/List-of-Testing-Tools-and-Frameworks-for-.NET](https://github.com/dariusz-wozniak/List-of-Testing-Tools-and-Frameworks-for-.NET).
+
+Lista zawiera narzędzia związane z testami typu:
 
 *   jednostkowe
 *   integracyjne
