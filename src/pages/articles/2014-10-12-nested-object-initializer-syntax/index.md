@@ -11,6 +11,7 @@ description: "W C# istnieje mało znana składnia do inicjalizacji zagnieżdzony
 ---
 
 W C# istnieje mało znana składnia do inicjalizacji zagnieżdzonych obiektów (_nested object initializer syntax_). Po raz pierwszy zetknąłem się z nią przy okazji lektury _The C# Programming Language (Covering C# 4.0)_, a później przy sugestii ReSharpera. Na czym polega cała zabawa? Spójrzmy na kod, za pomocą którego inicjalizujemy zagnieżdżony obiekt: 
+
 ```csharp
 Rectangle rectangle = new Rectangle
 {
@@ -18,7 +19,9 @@ Rectangle rectangle = new Rectangle
      P2 = { X = 2, Y = 3 }
 }; 
 ```
- Powyższy kod kompilowany jest do postaci: 
+
+ Powyższy kod kompilowany jest do postaci (Dla uproszczenia pominięto tymczasową zmienną ukrytą, tj. _hidden temporary variable_).
+
 ```csharp
 Rectangle r = new Rectangle(); 
 r.P1.X = 0;
@@ -26,7 +29,9 @@ r.P1.Y = 1;
 r.P2.X = 2;
 r.P2.Y = 3; 
 ```
+
  Pozostała część kodu wygląda następująco (całość na [gist](https://gist.github.com/dariusz-wozniak/3cc70aa649761d6a0076 "gist")): 
+
 ```csharp
  public class Point
  {
@@ -46,7 +51,9 @@ public class Rectangle
     public Point P2 { get; set; } 
 } 
 ```
- Kiedy stosować? Podaną składnią można sobie życie ułatwić, bo pozwoli nam to na skrót przy pisaniu struktur drzewiastych i zagnieżdżonych obiektów. Można też utrudnić, bo należy wziąć pod uwagę, że nie jest to powszechna technika i może budzić konsternację wśród innych osób przeglądających kod. * – Dla uproszczenia pominięto tymczasową zmienną ukrytą (hidden temporary variable)
+
+ Kiedy stosować? Podaną składnią można sobie życie ułatwić, bo pozwoli nam to na skrót przy pisaniu struktur drzewiastych i zagnieżdżonych obiektów. Można też utrudnić, bo należy wziąć pod uwagę, że nie jest to powszechna technika i może budzić konsternację wśród innych osób przeglądających kod.
+
 
 ### Źródła
 
