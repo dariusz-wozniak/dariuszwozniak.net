@@ -11,7 +11,13 @@ tags:
 description: "IntelliTest to wewnętrzna funkcjonalność Visual Studio, która służy do generowania tabeli danych wejściowych oraz zestawu testów jednostkowych. Dla danej metody generowane są dane wejściowe, w oparciu których mogą zostać wygenerowane testy jednostkowe. Przypadki testowe tworzone są w oparciu o analizę każdego skoku warunkowego (conditional branch)."
 ---
 
-**IntelliTest** to wewnętrzna funkcjonalność Visual Studio (Enterprise 2015), która służy do generowania tabeli danych wejściowych oraz zestawu testów jednostkowych. Dla danej metody generowane są dane wejściowe, w oparciu których mogą zostać wygenerowane testy jednostkowe. Przypadki testowe tworzone są w oparciu o analizę każdego skoku warunkowego (_conditional branch_). Co więcej, tabela przypadków testowych zawiera scenariusze, które nie zostały obsłużone w naszej logice biznesowej, a które zwracają wyjątek (np. _NullReferenceException_ lub dzielenie przez zero). IntelliTest współpracuje natywnie z MSTest oraz poprzez rozszerzenia z xUnit.net i NUnit. ![7167.2015_2D00_09_2D00_30_2D00_IntelliTest1_5F00_5C49D3D5](99812817-0813-4e63-a196-24abfc49bf09.jpg)  Źródło obrazka: [http://blogs.msdn.com/b/visualstudio/archive/2015/09/30/intellitest-for-net-test-more-with-less-effort.aspx](http://blogs.msdn.com/b/visualstudio/archive/2015/09/30/intellitest-for-net-test-more-with-less-effort.aspx)
+**IntelliTest** to wewnętrzna funkcjonalność Visual Studio (w wersji Enterprise), która służy do generowania tabeli danych wejściowych oraz zestawu testów jednostkowych. Dla danej metody generowane są dane wejściowe, w oparciu których mogą zostać wygenerowane testy jednostkowe.
+
+Przypadki testowe tworzone są w oparciu o analizę każdego skoku warunkowego (_conditional branch_). Co więcej, tabela przypadków testowych zawiera scenariusze, które nie zostały obsłużone w naszej logice biznesowej, a które zwracają wyjątek (np. _NullReferenceException_ lub dzielenie przez zero).
+
+IntelliTest współpracuje natywnie z MSTest oraz poprzez rozszerzenia z xUnit.net i NUnit. ![7167.2015_2D00_09_2D00_30_2D00_IntelliTest1_5F00_5C49D3D5](99812817-0813-4e63-a196-24abfc49bf09.jpg)
+
+<small>Źródło screenshota: [http://blogs.msdn.com/b/visualstudio/archive/2015/09/30/intellitest-for-net-test-more-with-less-effort.aspx](http://blogs.msdn.com/b/visualstudio/archive/2015/09/30/intellitest-for-net-test-more-with-less-effort.aspx)</small>
 
 # Historia projektu
 
@@ -35,24 +41,90 @@ Code Digger ([http://research.microsoft.com/en-us/projects/codedigger/](http://r
 
 Przed Release Candidate Visual Studio 2015, IntelliTest miało nazwę "Smart Unit Tests".
 
-# **Przykład—Kalkulator BMI**
+# **Przykład: Kalkulator BMI**
 
 Aby zobrazować działanie IntelliTest, posłużmy się algorytmem wyliczającym BMI. Nasz kod bazowy wygląda następująco: 
-```csharp
- public class BmiCalculator { public BmiKind Calculate(int massInKg, int heightInCentimetres) { decimal heightInMetres = heightInCentimetres / 100m; decimal bmi = massInKg / (heightInMetres * heightInMetres); if (bmi < 18.5m) return BmiKind.Underweight; if (bmi < 25) return BmiKind.Normal; if (bmi < 30) return BmiKind.Overweight; if (bmi >= 30) return BmiKind.Obese; throw new InvalidOperationException(); } } public enum BmiKind { Underweight = 0, Normal = 1, Overweight = 2, Obese = 3 } 
-```
- W menu kontekstowym Visual Studio widnieją dwie opcje dla IntelliTest: Run i Create IntelliTest. 1. **Run IntelliTest** – Analiza przypadków dla danej metody/klasy, które otwiera okno "IntelliTest Exploration Results": ![intellitest1](498986b3-778e-41ab-b8df-f90c9121c224.png) Powyższa analiza została uruchomiona na naszym kodzie wyliczającym indeks BMI. (Jako że IntelliTest gorzej radzi sobie z liczbami zmiennoprzecinkowymi, wzrost osoby podawana jest w centrymetrach, typ tej zmiennej to _int_.) W naszym przypadku analiza poradziła sobie bezproblemowo z wszystkimi przypadkami testowymi. Udało się pokryć logiczną zawartość naszej metody. IntelliTest wygenerował zestaw wartości, który zwraca każdą wartość enum _BmiKind_. Uwagi:
 
-*   IntelliTest wskazał wartości wejściowe które nie zostały obsłużone w naszym kodzie. W tym przypadku jest to zestaw wartości (waga: 0 kg, wzrost: 0 cm), które prowadzą do wyrzucenia wyjątku _DivideByZeroException_.
-*   Wyrzucenie wyjątku _InvalidOperationException_ w ostatniej linii metody _Calculate_ nie zostało pokryte, gdyż ten kod jest nieosiągalny.
+```csharp
+public class BmiCalculator
+{
+    public BmiKind Calculate(int massInKg, int heightInCentimetres)
+    {
+        decimal heightInMetres = heightInCentimetres / 100m;
+        decimal bmi = massInKg / (heightInMetres * heightInMetres);
+ 
+        if (bmi < 18.5m) return BmiKind.Underweight;
+        if (bmi < 25) return BmiKind.Normal;
+        if (bmi < 30) return BmiKind.Overweight;
+        if (bmi >= 30) return BmiKind.Obese;
+ 
+        throw new InvalidOperationException();
+    }
+}
+ 
+public enum BmiKind
+{
+    Underweight = 0,
+    Normal = 1,
+    Overweight = 2,
+    Obese = 3
+}
+```
+
+ W menu kontekstowym Visual Studio widnieją dwie opcje dla IntelliTest: Run i Create IntelliTest.
+ 
+ 
+ ## Run IntelliTest
+ 
+ Analiza przypadków dla danej metody/klasy, które otwiera okno "IntelliTest Exploration Results":
+ 
+ ![intellitest1](498986b3-778e-41ab-b8df-f90c9121c224.png)
+ 
+ Powyższa analiza została uruchomiona na naszym kodzie wyliczającym indeks BMI. (Jako że IntelliTest gorzej radzi sobie z liczbami zmiennoprzecinkowymi, wzrost osoby podawana jest w centrymetrach, typ tej zmiennej to _int_.) W naszym przypadku analiza poradziła sobie bezproblemowo z wszystkimi przypadkami testowymi. Udało się pokryć logiczną zawartość naszej metody. IntelliTest wygenerował zestaw wartości, który zwraca każdą wartość enum `BmiKind`. Uwagi:
+
+*   IntelliTest wskazał wartości wejściowe które nie zostały obsłużone w naszym kodzie. W tym przypadku jest to zestaw wartości (waga: 0 kg, wzrost: 0 cm), które prowadzą do wyrzucenia wyjątku `DivideByZeroException`.
+*   Wyrzucenie wyjątku `InvalidOperationException` w ostatniej linii metody `Calculate` nie zostało pokryte, gdyż ten kod jest nieosiągalny.
 
 Zobaczmy co się stanie jeśli wprowadzimy ograniczenia co zmiennych okreś. Wprowadźmy na początek metody warunki początkowe: 
+
 ```csharp
- const int MinMass = 40; // kg const int maxMass = 635; // kg if (massInKg <= MinMass || massInKg > maxMass) throw new ArgumentOutOfRangeException(); const int minHeight = 50; // cm const int maxHeight = 272; // cm if (heightInCentimetres <= minHeight || heightInCentimetres > maxHeight) throw new ArgumentOutOfRangeException(); 
+const int MinMass = 40;    // kg
+const int maxMass = 635;   // kg
+if (massInKg <= MinMass || massInKg > maxMass)
+  throw new ArgumentOutOfRangeException();
+ 
+const int minHeight = 50;  // cm
+const int maxHeight = 272; // cm
+if (heightInCentimetres <= minHeight || heightInCentimetres > maxHeight)
+  throw new ArgumentOutOfRangeException();
 ```
- W wyniku otrzymamy następującą tabelę wartości we-/wyjścia: ![intellitest2](9cdd7694-b55b-44b7-9cdd-5ce6ee2c859c.png) W dalszym ciągu zestaw wartości wejściowych pokrywa się z każdą wartością _enum BmiKind_. Obsłużony został także przypadek dzielenia przez zero, stąd IntelliTest nie zwraca nam uwagi na ten problem. 2. Druga opcja to **Create IntelliTest** – Stworzenie automatycznych testów jednostkowych: ![intellitest-create](3229b81e-4ebe-466b-a57d-1ca9dd34a097.png) Przykładowy kod wygenerowany przez IntelliTest dla wartości wejściowych: masa = 41 kg, wzrost = 51 cm wraz z oczekiwanym rezultatem = BmiKind.Obese wygląda następująco: 
+
+ W wyniku otrzymamy następującą tabelę wartości we-/wyjścia:
+ 
+ ![intellitest2](9cdd7694-b55b-44b7-9cdd-5ce6ee2c859c.png)
+ 
+ W dalszym ciągu zestaw wartości wejściowych pokrywa się z każdą wartością _enum BmiKind_. Obsłużony został także przypadek dzielenia przez zero, stąd IntelliTest nie zwraca nam uwagi na ten problem.
+ 
+ ## Create IntelliTest
+ 
+ Druga opcja to Create IntelliTest – Stworzenie automatycznych testów jednostkowych:
+ 
+ ![intellitest-create](3229b81e-4ebe-466b-a57d-1ca9dd34a097.png)
+ 
+ Przykładowy kod wygenerowany przez IntelliTest dla wartości wejściowych: masa = 41 kg, wzrost = 51 cm wraz z oczekiwanym rezultatem = `BmiKind.Obese` wygląda następująco: 
+
 ```csharp
- \[TestMethod\] \[PexGeneratedBy(typeof(BmiCalculatorTest))\] public void Calculate186() { BmiKind i; global::BmiCalculator.BmiCalculator s0 = new global::BmiCalculator.BmiCalculator(); i = this.Calculate(s0, 41, 51); Assert.AreEqual<BmiKind>(BmiKind.Obese, i); Assert.IsNotNull((object)s0); } 
+[TestMethod]
+[PexGeneratedBy(typeof(BmiCalculatorTest))]
+public void Calculate186()
+{
+    BmiKind i;
+    global::BmiCalculator.BmiCalculator s0
+       = new global::BmiCalculator.BmiCalculator();
+    i = this.Calculate(s0, 41, 51);
+    Assert.AreEqual<BmiKind>(BmiKind.Obese, i);
+    Assert.IsNotNull((object)s0);
+}
 ```
  **Wnioski** Do czego w praktyce może przydać się IntelliTest? Można wyróżnić dwie dziedziny:
 
