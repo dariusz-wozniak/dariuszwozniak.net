@@ -12,7 +12,7 @@ tags:
 description: "Celem testów parametryzowanych jest przekazanie zestawu wartości danych do metody testowej. Każdy zestaw danych jest traktowany jako osobny test."
 ---
 
-Temat testów parametryzowanych pojawił się przy okazji pisania [naszego "drugiego" testu jednostkowego](/posts/kurs-tdd-5-nasz-drugi-test-jednostkowy "Kurs TDD cz. 5: Nasz drugi test jednostkowy"). Wtedy to skorzystaliśmy z atrybutu `[TestCase]` pozwalającym na zdefiniowanie zestawów wartości, które są przekazywane do metody testowej. Stosując atrybuty do testów parametryzowanych (m. in. TestCase, Values, Range, Random) ograniczamy liczbę naszych metod testowych i redukujemy ilość redundantnego kodu. Ponadto, zyskujemy na czytelności naszych testów.
+Temat testów parametryzowanych pojawił się przy okazji pisania [naszego "drugiego" testu jednostkowego](/posts/kurs-tdd-5-nasz-drugi-test-jednostkowy "Kurs TDD cz. 5: Nasz drugi test jednostkowy"). Wtedy to skorzystaliśmy z atrybutu `[TestCase]` pozwalającym na zdefiniowanie zestawów wartości, które są przekazywane do metody testowej. Stosując atrybuty do testów parametryzowanych (m. in. `TestCase`, `Values`, `Range`, `Random`) ograniczamy liczbę naszych metod testowych i redukujemy ilość redundantnego kodu. Ponadto, zyskujemy na czytelności naszych testów.
 
 Kod źródłowy do kursu TDD pojawił się na GitHubie i jest dostępny pod adresem: [https://github.com/dariusz-wozniak/TddCourse](https://github.com/dariusz-wozniak/TddCourse "https://github.com/dariusz-wozniak/TddCourse"). Zapraszam do ściągania i dalszej lektury...
 
@@ -30,7 +30,7 @@ Oraz:
 *   `[TestCaseSource]` (zestaw wartości odczytany ze zmiennej dla wszystkich parametrów metody)
 *   `[ValueSource]` (zestaw wartości odczytany ze zmiennej dla parametru metody)
 
-Zobrazujmy te przypadki kodem źródłowym na przykładzie funkcji Divide pochodzącej z [naszego kalkulatora, o którym była mowa w części piątej kursu](/posts/kurs-tdd-5-nasz-drugi-test-jednostkowy). Niektóre z testów (przykładowo te z atrybutem Random) mają jedynie na celu pokazanie w jaki sposób realizowana jest idea parametryzacji testów. Nie zawsze istnieje sens użycia danej techniki w przypadku metody Divide, dlatego też skupimy się tutaj nie na ich zasadności, a na tym jaki uzyskujemy rezultat.
+Zobrazujmy te przypadki kodem źródłowym na przykładzie funkcji `Divide` pochodzącej z [naszego kalkulatora, o którym była mowa w części piątej kursu](/posts/kurs-tdd-5-nasz-drugi-test-jednostkowy). Niektóre z testów (przykładowo te z atrybutem `Random`) mają jedynie na celu pokazanie w jaki sposób realizowana jest idea parametryzacji testów. Nie zawsze istnieje sens użycia danej techniki w przypadku metody Divide, dlatego też skupimy się tutaj nie na ich zasadności, a na tym jaki uzyskujemy rezultat.
 
 ### `TestCase`
 
@@ -87,11 +87,11 @@ public void Divide_DividendIsZero_ReturnsQuotientEqualToZero(
     Assert.AreEqual(0, quotient);
 }
 ```
- W powyższym przykładzie chcemy dowieść, że gdy dzielna jest równa zeru, to niezależnie od wartości dzielnika, iloraz ma być równy również zeru. Wartości dzielnika: {-2, -1, 1, 2}. W tym teście mamy więc cztery zestawy danych, wszystkie zdefiniowane w atrybucie Values.
+ W powyższym przykładzie chcemy dowieść, że gdy dzielna jest równa zeru, to niezależnie od wartości dzielnika, iloraz ma być równy również zeru. Wartości dzielnika: {-2, -1, 1, 2}. W tym teście mamy więc cztery zestawy danych, wszystkie zdefiniowane w atrybucie `Values`.
 
 ### `Range`
 
-W atrybucie Range przekazujemy wartości graniczne zakresu oraz krok (domyślnie = 1). Przykład: 
+W atrybucie `Range` przekazujemy wartości graniczne zakresu oraz krok (domyślnie = 1). Przykład: 
 
 ```csharp
 [Test]
@@ -104,7 +104,7 @@ public void Divide_DividendIsZero_ReturnsQuotientEqualToZero(
 
 ### `Random`
 
-W atrybucie Random podajemy wartości graniczne zakresu oraz liczbę wartości, które mają się wygenerować losowo. Przykład: 
+W atrybucie `Random` podajemy wartości graniczne zakresu oraz liczbę wartości, które mają się wygenerować losowo. Przykład: 
 
 ```csharp
 [Test]
@@ -129,9 +129,9 @@ public void Divide_DividendAndDivisorAreRandomPositiveNumbers_ReturnsPositiveQuo
 
 *   NUnit posiada także atrybuty `[TestCaseSource]` oraz `[ValueSource]`, które nie zostały ukazane wyżej, ale są bajecznie proste. Argumenty te odczytują wartości z podanej zmiennej — W argumencie atrybutu podajemy nazwę zmiennej, z której mają być odczytane wartości. Ma to następujące korzyści:
     *   Jeden zestaw danych możemy przekazywać do wielu metod testowych.
-    *   Dane mogą być odczytane z zewnętrznego źródła (np. plik, baza danych). Pamiętajmy tylko, że test jednostkowy powinien wykonywać się w pamięci, a więc czytanie danych z zewnętrznego źródła jest niezgodne z jego definicją. Nic nie stoi jednak na przeszkodzie, aby tę funkcjonalność wykorzystać w innego rodzaju testów, np. w testach integracyjnych lub akceptacyjnych.
+    *   Dane mogą być odczytane z zewnętrznego źródła (np. plik, baza danych). Pamiętajmy tylko, że test jednostkowy powinien wykonywać się w pamięci, a więc czytanie danych z zewnętrznego źródła jest niezgodne z jego definicją. Nic nie stoi jednak na przeszkodzie, aby tę funkcję wykorzystać w innego rodzaju testów, np. w testach integracyjnych lub akceptacyjnych.
 *   Pokazane sposoby realizacji testów parametryzowanych dotyczą tylko jednego frameworka — NUnit. W innych frameworkach możemy tych koncepcji nie znaleźć lub występują one pod inną nazwą.
-*   Nie należy używać atrybutu Random w kontekście testu jednostkowego. Jest to niezgodne z zasadą mówiącą, że test jednostkowy powinien być powtarzalny. W przypadku zestawu danych który za każdym razem jest generowany losowo, takiej powtarzalności nie ma.
+*   Nie należy używać atrybutu `Random` w kontekście testu jednostkowego. Jest to niezgodne z zasadą mówiącą, że test jednostkowy powinien być powtarzalny. W przypadku zestawu danych który za każdym razem jest generowany losowo, takiej powtarzalności nie ma.
 
 # Zobacz też
 
