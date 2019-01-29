@@ -41,7 +41,7 @@ Pierwszą czynnością po uruchomieniu Visual Studio jest utworzenie nowej soluc
 
 Zwróć uwagę na nazewnictwo projektu i klas. Nieformalna zasada mówi, że projekt z testami powinien mieć przyrostek _.Tests_, natomiast klasa zawierająca testy przyrostek _Tests_. Jeśli wszystko poszło dobrze, całość powinna wyglądać tak:
 
-[![tdd-4-1](802db7e9-96ee-4b86-bdab-145a6e8516e8.png)
+![tdd-4-1](802db7e9-96ee-4b86-bdab-145a6e8516e8.png)
 
 ## Dodajemy NUnit
 
@@ -120,8 +120,9 @@ Testy możemy uruchomić wybierając z menu Visual Studio opcję _Test_ > _Run_ 
 
 Jeśli mamy ReSharpera, możemy to zrobić na dwa różne sposoby:
 
-1.  Sposób 1.: Klikamy prawym przyciskiem myszy na projekt `Calculator.Tests` i wybieramy _Run Unit Tests_, lub
-2.  Sposób 2.: Klikamy w edytorze kodu na zielonożółte kółko przy teście i wybieramy _Run_.
+Sposób 1.: Klikamy prawym przyciskiem myszy na projekt `Calculator.Tests` i wybieramy _Run Unit Tests_, lub
+
+Sposób 2.: Klikamy w edytorze kodu na zielonożółte kółko przy teście i wybieramy _Run_.
 
 Po uruchomieniu testów wszystkie testy będą czerwone: 
 
