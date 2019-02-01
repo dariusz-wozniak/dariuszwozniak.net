@@ -11,8 +11,6 @@ tags:
 description: "Estymacja, czyli szacowanie projektu programistycznego to bardzo często bolączka każdego zespołu. Czego użyć do szacowania naszego projektu: estymat godzinowych, roboczodniowych, Story Pointów, koszulkowych. A może w ogóle nie korzystać z estymat (#NoEstimates)? Postaram się przedstawić sposoby oraz zalety i wady każdej z tych metod estymacji, zaczynając od tego postu i estymat czasowych."
 ---
 
-> _Hofstadter's Law: It always takes longer than you expect, even when you take into account Hofstadter's Law._
-
 **Estymacja, czyli szacowanie projektu programistycznego** to bardzo często bolączka każdego zespołu. Czego użyć do szacowania naszego projektu:
 
 *   estymat godzinowych,
@@ -25,17 +23,26 @@ Postaram się przedstawić sposoby oraz zalety i wady każdej z tych metod estym
 
 # Ludzka natura i błędy poznawcze
 
- ![planning-fail-500x372](256ebc3a-6684-4402-b7f9-537cc17b9b13.jpg)
+![planning-fail-500x372](256ebc3a-6684-4402-b7f9-537cc17b9b13.jpg)
 
-Źródło: [http://theincidentaleconomist.com/wordpress/planning-falacy/](http://theincidentaleconomist.com/wordpress/planning-falacy/)
+<div style="text-align: center"><small>Źródło: http://theincidentaleconomist.com/wordpress/planning-falacy</small></div>
 
-Zacznijmy od tego, że nam ludziom bardzo trudno jest oszacować czas trwania zadania lub projektu programistycznego. Dlaczego? Ludzie są z reguły słabi w szacowaniu zadań. Laureat nagrody Nobla Daniel Kahneman wraz z Amosem Tverskym zaproponowali określenie "złudzenie planowania" (ang. _planning fallacy_). Zgodnie z ich teorią, planowanie czasowe danego zadania związane jest ze zbyt dużym optymizmem i niedoszacowaniem potrzebnego czasu na jego realizację. Związane to jest bezpośrednio z kilkoma czynnikami:
+
+Zacznijmy od tego, że nam ludziom bardzo trudno jest oszacować czas trwania zadania lub projektu programistycznego. Dlaczego?
+
+Ludzie są z reguły słabi w szacowaniu zadań. Laureat nagrody Nobla Daniel Kahneman wraz z Amosem Tverskym zaproponowali określenie "złudzenie planowania" (ang. _planning fallacy_). Zgodnie z ich teorią, planowanie czasowe danego zadania związane jest ze zbyt dużym optymizmem i niedoszacowaniem potrzebnego czasu na jego realizację. Związane to jest bezpośrednio z kilkoma czynnikami:
 
 *   Planowanie z uwzględnieniem tylko i wyłącznie najbardziej optymalnego scenariusza dla rozwiązania zadania.
 *   Myślenie życzeniowe, innymi słowy – ludzie są przekonani, że ukończą dane zadanie szybko i bez problemów.
 *   Prawo Brooksa: dodanie nowej osoby (lub nowych osób) do opóźnionego projektu powoduje ryzyko jeszcze większego opóźnienia.
 *   Efekt skupienia: przywiązanie zbyt dużej uwagi do jednego szczegółu, co w istocie zaburza racjonalną ocenę użyteczności rozważanego rozwiązania.
 *   Dysonans poznawczy: wg Wikipedii - "stan nieprzyjemnego napięcia psychicznego, pojawiający się u danej osoby wtedy, gdy jednocześnie występują dwa elementy poznawcze (np. myśli i sądy), które są niezgodne ze sobą. Dysonans może pojawić się także wtedy, gdy zachowania nie są zgodne z postawami. Stan dysonansu wywołuje napięcie motywacyjne i związane z nim zabiegi, mające na celu zredukowanie lub złagodzenie napięcia."
+
+---
+
+> Prawo Hofstadtera: Zadanie zawsze zajmie nam więcej czasu niż myśleliśmy, nawet jeśli uwzględnimy prawo Hofstadtera.
+
+---
 
 Badania Standish Group z roku 2004 dla wykazały, że 71% projektów IT była niedoszacowana czasowo lub/i budżetowo, co według wyliczeń skutkuje stratami rzędu 55 miliardów USD w samych Stanach rocznie. Bent Flyvberk, ekspert ds. planowania, przeanalizował niemal 300 największych inwestycji publicznych na świecie - blisko 90% z nich było niedoszacowanych.
 
@@ -66,37 +73,41 @@ A jeśli spróbujemy ugryźć problem od strony bardziej technicznej? Spróbujmy
     2.  Bez związku przyczynoskutkowego na poziomie systemu.
     3.  Rozwiązanie: Działaj-Odczuj-Zareaguj.
 
-Piąta domena, **nieporządek**, to stan w którym nie znamy rodzaju związku przyczyno-skutkowego. Priorytetem nr 1 jest odnalezienie jednej z powyższych domen. ![untitled-picture](bcd99513-e7ee-46ae-a566-53b370c01890.png)
+Piąta domena, **nieporządek**, to stan w którym nie znamy rodzaju związku przyczyno-skutkowego. Priorytetem nr 1 jest odnalezienie jednej z powyższych domen.
 
-Źródło: [http://cognitive-edge.com/](http://cognitive-edge.com/)
+![Cynefin Framework](bcd99513-e7ee-46ae-a566-53b370c01890.png)
 
-[![static1-squarespace-com](https://dariuszwozniaknet.files.wordpress.com/2016/11/static1-squarespace-com.jpg)](fbc28a9c-6429-48cd-8140-3ac35fcf0c32.jpg)
+<div style="text-align: center"><small>Źródło: http://cognitive-edge.com/</small></div>
 
-Źródło: [http://sketchingmaniacs.com/decision-making/](http://sketchingmaniacs.com/decision-making/)
+![Cynefin Framework](fbc28a9c-6429-48cd-8140-3ac35fcf0c32.jpg)
+
+<div style="text-align: center"><small>Źródło: http://sketchingmaniacs.com/decision-making/</small></div>
 
 Do której domeny należy pisanie oprogramowania? I tu odpowiedź też nie jest prosta… Możemy rozróżnić rodzaje zadań i ich stopień złożoności charakterystycznych dla projektów programistycznych, np.: \[Pelrine\]
 
 1.  Oczywisty:
-    1.  Wiemy, kiedy zadanie zostanie ukończone.
-    2.  Monitorujemy czas spędzony nad zadaniem.
-    3.  Napisanie drobnej funkcjonalności.
+    -  Wiemy, kiedy zadanie zostanie ukończone.
+    -  Monitorujemy czas spędzony nad zadaniem.
+    -  Napisanie drobnej funkcjonalności.
 2.  Skomplikowany:
-    1.  Ambitny (polityczny) deadline.
-    2.  Naprawa zepsutego builda.
-    3.  Odnalezienie osoby kontaktowej ws. danego problemu.
+    -  Ambitny (polityczny) deadline.
+    -  Naprawa zepsutego builda.
+    -  Odnalezienie osoby kontaktowej ws. danego problemu.
 3.  Złożony:
-    1.  Zmieniające się wymagania.
-    2.  Estymacja zadań.
+    -  Zmieniające się wymagania.
+    -  Estymacja zadań.
 4.  Chaos:
-    1.  Debata na temat standardów kodowania.
-    2.  Retrospektywy bez wniosków.
-    3.  Zbyt duży projekt.
+    -  Debata na temat standardów kodowania.
+    -  Retrospektywy bez wniosków.
+    -  Zbyt duży projekt.
 5.  Nieporządek:
-    1.  Brak deadline'u dla release'u.
-    2.  Zmniejszenie zasobów (ekhm… ludzi ;)).
-    3.  Brak zaufania w zespole.
+    -  Brak deadline'u dla release'u.
+    -  Zmniejszenie zasobów (ekhm… ludzi ;)).
+    -  Brak zaufania w zespole.
 
-https://www.youtube.com/embed/N7oz366X0-8 Na podstawie analizy dziedziny tworzenia oprogramowania w kontekście Cynefin framework możemy stwierdzić, że: \[Pelrine\]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N7oz366X0-8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Na podstawie analizy dziedziny tworzenia oprogramowania w kontekście Cynefin framework możemy stwierdzić, że: \[Pelrine\]
 
 *   Tworzenie oprogramowania to dziedzina zawierająca aspekty i aktywności o zróżnicowanej domenie stopnia złożności.
 *   Sama interakcja między aspektami i aktywnościami ma najczęściej naturę nieuporządkowaną, złożoną.
@@ -105,7 +116,9 @@ https://www.youtube.com/embed/N7oz366X0-8 Na podstawie analizy dziedziny tworzen
 
 # Estymaty czasowe
 
-Co to oznacza w kontekście estymat? Jeśli zdecydujemy się na szacowanie naszych zadań estymatą czasową, to:
+Co to oznacza w kontekście estymat?
+
+Jeśli zdecydujemy się na szacowanie naszych zadań estymatą czasową, to:
 
 *   Postaraj się podzielić każdy problem na możliwie najmniejsze zadania.
 *   Możesz wykorzystać estymaty godzinowe, roboczodniowe lub może tygodniowe.
@@ -115,25 +128,33 @@ Co to oznacza w kontekście estymat? Jeśli zdecydujemy się na szacowanie naszy
 
 ## PERT
 
-Jedna z technik zarządzania projektem, PERT (od Program/Project Evaluation and Review Technique), zakłada wzór na estymatę czasową. Oczekiwany czas realizacji danego zadania ma wzór: **te** = (**o** \+ **4m** \+ **p**) ÷ **6** Gdzie:
+Jedna z technik zarządzania projektem, PERT (od Program/Project Evaluation and Review Technique), zakłada wzór na estymatę czasową. Oczekiwany czas realizacji danego zadania ma wzór:
 
-*   o - optimistic time, minimum potrzebnego czasu na realizację zadania
-*   m - most likely time, najprawdopodobniejszy czas na realizację zadania
-*   p - pessimistic time, maksimum potrzebnego czasu na realizację zadania
-*   te - time expected, czas potrzebny na realizację zadania - ostateczna estymata
+```
+te = (o + 4m + p) ÷ 6
+```
+
+Gdzie:
+
+*   o – optimistic time, minimum potrzebnego czasu na realizację zadania
+*   m – most likely time, najprawdopodobniejszy czas na realizację zadania
+*   p – pessimistic time, maksimum potrzebnego czasu na realizację zadania
+*   te – time expected, czas potrzebny na realizację zadania (ostateczna estymata)
 
 Oczywiście, zawsze po każdej estymacie należy zmierzyć faktyczny czas spędzony nad ukończeniem zadania oraz zmierzyć błąd estymacji.
 
 # Wnioski
 
-Wiemy, że natura ludzka jest bardzo zwodnicza jeśli chodzi o przewidywanie przyszłości. Wiemy też, że większość zadań programistycznych nie jest prosta i dlatego też, jest bardzo trudno lub nawet niemożliwym oszacować oczekiwany czas jego ukończenia. Jeśli chciał(a)byś korzystać z estymat czasowych dla swojego projektu, to zawsze mierz  błąd estymaty i zapytaj siebie czy taki błąd jest akceptowalny. Jeśli błąd jest zbyt duży, możesz jeszcze spróbować skorzystać z wzoru PERT i odpowiedzieć na pytanie czy ta technika okazała się dla Ciebie pomocna. Jeśli nie, to skorzystaj z innego sposobu estymat lub całkowicie rezygnuj z szacowania zadań.
+Wiemy, że natura ludzka jest bardzo zwodnicza jeśli chodzi o przewidywanie przyszłości. Wiemy też, że większość zadań programistycznych nie jest prosta i dlatego też, jest bardzo trudno lub nawet niemożliwym oszacować oczekiwany czas jego ukończenia.
+
+Jeśli chciał(a)byś korzystać z estymat czasowych dla swojego projektu, to zawsze mierz  błąd estymaty i zapytaj siebie czy taki błąd jest akceptowalny. Jeśli błąd jest zbyt duży, możesz jeszcze spróbować skorzystać z wzoru PERT i odpowiedzieć na pytanie czy ta technika okazała się dla Ciebie pomocna. Jeśli nie, to skorzystaj z innego sposobu estymat lub całkowicie rezygnuj z szacowania zadań.
 
 # Źródła
 
-*   [https://en.wikipedia.org/wiki/Planning_fallacy](https://en.wikipedia.org/wiki/Planning_fallacy)
-*   [https://pl.wikipedia.org/wiki/Efekt_skupienia](https://pl.wikipedia.org/wiki/Efekt_skupienia)
-*   [https://en.wikipedia.org/wiki/Cynefin_Framework](https://en.wikipedia.org/wiki/Cynefin_Framework)
-*   [https://en.wikipedia.org/wiki/Software\_development\_effort_estimation](https://en.wikipedia.org/wiki/Software_development_effort_estimation)
-*   [https://pl.wikipedia.org/wiki/Dysonans_poznawczy](https://pl.wikipedia.org/wiki/Dysonans_poznawczy)
-*   [https://en.wikipedia.org/wiki/Program\_evaluation\_and\_review\_technique](https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique)
-*   Joseph Pelrine. Is software development complex? [http://cognitive-edge.com/blog/is-software-development-complex/](http://cognitive-edge.com/blog/is-software-development-complex/)
+*   [Wikipedia PL: Efekt skupienia](https://pl.wikipedia.org/wiki/Efekt_skupienia)
+*   [Wikipedia PL: Dysonans poznawczy](https://pl.wikipedia.org/wiki/Dysonans_poznawczy)
+*   [Wikipedia EN: Planning fallacy](https://en.wikipedia.org/wiki/Planning_fallacy)
+*   [Wikipedia EN: Cynefin Framework](https://en.wikipedia.org/wiki/Cynefin_Framework)
+*   [Wikipedia EN: Software development: effort estimation](https://en.wikipedia.org/wiki/Software_development_effort_estimation)
+*   [Wikipedia EN: Program evaluation and review technique](https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique)
+*   [Joseph Pelrine. Is software development complex?](http://cognitive-edge.com/blog/is-software-development-complex/)
