@@ -8,10 +8,15 @@ category: "Programowanie"
 tags:
   - "TDD"
   - "Kurs TDD"
+  - "Agile"
 description: "Test-Driven Development ma niezaprzeczalnie bardzo pokaźną liczbę zalet, jednak jednym z problemów stojących na przeszkodzie we wdrożeniu i stosowaniu tej techniki jest fakt, że pisanie testów jednostkowych wymaga większego nakładu czasowego programisty. Nie licząc czasu na zmianę sposobu myślenia oraz naukę zespołu, pisanie testów jednostkowych może trwać nawet dwukrotnie dłużej niż w sposób "beztestowy". Warto więc zadać podstawowe pytanie: Czy TDD się opłaca? Spójrzmy na TDD okiem biznesowym…"
 ---
 
-**Test-Driven Development** ma niezaprzeczalnie [bardzo pokaźną liczbę zalet](https://dariuszwozniak.net/2013/04/20/kurs-tdd-czesc-1-wstep/), jednak jednym z problemów stojących na przeszkodzie we wdrożeniu i stosowaniu tej techniki jest fakt, że pisanie testów jednostkowych wymaga większego nakładu czasowego programisty. Nie licząc czasu na zmianę sposobu myślenia oraz naukę zespołu, pisanie testów jednostkowych może trwać nawet dwukrotnie dłużej niż w sposób "beztestowy". Warto więc zadać podstawowe pytanie: Czy TDD się opłaca? Spójrzmy na TDD okiem biznesowym…
+**Test-Driven Development** ma niezaprzeczalnie [bardzo pokaźną liczbę zalet](https://dariuszwozniak.net/2013/04/20/kurs-tdd-czesc-1-wstep/), jednak jednym z problemów stojących na przeszkodzie we wdrożeniu i stosowaniu tej techniki jest fakt, że pisanie testów jednostkowych wymaga większego nakładu czasowego programisty. Nie licząc czasu na zmianę sposobu myślenia oraz naukę zespołu, pisanie testów jednostkowych może trwać nawet dwukrotnie dłużej niż w sposób "beztestowy".
+
+Warto więc zadać podstawowe pytanie: Czy TDD się opłaca?
+
+Spójrzmy na TDD okiem biznesowym…
 
 # Koszt zmian
 
@@ -23,13 +28,22 @@ Barry Boehm we wczesnych latach 80. ubiegłego wieku opublikował statystyki, z 
 *   Testowanie
 *   Produkcja
 
-Zmiana kodu po fazie analizy, tworzenia kodu, przetestowania go oraz oddaniu w ręce klienta może być nawet dwustukrotnie (!!) wyższa niż na etapie zbierania wymagań biznesowych. Oczywiście, wartość ta zależy od wielu czynników, takich jak na przykład wielkość i złożoność projektu. W pesymistycznym scenariuszu, koszt zmian rośnie wykładniczo. Zobrazujmy taki scenariusz przykładem: Jedna strona wymagań biznesowych może przełożyć się na 5 stron diagramów, 500 linii kodu, 15 stron dokumentacji oraz kilkadziesiąt przypadków testowych. W _waterfallu_ kaskadowane są zatem nie tylko fazy procesu, ale też problemy... ![waterfall](e769f58f-86fb-49aa-96bc-72b4f59f53f3.png) Koszt zmian w poszczególnych fazach projektu waterfallowego (na podst. _Extreme Programming Explained_  W jaki sposób możemy zredukować koszty zmian w projekcie programistycznym? W 1999 r. Kent Beck zaproponował spłaszczenie powyższego wykresu przy zastosowaniu autorskiej metody programowania ekstremalnego (XP). Składniki, które wpływają na elastyczność kodu i relatywnie niski koszt zmian to:
+Zmiana kodu po fazie analizy, tworzenia kodu, przetestowania go oraz oddaniu w ręce klienta może być nawet dwustukrotnie (!!) wyższa niż na etapie zbierania wymagań biznesowych. Oczywiście, wartość ta zależy od wielu czynników, takich jak na przykład wielkość i złożoność projektu. W pesymistycznym scenariuszu, koszt zmian rośnie wykładniczo. Zobrazujmy taki scenariusz przykładem: Jedna strona wymagań biznesowych może przełożyć się na 5 stron diagramów, 500 linii kodu, 15 stron dokumentacji oraz kilkadziesiąt przypadków testowych. W _waterfallu_ kaskadowane są zatem nie tylko fazy procesu, ale też problemy...
+
+![waterfall](e769f58f-86fb-49aa-96bc-72b4f59f53f3.png)
+
+<div style="text-align: center"><small>Koszt zmian w poszczególnych fazach projektu waterfallowego (na podst. Extreme Programming Explained)</small></div>
+
+W jaki sposób możemy zredukować koszty zmian w projekcie programistycznym? W 1999 r. Kent Beck zaproponował spłaszczenie powyższego wykresu przy zastosowaniu autorskiej metody programowania ekstremalnego (XP). Składniki, które wpływają na elastyczność kodu i relatywnie niski koszt zmian to:
 
 *   Zachowanie prostoty w kodzie i jego designie, w tym trzymanie się zasad KISS (_Keep It Simple Stupid_, „to ma być proste, głupku”) i YAGNI (_You Ain't Gonna Need It_, „nie będziesz tego potrzebować”).
 *   Automatyczne testy, dzięki którym możemy mieć większą pewność, że nie wprowadzono błędu oraz możęmy znacznie zredukować czas pracy manualnych testów.
 *   Dużo doświadczenia w ciągle zmieniającym się środowisku, głównie wymagań klienckich oraz designie kodu.
 
-![Koszt zmian przy zastosowaniu programowania ekstremalnego i TDD jest znacząco mniejszy (na podst. Extreme Programming Explained).](8b1eeafc-b88e-4757-bb73-2be2fa32d8a4.png) Koszt zmian przy zastosowaniu programowania ekstremalnego jest znacząco mniejszy (na podst. _Extreme Programming Explained_
+![Koszt zmian przy zastosowaniu programowania ekstremalnego i TDD jest znacząco mniejszy (na podst. Extreme Programming Explained).](8b1eeafc-b88e-4757-bb73-2be2fa32d8a4.png)
+
+<div style="text-align: center"><small>Koszt zmian przy zastosowaniu programowania ekstremalnego jest znacząco mniejszy (na podst. Extreme Programming Explained)</small></div>
+
 
 # Statystyki
 
@@ -37,7 +51,9 @@ Dobrze, mamy już oparcie o statystyki z waterfallowych lat 80. oraz przykład r
 
 ## Microsoft i IBM
 
-W roku 2008 pod marką Microsoft Research powstał eksperyment \[Nagappan\] mający na celu zbadanie zespołów z firmy IBM i Microsoft: czterech, które stosowały TDD oraz czterech z grupy kontrolnej, którą stanowiły zespoły jak najbardziej zbliżone do grupy eksperymentalnej, lecz oczywiście nie stosujące TDD. Eksperyment przeprowadzano na "żywych" projektach, aktualnie pisanych przez dane zespoły. Wszystkie cztery przypadki użycia dobrano w ten sposób, aby zagwarantować zróżnicowanie w obrębie eksperymentu. Zespoły miały:
+W roku 2008 pod marką Microsoft Research powstał eksperyment \[Nagappan\] mający na celu zbadanie zespołów z firmy IBM i Microsoft: czterech, które stosowały TDD oraz czterech z grupy kontrolnej, którą stanowiły zespoły jak najbardziej zbliżone do grupy eksperymentalnej, lecz oczywiście nie stosujące TDD. Eksperyment przeprowadzano na "żywych" projektach, aktualnie pisanych przez dane zespoły.
+
+Wszystkie cztery przypadki użycia dobrano w ten sposób, aby zagwarantować zróżnicowanie w obrębie eksperymentu. Zespoły miały:
 
 *   Charakter kolokacyjny lub pracowały zdalnie.
 *   Różny poziom doświadczenia programistów: od niskiego do wysokiego.
@@ -55,7 +71,9 @@ Wnioski z eksperymentu były interesujące:
 
 ## Mały projekt w parach
 
-Do innego eksperymentu \[Boby\] zaproszono 24 doświadczonych programistów, którzy mieli napisać mały programik w Javie. Programowanie odbywało się w parach, gdzie jedna para pisała kod w oparciu o TDD, a druga (oczywiście) nie-TDD. Testy przeprowadzono w trzech różnych firmach. Do weryfikacji jakości przygotowano 20 testów penetracyjnych (black box). Okazało się, że:
+Do innego eksperymentu \[Boby\] zaproszono 24 doświadczonych programistów, którzy mieli napisać mały programik w Javie. Programowanie odbywało się w parach, gdzie jedna para pisała kod w oparciu o TDD, a druga (oczywiście) nie-TDD. Testy przeprowadzono w trzech różnych firmach. Do weryfikacji jakości przygotowano 20 testów penetracyjnych (black box).
+
+Okazało się, że:
 
 *   Aplikacje programistów TDD spełniały średnio o 18% więcej przypadków testowych (w oparciu o testowanie black box) niż aplikacje z grupy kontrolnej.
 *   Programiści TDD spędzili średnio o 16% dłużej czasu nad zadaniem. Przy czym każda grupa kontrolna została poproszona o napisanie testów jednostkowych po napisaniu swojego kodu, a tylko jedna uczyniła to w sposób "sensowny".
@@ -63,7 +81,9 @@ Do innego eksperymentu \[Boby\] zaproszono 24 doświadczonych programistów, kt�
 
 ## Meta-analiza
 
-Jedną z najciekawszych prac nt. TDD jest meta-analiza 27 prac naukowych i 3 innych meta-analiz o tematyce TDD \[Rafique\]. Dokonano podziału prac naukowych ze względu na eksperymenty wykonane w środowisku akademickim oraz branżowym. Z ogólnie dostępnych prac naukowych odfiltrowano te, których wiarygodność była niska ze względu na:
+Jedną z najciekawszych prac nt. TDD jest meta-analiza 27 prac naukowych i 3 innych meta-analiz o tematyce TDD \[Rafique\]. Dokonano podziału prac naukowych ze względu na eksperymenty wykonane w środowisku akademickim oraz branżowym.
+
+Z ogólnie dostępnych prac naukowych odfiltrowano te, których wiarygodność była niska ze względu na:
 
 *   Brak odpowiedniej ilości danych.
 *   Brak grupy kontrolnej.
@@ -77,7 +97,9 @@ Nie rozpartywano także prac, w których wyniki opierały się o rezultaty już 
 
 # Podsumowanie
 
-Czy TDD zawsze się opłaca? Wiemy z wielu wiarygodnych źródeł, że TDD łączy się z wyraźnie wyższą jakością a w rezultacie mniejszą ilość defektów. Narzut czasowy na napisanie testów jednostkowych szybko się zwraca, gdyż koszt późniejszych zmian bez automatycznych testów jest znacząco wyższy, a w pesymistycznych scenariuszach może rosnąć wykładniczo. TDD jest bardzo dobrze zbadany w językach obiektowych i tam zwrot z inwestycji dla projektów podparty jest dużo wyższą jakością. Brakuje jednak odpowiedniej ilości prac i przypadków użycia dla języków nieobiektowych oraz ekosystemów z wyłączną warstwą testów funkcjonalnych i BDD. Nic nie stoi jednak na przeszkodzie, aby opłacalność dodatkowych warstw testowych badać empirycznie na przykładzie swojego projektu. Z mojego doświadczenia i obserwacji wynika, że warstwę testów jednostkowych warto rozszerzyć (lub taką opcję rozważyć) o testy integracyjne, ATDD lub/i BDD.
+Czy TDD zawsze się opłaca? Wiemy z wielu wiarygodnych źródeł, że TDD łączy się z wyraźnie wyższą jakością a w rezultacie mniejszą ilość defektów. Narzut czasowy na napisanie testów jednostkowych szybko się zwraca, gdyż koszt późniejszych zmian bez automatycznych testów jest znacząco wyższy, a w pesymistycznych scenariuszach może rosnąć wykładniczo.
+
+TDD jest bardzo dobrze zbadany w językach obiektowych i tam zwrot z inwestycji dla projektów podparty jest dużo wyższą jakością. Brakuje jednak odpowiedniej ilości prac i przypadków użycia dla języków nieobiektowych oraz ekosystemów z wyłączną warstwą testów funkcjonalnych i BDD. Nic nie stoi jednak na przeszkodzie, aby opłacalność dodatkowych warstw testowych badać empirycznie na przykładzie swojego projektu. Z mojego doświadczenia i obserwacji wynika, że warstwę testów jednostkowych warto rozszerzyć (lub taką opcję rozważyć) o testy integracyjne, ATDD lub/i BDD.
 
 # Źródła
 
