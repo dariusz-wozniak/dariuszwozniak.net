@@ -14,7 +14,7 @@ description: "Jedną z największych trudności dla osoby zaczynającej przygod�
 Jedną z największych trudności dla osoby zaczynającej przygodę z testami jednostkowymi są:
 
 *   **Metody i klasy statyczne.**
-    *   Darmowe frameworki ([Moq](http://dariuszwozniak.net/2016/01/09/kurs-tdd-cz-15-wstep-do-moq/), [FakeItEasy](http://dariuszwozniak.net/2016/02/20/kurs-tdd-cz-17-fakeiteasy/), [NSubstitute](http://dariuszwozniak.net/2016/02/29/kurs-tdd-cz-18-nsubstitute/)) nie wspierają tworzenia atrap dla metod i klas statycznych.
+    *   Darmowe frameworki ([Moq](/posts/kurs-tdd-15-wstep-do-moq), [FakeItEasy](/posts/kurs-tdd-17-fakeiteasy), [NSubstitute](/posts/kurs-tdd-18-nsubstitute)) nie wspierają tworzenia atrap dla metod i klas statycznych.
 *   **Niederministyczne lub/i niepowtarzalne zależności.**
     *   Testy jednostkowe muszą być deterministyczne i powtarzalne.
     *   Musimy przyjąć zatem strategię wstrzykiwania alternatywnej implementacji dla wywołań DateTime.Now, funkcji losującej, itp.
@@ -23,26 +23,97 @@ W tym artykule przedstawię jedną ze strategii tworzenia atrap dla tego typu za
 
 # Co będziemy testować?
 
-Przyjmijmy, że chcemy przetestować metodę GetAge klasy AgeCalculator która, jak sama nazwa wskazuje, zwraca wiek danej osoby. Przykładowa implementacja ([źródło](http://stackoverflow.com/a/229/297823)) wygląda następująco: \[code language="csharp"\] public class AgeCalculator { public int GetAge(DateTime dateOfBirth) { DateTime now = DateTime.Now; int age = now.Year - dateOfBirth.Year; if (now.Month < dateOfBirth.Month || (now.Month == dateOfBirth.Month && now.Day < dateOfBirth.Day)) { age--; } return age; } } 
+Przyjmijmy, że chcemy przetestować metodę GetAge klasy AgeCalculator która, jak sama nazwa wskazuje, zwraca wiek danej osoby. Przykładowa implementacja ([źródło](http://stackoverflow.com/a/229/297823)) wygląda następująco:
+
+```csharp
+public class AgeCalculator
+{
+    public int GetAge(DateTime dateOfBirth)
+    {
+        DateTime now = DateTime.Now;
+        int age = now.Year - dateOfBirth.Year;
+ 
+        if (now.Month < dateOfBirth.Month ||
+           (now.Month == dateOfBirth.Month && now.Day < dateOfBirth.Day))
+        {
+            age--;
+        }
+ 
+        return age;
+    }
+}
 ```
  Oczywiście, nie jest to algorytm idealny i sam nie użyłbym go u siebie ze względu na brak wsparcia dla:
 
 *   lat przestępnych,
 *   stref czasowych,
 *   różnych niuansów związanych z kalendarzami lokalnymi,
-*   [przypadków podróżujących z prędkością bliską światła](http://stackoverflow.com/questions/9/how-do-i-calculate-someones-age-in-c#comment6145262_9) :)
+*   przypadków podróżujących z prędkością bliską światła 😊
 
-Algorytm jest jednak prosty i spełnia nasze założenia, tj. wywołuje metodę DateTime.Now, która nie jest powtarzalna.
+Algorytm jest jednak prosty i spełnia nasze założenia, tj. wywołuje metodę `DateTime.Now`, która nie jest powtarzalna.
 
 # Wzorzec Provider
 
-Jednym z najprostszych rozwiązań jest oddelegowanie kontroli nad daną funkcjonalnością do osobnej klasy. W naszym przypadku będzie to oddelegowanie wywołania DateTime.Now: \[code language="csharp"\] public interface IDateTimeProvider { DateTime GetDateTime(); } public class DateTimeProvider : IDateTimeProvider { public DateTime GetDateTime() => DateTime.Now; } 
+Jednym z najprostszych rozwiązań jest oddelegowanie kontroli nad daną funkcjonalnością do osobnej klasy. W naszym przypadku będzie to oddelegowanie wywołania `DateTime.Now`:
+
+```csharp
+public interface IDateTimeProvider
+{
+    DateTime GetDateTime();
+}
+ 
+public class DateTimeProvider : IDateTimeProvider
+{
+    public DateTime GetDateTime() => DateTime.Now;
+}
 ```
- Zmieniony kalkulator wykorzystujący providera wygląda następująco: \[code language="csharp"\] public class AgeCalculator { private readonly IDateTimeProvider \_dateTimeProvider; public AgeCalculator(IDateTimeProvider dateTimeProvider) { if (dateTimeProvider == null) throw new ArgumentNullException(nameof(dateTimeProvider)); \_dateTimeProvider = dateTimeProvider; } public int GetAge(DateTime dateOfBirth) { DateTime now = _dateTimeProvider.GetDateTime(); // ... } } 
+
+ Zmieniony kalkulator wykorzystujący providera wygląda następująco:
+ 
+```csharp
+public class AgeCalculator
+{
+    private readonly IDateTimeProvider _dateTimeProvider;
+ 
+    public AgeCalculator(IDateTimeProvider dateTimeProvider)
+    {
+        if (dateTimeProvider == null) throw new ArgumentNullException(nameof(dateTimeProvider));
+        _dateTimeProvider = dateTimeProvider;
+    }
+ 
+    public int GetAge(DateTime dateOfBirth)
+    {
+        DateTime now = _dateTimeProvider.GetDateTime();
+        // ...
+    }
+}
 ```
- Strategia ta pozwala na podmianę implementacji providera na testowy: \[code language="csharp"\] \[Test\] public void Test() { var currentDate = new DateTime(2015, 1, 1); var dateTimeProvider = Mock.Of<IDateTimeProvider>(provider => provider.GetDateTime() == currentDate); var ageCalculator = new AgeCalculator(dateTimeProvider); var dateOfBirth = new DateTime(1990, 1, 1); int age = ageCalculator.GetAge(dateOfBirth); age.Should().Be(25); } 
+
+ Strategia ta pozwala na podmianę implementacji providera na testowy:
+ 
+```csharp
+[Test]
+public void Test()
+{
+    var currentDate = new DateTime(2015, 1, 1);
+    
+    var dateTimeProvider = Mock.Of<IDateTimeProvider>(provider =>
+      provider.GetDateTime() == currentDate);
+ 
+    var ageCalculator = new AgeCalculator(dateTimeProvider);
+ 
+    var dateOfBirth = new DateTime(1990, 1, 1);
+    int age = ageCalculator.GetAge(dateOfBirth);
+ 
+    age.Should().Be(25);
+}
 ```
- Podczas testu domyślna strategia pobierania daty zostaje podmieniona na testową, której wartość można dowolnie dostosowywać do założeń naszego testu. Alternatywnie, można stworzyć provider typu generycznego, czyli IProvider<T>. W taki sam sposób możemy opakować (ang. _wrap_) wywołania klas lub/i metod statycznych. Lepszy sufiks dla takiego wzorca będzie "Wrapper".
+
+ Podczas testu domyślna strategia pobierania daty zostaje podmieniona na testową, której wartość można dowolnie dostosowywać do założeń naszego testu.
+ 
+ Alternatywnie, można stworzyć provider typu generycznego, czyli `IProvider<T>`.
+ 
+ W taki sam sposób możemy opakować (ang. _wrap_) wywołania klas lub/i metod statycznych. Lepszy sufiks dla takiego wzorca będzie "Wrapper".
 
 # Pytania otwarte (a niektóre zamknięte)
 
