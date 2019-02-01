@@ -14,9 +14,11 @@ description: "Nomenklatura w świecie TDD, a w szczególności ta dotycząca two
 Nomenklatura w świecie TDD, a w szczególności ta dotycząca tworzenia atrap, jest źródłem wielu niejasności. Powodem takiego stanu jest fakt, że definicje różnią się w zależności od źródła, tj. książki, lub frameworka. W poprzednich częściach poznaliśmy trzy najbardziej popularne frameworki do tworzenia atrap dla .NET, dla których:
 
 *   Nie ma podziału na rodzaje atrap.
-*   Atrapa (pod różną nazwą–_mock_, _fake_, _substitute_), poza subtelnymi różnicami, ma tę samą definicję i służy do jednakowych celów.
+*   Atrapa (pod różną nazwą – _mock_, _fake_, _substitute_), poza subtelnymi różnicami, ma tę samą definicję i służy do jednakowych celów.
 
-![podzial definicji_2](9e324d00-6f32-494b-a5d6-b91ec2253f49.png) Sprawa komplikuje się gdy mamy do czynienia z literaturą (książki i blogi) dotyczącą testów jednostkowych. Tutaj jest o tyle trudniej ponieważ:
+![podzial definicji_2](9e324d00-6f32-494b-a5d6-b91ec2253f49.png)
+
+Sprawa komplikuje się gdy mamy do czynienia z literaturą (książki i blogi) dotyczącą testów jednostkowych. Tutaj jest o tyle trudniej ponieważ:
 
 *   Istnieje podział atrap ze względu na cel i zachowanie. Najbardziej popularnym podziałem jest (w moim subiektywnym odczuciu) podział wprowadzony przez Gerarda Meszarosa w książce _xUnit Test Patterns_ na _mock, stub, fake, test spy, dummy_:
 
@@ -24,52 +26,215 @@ Nomenklatura w świecie TDD, a w szczególności ta dotycząca tworzenia atrap, 
 
 *   Definicje atrap są różne, a niekiedy nawet wykluczające się:
 
-![Terminology Cross-Reference](2347a2e5-288c-4a91-b0fb-cea0dc1f503b.png) W tym artykule przedstawię atrapy z _xUnit Test Patterns_ napisane w Moq. 
+![Terminology Cross-Reference](2347a2e5-288c-4a91-b0fb-cea0dc1f503b.png)
 
-# Dummy
+W tym artykule przedstawię atrapy z _xUnit Test Patterns_ napisane w Moq. 
 
-_Dummy_ (z ang. imitacja, marionetka) jest najprostszą z atrap, gdyż... nie robi absolutnie nic! Jego zadaniem jest tylko i wyłącznie spełnienie założeń sygnatury. Dla przykładu, przyjrzyjmy się klasie Customer: \[code language="csharp"\] public class Customer { public string FirstName { get; set; } public string LastName { get; set; } public Customer(string firstName, string lastName) { if (firstName == null) throw new ArgumentNullException(nameof(firstName)); if (lastName == null) throw new ArgumentNullException(nameof(lastName)); FirstName = firstName; LastName = lastName; } } 
-```
- Chcąc przetestować pierwszego _null-guard_, musimy przekazać wartość null jako firstName. Nie przejmujemy się czym jest lastName, gdyż kod związany z tą zmienną nie będzie wykonywany. Przykład testu: \[code language="csharp"\] \[Test\] public void DummyExample() { string firstName = null; string lastName = It.IsAny<string>(); // Dummy Action act = () => new Customer(firstName, lastName); act.ShouldThrow<ArgumentNullException>(); } 
-```
- Sygnatura metody została spełniona, nasz dummy object nie robi absolutnie nic, poza tym że udaje jakikolwiek obiekt typu string. Alternatywnym sposobem tworzenia obiektów dummy jest wykorzystanie atrap z zachowaniem Strict. Oznacza to, że stworzona atrapa wyrzuci wyjątek przy wywołaniu którejś z jej składowych. Dla przypomnienia, zachowanie atrap dla Moq opisane zostało [w części 15. kursu: "Wstęp do Moq"](http://dariuszwozniak.net/2016/01/09/kurs-tdd-cz-15-wstep-do-moq/). Równie dobrze, zamiast obiektu _dummy_, możemy też przesłać null lub default(T).
+# _Dummy_
 
-# Stub
+_Dummy_ (z ang. imitacja, marionetka) jest najprostszą z atrap, gdyż... nie robi absolutnie nic! Jego zadaniem jest tylko i wyłącznie spełnienie założeń sygnatury.
 
-_Stub_ (z ang. zalążek) to nieco bardziej zaawansowany d_ummy_. Dodatkowo jednak, _stub_ potrafi zwracać zdefiniowane przez nas wartości, o ile o nie poprosimy. _Stub_ też nie wyrzuci błędu, jeśli nie zdefiniowaliśmy danego stanu (np. metody void są puste, a niezdefiniowane wartości wyjścia zwracają wartości domyślne). Przykładowy test: \[code language="csharp"\] \[Test\] public void StubExample() { var customerValidator = new CustomerValidator(); var customer = Mock.Of<ICustomer>(c => c.GetAge() == 21); // Stub bool validate = customerValidator.Validate(customer); validate.Should().BeTrue(); } 
+Dla przykładu, przyjrzyjmy się klasie `Customer`:
+
+```csharp
+public class Customer
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+ 
+    public Customer(string firstName, string lastName)
+    {
+        if (firstName == null) throw new ArgumentNullException(nameof(firstName));
+        if (lastName == null) throw new ArgumentNullException(nameof(lastName));
+ 
+        FirstName = firstName;
+        LastName = lastName;
+    }
+}
 ```
 
+ Chcąc przetestować pierwszego _null-guard_, musimy przekazać wartość null jako `firstName`. Nie przejmujemy się czym jest `lastName`, gdyż kod związany z tą zmienną nie będzie wykonywany.
+ 
+ Przykład testu: 
+ 
+ ```csharp
+[Test]
+public void DummyExample()
+{
+    string firstName = null;
+    string lastName = It.IsAny<string>(); // Dummy
+ 
+    Action act = () => new Customer(firstName, lastName);
+ 
+    act.ShouldThrow<ArgumentNullException>();
+}
+```
 
-# Fake
+ Sygnatura metody została spełniona, nasz dummy object nie robi absolutnie nic, poza tym że udaje jakikolwiek obiekt typu string. Alternatywnym sposobem tworzenia obiektów dummy jest wykorzystanie atrap z zachowaniem `Strict`. Oznacza to, że stworzona atrapa wyrzuci wyjątek przy wywołaniu którejś z jej składowych. Dla przypomnienia, zachowanie atrap dla Moq opisane zostało [w części 15. kursu: "Wstęp do Moq"](/posts/kurs-tdd-15-wstep-do-moq). Równie dobrze, zamiast obiektu _dummy_, możemy też przesłać null lub `default(T)`.
 
-_Fake_ (z ang. podróbka, falsyfikat) jest z kolei wariancją _stuba_ i ma na celu symulowanie bardziej złożonych interakcji. Jeśli atrapa posiada złożone interakcje, której symulacja przy pomocy _stuba_ jest niewykonalna (ograniczenia frameworka) lub bardzo złożona, możemy wykorzystać _fake_'a. Jest to z reguły własnoręcznie napisana klasa, która posiada minimalną funkcjonalność aby spełnić założenia interakcji. Przykład: Rozważmy klasę, która generuje raporty z interfejsu ICustomerRepository. \[code language="csharp"\] public class CustomerReportingService { private readonly ICustomerRepository \_customerRepository; public CustomerReportingService(ICustomerRepository customerRepository) { \_customerRepository = customerRepository; } public string GenerateReport() { return string.Join("\\n", _customerRepository.AllCustomers.Select(x => x.FirstName + " " + x.LastName)); } } 
+# _Stub_
+
+_Stub_ (z ang. zalążek) to nieco bardziej zaawansowany _dummy_. Dodatkowo jednak, _stub_ potrafi zwracać zdefiniowane przez nas wartości, o ile o nie poprosimy. _Stub_ też nie wyrzuci błędu, jeśli nie zdefiniowaliśmy danego stanu (np. metody void są puste, a niezdefiniowane wartości wyjścia zwracają wartości domyślne).
+
+Przykładowy test:
+
+```csharp
+[Test]
+public void StubExample()
+{
+    var customerValidator = new CustomerValidator();
+    var customer = Mock.Of<ICustomer>(c => c.GetAge() == 21); // Stub
+ 
+    bool validate = customerValidator.Validate(customer);
+ 
+    validate.Should().BeTrue();
+}
 ```
- Gdzie ICustomerRepository to: \[code language="csharp"\] public interface ICustomerRepository { IReadOnlyList<ICustomer> AllCustomers { get; } bool Add(ICustomer customer); } 
+
+# _Fake_
+
+_Fake_ (z ang. podróbka, falsyfikat) jest z kolei wariancją _stuba_ i ma na celu symulowanie bardziej złożonych interakcji. Jeśli atrapa posiada złożone interakcje, której symulacja przy pomocy _stuba_ jest niewykonalna (ograniczenia frameworka) lub bardzo złożona, możemy wykorzystać _fake_'a. Jest to z reguły własnoręcznie napisana klasa, która posiada minimalną funkcjonalność aby spełnić założenia interakcji.
+
+Przykład: Rozważmy klasę, która generuje raporty z interfejsu `ICustomerRepository`.
+
+```csharp
+public class CustomerReportingService
+{
+    private readonly ICustomerRepository _customerRepository;
+ 
+    public CustomerReportingService(ICustomerRepository customerRepository)
+    {
+        _customerRepository = customerRepository;
+    }
+ 
+    public string GenerateReport()
+    {
+        return string.Join("\n", _customerRepository.AllCustomers.Select(x =>
+          x.FirstName + " " + x.LastName));
+    }
 ```
- Aby przetestować metodę GenerateReport klasy CustomerReportingService potrzebny nam jest dostęp do kolekcji AllCustomers interfejsu ICustomerRepository. Jako że kolekcja ta jest niezmienna (immutable), stworzenie _stuba_ dla interfejsu ICustomerRepository wiązałoby się z dość skomplikowanym kodem (a w przypadku niektórych bibliotek – stworzenie takiego _stuba_ jest niemożliwe). Można zatem stworzyć klasę (w projekcie testowym!), która będzie wykonywać minimum do wykonania testu. Takim minimum jest w tym przypadku dodanie elementu ICustomer do kolekcji. Ostatecznie, nasz _fake_ wygląda następująco: \[code language="csharp"\] internal class FakeCustomerRepository : ICustomerRepository { private readonly List<ICustomer> \_customers = new List<ICustomer>(); public IReadOnlyList<ICustomer> AllCustomers => \_customers.AsReadOnly(); public bool Add(ICustomer customer) { \_customers.Add(customer); return true; } } 
+
+ Gdzie `ICustomerRepository` to:
+ 
+ ```csharp 
+public interface ICustomerRepository
+{
+    IReadOnlyList<ICustomer> AllCustomers { get; }
+    bool Add(ICustomer customer);
+}
 ```
- Natomiast test wygląda następująco: \[code language="csharp"\] \[Test\] public void FakeExample() { var customerRepository = new FakeCustomerRepository(); // Fake customerRepository.Add(Mock.Of<ICustomer>(c => c.FirstName == "John" && c.LastName == "Kowalski")); customerRepository.Add(Mock.Of<ICustomer>(c => c.FirstName == "Steve" && c.LastName == "Jablonsky")); var customerReportingService = new CustomerReportingService(customerRepository); string report = customerReportingService.GenerateReport(); report.Should().Be("John Kowalski\\nSteve Jablonsky"); } 
+ Aby przetestować metodę `GenerateReport` klasy `CustomerReportingService` potrzebny nam jest dostęp do kolekcji `AllCustomers` interfejsu `ICustomerRepository`. Jako że kolekcja ta jest niezmienna (immutable), stworzenie _stuba_ dla interfejsu `ICustomerRepository` wiązałoby się z dość skomplikowanym kodem (a w przypadku niektórych bibliotek – stworzenie takiego _stuba_ jest niemożliwe). Można zatem stworzyć klasę (w projekcie testowym!), która będzie wykonywać minimum do wykonania testu. Takim minimum jest w tym przypadku dodanie elementu ICustomer do kolekcji. Ostatecznie, nasz _fake_ wygląda następująco:
+ 
+ ```csharp
+internal class FakeCustomerRepository : ICustomerRepository
+{
+    private readonly List<ICustomer> _customers = new List<ICustomer>();
+ 
+    public IReadOnlyList<ICustomer> AllCustomers => _customers.AsReadOnly();
+ 
+    public bool Add(ICustomer customer)
+    {
+        _customers.Add(customer);
+        return true;
+    }
+}
 ```
- Podstawowe pytanie jakie może się nasunąć to...: Czemu by nie użyć obiektu klasy CustomerRepository, która jest już zaimplementowana: \[code language="csharp"\] public class CustomerRepository : ICustomerRepository { private readonly List<ICustomer> \_allCustomers; private readonly ICustomerValidator \_customerValidator; public IReadOnlyList<ICustomer> AllCustomers => \_allCustomers.AsReadOnly(); public CustomerRepository(ICustomerValidator customerValidator) { \_allCustomers = new List<ICustomer>(); \_customerValidator = customerValidator; } public bool Add(ICustomer customer) { if (\_customerValidator.Validate(customer)) { \_allCustomers.Add(customer); return true; } return false; } } 
+
+ Natomiast test wygląda następująco:
+ 
+ ```csharp
+[Test]
+public void FakeExample()
+{
+    var customerRepository = new FakeCustomerRepository(); // Fake
+
+    customerRepository.Add(Mock.Of<ICustomer>(c =>
+      c.FirstName == "John" && c.LastName == "Kowalski"));
+
+    customerRepository.Add(Mock.Of<ICustomer>(c =>
+      c.FirstName == "Steve" && c.LastName == "Jablonsky"));
+ 
+    var customerReportingService = new CustomerReportingService(customerRepository);
+ 
+    string report = customerReportingService.GenerateReport();
+ 
+    report.Should().Be("John Kowalski\nSteve Jablonsky");
+}
 ```
- _Fake_ ma tutaj istotną przewagę nad implementacją produkcyjną; przede wszystkim wykonuje minimum funkcjonalności do spełnienia założeń testu. Oznacza to, że nie potrzebujemy redundantnych interakcji, takich jak np. z ICustomerValidator oraz walidacja przy dodawaniu. Uważny czytelnik zauważył też, że istnieje niebezpieczeństwo związane z pisaniem _fake_'ów. Co w przypadku jeśli logika biznesowa _fake_'a będzie różna od implementacji w taki sposób, że test jednostkowy nie wykryje błędu? Trzeba pamiętać o dwóch kwestiach:
+
+ Podstawowe pytanie jakie może się nasunąć to...: Czemu by nie użyć obiektu klasy CustomerRepository, która jest już zaimplementowana:
+ 
+ ```csharp
+public class CustomerRepository : ICustomerRepository
+{
+    private readonly List<ICustomer> _allCustomers;
+    private readonly ICustomerValidator _customerValidator;
+ 
+    public IReadOnlyList<ICustomer> AllCustomers => _allCustomers.AsReadOnly();
+ 
+    public CustomerRepository(ICustomerValidator customerValidator)
+    {
+        _allCustomers = new List<ICustomer>();
+ 
+        _customerValidator = customerValidator;
+    }
+ 
+    public bool Add(ICustomer customer)
+    {
+        if (_customerValidator.Validate(customer))
+        {
+            _allCustomers.Add(customer);
+            return true;
+        }
+ 
+        return false;
+    }
+}
+```
+ _Fake_ ma tutaj istotną przewagę nad implementacją produkcyjną; przede wszystkim wykonuje minimum funkcjonalności do spełnienia założeń testu. Oznacza to, że nie potrzebujemy redundantnych interakcji, takich jak np. z `ICustomerValidator` oraz walidacja przy dodawaniu. Uważny czytelnik zauważył też, że istnieje niebezpieczeństwo związane z pisaniem _fake_'ów. Co w przypadku jeśli logika biznesowa _fake_'a będzie różna od implementacji w taki sposób, że test jednostkowy nie wykryje błędu? Trzeba pamiętać o dwóch kwestiach:
 
 *   Testy jednostkowe wykonywane są w izolacji od innych klas. Błędy interakcji pomiędzy klasami powinny być wykryte przez inny rodzaj testów, np. integracyjny lub akceptacyjny.
 *   _Fake_'i pisze się w tych szczególnych przypadkach, gdzie ciężko lub niemożliwym jest stworzenie stuba oraz implementacja danego zachowania jest przejrzysta i prosta. Takim przykładem jest kolekcja i dodawanie do niej elementów.
 
-Alternatywnie, _fake_'i można definiować przy użyciu funkcjonalności Callback, którą posiada większość frameworków do tworzenia atrap.
+Alternatywnie, _fake_'i można definiować przy użyciu funkcjonalności `Callback`, którą posiada większość frameworków do tworzenia atrap.
 
-# Mock
+# _Mock_
 
-_Mock_ (z ang. imitacja, atrapa) potrafi weryfikować zachowanie obiektu testowanego. Jego celem jest sprawdzenie czy dana składowa została wykonana. \[code language="csharp"\] \[Test\] public void MockExample() { var customerValidator = new CustomerValidator(); var customer = Mock.Of<ICustomer>(c => c.GetAge() == 21); // Mock customerValidator.Validate(customer); Mock.Get(customer).Verify(x => x.GetAge()); // Verification of Mock } 
+_Mock_ (z ang. imitacja, atrapa) potrafi weryfikować zachowanie obiektu testowanego. Jego celem jest sprawdzenie czy dana składowa została wykonana.
+
+Przykład:
+
+```csharp
+[Test]
+public void MockExample()
+{
+    var customerValidator = new CustomerValidator();
+    var customer = Mock.Of<ICustomer>(c => c.GetAge() == 21); // Mock
+ 
+    customerValidator.Validate(customer);
+ 
+    Mock.Get(customer).Verify(x => x.GetAge()); // Verification of Mock
+}
 ```
 
+# _Spy_
 
-# Spy
+_Spy_ (z ang. szpieg) to _mock_ z dodatkową funkcjonalnoscią. O ile _mock_ rejestrował czy dana składowa została wywołana, to _spy_ sprawdza dodatkowo ilość wywołań.
 
-_Spy_ (z ang. szpieg) to _mock_ z dodatkową funkcjonalnoscią. O ile _mock_ rejestrował czy dana składowa została wywołana, to _spy_ sprawdza dodatkowo ilość wywołań. Przykład: \[code language="csharp"\] \[Test\] public void SpyExample() { var customerValidator = new CustomerValidator(); var customer = Mock.Of<ICustomer>(c => c.GetAge() == 21); // Spy customerValidator.Validate(customer); Mock.Get(customer).Verify(x => x.GetAge(), Times.Once); // Verification of Spy } 
+Przykład:
+
+```csharp
+[Test]
+public void SpyExample()
+{
+    var customerValidator = new CustomerValidator();
+    var customer = Mock.Of<ICustomer>(c => c.GetAge() == 21); // Spy
+ 
+    customerValidator.Validate(customer);
+ 
+    Mock.Get(customer).Verify(x => x.GetAge(), Times.Once); // Verification of Spy
+}
 ```
-
 
 # W skrócie
 
@@ -90,28 +255,32 @@ _Spy_ (z ang. szpieg) to _mock_ z dodatkową funkcjonalnoscią. O ile _mock_ rej
 W Moq nie ma rozróżnienia na poszczególne typy, wszystko jest mockiem; aby zasymulować działanie poszczególnych rodzajów atrap możemy wykorzystać poszczególne elementy frameworka (lub języka C#):
 
 *   **_Dummy_**
-    *   It.IsAny<T>()
-    *   MockBehavior.Strict
-    *   alternatywnie: null, default(T)
+    *   `It.IsAny<T>()`
+    *   `MockBehavior.Strict`
+    *   alternatywnie: null, `default(T)`
 *   **_Stub_**
-    *   Setup()
-    *   MockBehavior.Loose
+    *   `Setup()`
+    *   `MockBehavior.Loose`
 *   **_Mock_**
-    *   Verify()
+    *   `Verify()`
 *   **_Spy_**
-    *   Verify() + Times
+    *   `Verify()` + `Times`
 *   **_Fake_**
     *   ręcznie stworzna klasa Fake
-    *   Callback()
+    *   `Callback()`
 
 # Podsumowanie
 
-Pytanie jakie może się nasunąć, to: Czy pomimo, że:
+Pytanie jakie może się nasunąć, to —
+
+Czy pomimo, że...:
 
 *   Definicje atrap w zależności od źródła są różne, a niekiedy wykluczające się, oraz
 *   W niektórych frameworkach nie ma rozróżnienia na rodzaje atrap, to...
 
-...czy warto pamiętać podział i definicje atrap? Odpowiedź zależna jest od kontekstu. Moim zdaniem:
+...czy warto pamiętać podział i definicje atrap?
+
+Odpowiedź zależna jest od kontekstu. Moim zdaniem:
 
 *   Warto pamiętać o podstawach teoretycznych testów jednostkowych i atrap z _xUnit Test Patterns_. Jest to wiedza historyczna, ale jednocześnie pozwala na zrozumienie co dokładnie chcemy testować, zwłaszcza w kontekście weryfikacji stanu vs. zachowania.
 *   Niektóre frameworki posiadają rozróżnienie na rodzaje atrap (np. Rhino Mocks).
@@ -131,5 +300,85 @@ Przypominam, że kod źródłowy całego kursu TDD, jak i tego rozdziału jest d
 
 # P.S. All-in-one
 
-Wszystkie typy w jednym miejscu: \[code language="csharp"\] \[TestFixture\] public class TestDoubles { \[Test\] public void DummyExample() { string firstName = null; string lastName = It.IsAny<string>(); // Dummy Action act = () => new Customer(firstName, lastName); act.ShouldThrow<ArgumentNullException>(); } \[Test\] public void StubExample() { var customerValidator = new CustomerValidator(); var customer = Mock.Of<ICustomer>(c => c.GetAge() == 21); // Stub bool validate = customerValidator.Validate(customer); validate.Should().BeTrue(); } \[Test\] public void MockExample() { var customerValidator = new CustomerValidator(); var customer = Mock.Of<ICustomer>(c => c.GetAge() == 21); // Mock customerValidator.Validate(customer); Mock.Get(customer).Verify(x => x.GetAge()); // Verification of Mock } \[Test\] public void SpyExample() { var customerValidator = new CustomerValidator(); var customer = Mock.Of<ICustomer>(c => c.GetAge() == 21); // Spy customerValidator.Validate(customer); Mock.Get(customer).Verify(x => x.GetAge(), Times.Once); // Verification of Spy } \[Test\] public void FakeExample() { var customerRepository = new FakeCustomerRepository(); // Fake customerRepository.Add(Mock.Of<ICustomer>(c => c.FirstName == "John" && c.LastName == "Kowalski")); customerRepository.Add(Mock.Of<ICustomer>(c => c.FirstName == "Steve" && c.LastName == "Jablonsky")); var customerReportingService = new CustomerReportingService(customerRepository); string report = customerReportingService.GenerateReport(); report.Should().Be("John Kowalski\\nSteve Jablonsky"); } } internal class FakeCustomerRepository : ICustomerRepository { private readonly List<ICustomer> \_customers = new List<ICustomer>(); public IReadOnlyList<ICustomer> AllCustomers => \_customers.AsReadOnly(); public bool Add(ICustomer customer) { _customers.Add(customer); return true; } } 
+Wszystkie typy w jednym miejscu:
+
+```csharp
+[TestFixture]
+public class TestDoubles
+{
+    [Test]
+    public void DummyExample()
+    {
+        string firstName = null;
+        string lastName = It.IsAny<string>(); // Dummy
+ 
+        Action act = () => new Customer(firstName, lastName);
+ 
+        act.ShouldThrow<ArgumentNullException>();
+    }
+ 
+    [Test]
+    public void StubExample()
+    {
+        var customerValidator = new CustomerValidator();
+        var customer = Mock.Of<ICustomer>(c => c.GetAge() == 21); // Stub
+ 
+        bool validate = customerValidator.Validate(customer);
+ 
+        validate.Should().BeTrue();
+    }
+ 
+    [Test]
+    public void MockExample()
+    {
+        var customerValidator = new CustomerValidator();
+        var customer = Mock.Of<ICustomer>(c => c.GetAge() == 21); // Mock
+ 
+        customerValidator.Validate(customer);
+ 
+        Mock.Get(customer).Verify(x => x.GetAge()); // Verification of Mock
+    }
+ 
+    [Test]
+    public void SpyExample()
+    {
+        var customerValidator = new CustomerValidator();
+        var customer = Mock.Of<ICustomer>(c => c.GetAge() == 21); // Spy
+ 
+        customerValidator.Validate(customer);
+ 
+        Mock.Get(customer).Verify(x => x.GetAge(), Times.Once); // Verification of Spy
+    }
+ 
+    [Test]
+    public void FakeExample()
+    {
+        var customerRepository = new FakeCustomerRepository(); // Fake
+
+        customerRepository.Add(Mock.Of<ICustomer>(c =>
+          c.FirstName == "John" && c.LastName == "Kowalski"));
+
+        customerRepository.Add(Mock.Of<ICustomer>(c =>
+          c.FirstName == "Steve" && c.LastName == "Jablonsky"));
+ 
+        var customerReportingService = new CustomerReportingService(customerRepository);
+ 
+        string report = customerReportingService.GenerateReport();
+ 
+        report.Should().Be("John Kowalski\nSteve Jablonsky");
+    }
+}
+ 
+internal class FakeCustomerRepository : ICustomerRepository
+{
+    private readonly List<ICustomer> _customers = new List<ICustomer>();
+ 
+    public IReadOnlyList<ICustomer> AllCustomers => _customers.AsReadOnly();
+ 
+    public bool Add(ICustomer customer)
+    {
+        _customers.Add(customer);
+        return true;
+    }
+}
 ```
