@@ -11,7 +11,9 @@ tags:
 description: "Najprawdopodobniej spotkałeś się z tym problemem: Kod zastany, napisany przez nas lub nie, na pewno nie perfekcyjny i ostatecznie bez testów jednostkowych (ang. legacy code). Co teraz? Wstrzymać dotychczasowe prace nad projektem i pisać testy jednostkowe? A może całkowicie zaniechać pisania testów, bo skoro nigdy nie było testów, to po co pisać je teraz? Do tej pory omawialiśmy TDD z perspektywy pisania nowego kodu. Jak wygląda sytuacja w przypadku istniejącego już kodu?"
 ---
 
-Najprawdopodobniej spotkałeś się z tym problemem: Kod zastany, napisany przez nas lub nie, na pewno nie perfekcyjny i ostatecznie bez testów jednostkowych (ang. _legacy code_). Co teraz? Wstrzymać dotychczasowe prace nad projektem i pisać testy jednostkowe? A może całkowicie zaniechać pisania testów, bo skoro nigdy nie było testów, to po co pisać je teraz? Do tej pory omawialiśmy TDD z perspektywy pisania nowego kodu. Jak wygląda sytuacja w przypadku istniejącego już kodu? Na początek warto zastanowić się nad kilkoma pytaniami:
+Najprawdopodobniej spotkałeś się z tym problemem: Kod zastany, napisany przez nas lub nie, na pewno nie perfekcyjny i ostatecznie bez testów jednostkowych (ang. _legacy code_). Co teraz? Wstrzymać dotychczasowe prace nad projektem i pisać testy jednostkowe? A może całkowicie zaniechać pisania testów, bo skoro nigdy nie było testów, to po co pisać je teraz?
+
+Do tej pory omawialiśmy TDD z perspektywy pisania nowego kodu. Jak wygląda sytuacja w przypadku istniejącego już kodu? Na początek warto zastanowić się nad kilkoma pytaniami:
 
 *   Czy powinno się poświęcać czas i zasoby, czasem wstrzymując dotychczasowe prace, na pisanie testów jednostkowych do kodu już istniejącego?
 *   …Jeśli tak, to którą część aplikacji pokryć w pierwszej kolejności?
@@ -20,11 +22,15 @@ Najprawdopodobniej spotkałeś się z tym problemem: Kod zastany, napisany przez
 
 # Kod nietestowalny
 
-Klasy i metody statyczne, ukryte zależności, długie metody i inne problemy stoją na przeszkodzie napisania krótkiego, zwięzłego, a przede wszystkim dobrego kodu jednostkowego. Do kodu nie napisanego wg TDD, dopisanie testów jednostkowych bez dodatkowej refaktoryzacji, może okazać się niemożliwe. I tu pojawia się słowo-klucz: "refaktoryzacja". Wiele osób na widok kodu istniejącego chce zabrać się na naprawę świata (a także kodu ;-)). Refaktoryzacja to, według definicji, wprowadzenie zmian w kodzie bez zmiany jej funkcjonalności. A w jaki sposób sprawdzimy czy zmieniliśmy nasz kod nie zmieniając przez przypadek dotychczasowego zachowania, skoro nie mamy jeszcze testów jednostkowych? Odpowiedź na to może być trudna; przedstawię tutaj jedną ze strategii prac nad takim kodem.
+Klasy i metody statyczne, ukryte zależności, długie metody i inne problemy stoją na przeszkodzie napisania krótkiego, zwięzłego, a przede wszystkim dobrego kodu jednostkowego. Do kodu nie napisanego wg TDD, dopisanie testów jednostkowych bez dodatkowej refaktoryzacji, może okazać się niemożliwe. I tu pojawia się słowo-klucz: "refaktoryzacja". Wiele osób na widok kodu istniejącego chce zabrać się na naprawę świata (a także kodu 😉). Refaktoryzacja to, według definicji, wprowadzenie zmian w kodzie bez zmiany jej funkcjonalności. A w jaki sposób sprawdzimy czy zmieniliśmy nasz kod nie zmieniając przez przypadek dotychczasowego zachowania, skoro nie mamy jeszcze testów jednostkowych? Odpowiedź na to może być trudna; przedstawię tutaj jedną ze strategii prac nad takim kodem.
 
-# Po pierwsze, nie robić nic
+# Po pierwsze, nie robić nic…
 
-Nie robić nic… z istniejącym już kodem. Taki kod to tysiące, czasem miliony linii, a z nim związane wszystkie zawiłe i czasem bardzo sztywne zależności, nie do końca znane wymagania biznesowe, zawiłe algorytmy, kod spaghetti, [lasagne](http://c2.com/cgi/wiki?LasagnaCode) i ukryte hacki. Kwestia pierwsza: ryzyko. "Skoro działa, lepiej tego nie dotykać". Jak już zostało wcześniej powiedziane, jeśli kod nie był pisany pod testy jednostkowe, to niemożliwym może okazać się napisanie dobrego testu bez refaktoryzacji. Jeśli już będziemy rekfaktoryzować kod, to ryzyko wprowadzenia błędu może okazać się wysokie. Kwestia druga: czas. Jeśli uznać, że pisanie testów do kodu to mniej więcej 50% czasu programisty, to czas na napisanie testów jest równy pracy wszystkich programistów razy ich ilość. Przy czym, pisanie testów do istniejącego kodu to ciut trudniejsza sprawa i do 50% trzeba dodać kilka (niekiedy kilkanaście/-dziesiąt) punktów procentowych.
+Nie robić nic… z istniejącym już kodem. Taki kod to tysiące, czasem miliony linii, a z nim związane wszystkie zawiłe i czasem bardzo sztywne zależności, nie do końca znane wymagania biznesowe, zawiłe algorytmy, kod spaghetti, [lasagne](http://c2.com/cgi/wiki?LasagnaCode) i ukryte hacki.
+
+Kwestia pierwsza: ryzyko. "Skoro działa, lepiej tego nie dotykać". Jak już zostało wcześniej powiedziane, jeśli kod nie był pisany pod testy jednostkowe, to niemożliwym może okazać się napisanie dobrego testu bez refaktoryzacji. Jeśli już będziemy rekfaktoryzować kod, to ryzyko wprowadzenia błędu może okazać się wysokie.
+
+Kwestia druga: czas. Jeśli uznać, że pisanie testów do kodu to mniej więcej 50% czasu programisty, to czas na napisanie testów jest równy pracy wszystkich programistów razy ich ilość. Przy czym, pisanie testów do istniejącego kodu to ciut trudniejsza sprawa i do 50% trzeba dodać kilka (niekiedy kilkanaście/-dziesiąt) punktów procentowych.
 
 # …ale pisać testy do kodu nowego…
 
@@ -32,7 +38,9 @@ W przypadku gdy aplikacja nie posiada jeszcze testów jednostkowych, to pisanie 
 
 # …i zmienianego.
 
-Jeśli musimy odkurzyć stary kod i wprowadzić zmianę lub poprawkę, to warto to robić mądrze, bezpiecznie i z testami jednostkowymi :) Ale w jaki sposób? Istnieje sporo metod refaktoryzacji, które służą wprowadzeniu poprawek w istniejącym kodzie. W najprostszym uogólnieniu, opierają się one na:
+Jeśli musimy odkurzyć stary kod i wprowadzić zmianę lub poprawkę, to warto to robić mądrze, bezpiecznie i z testami jednostkowymi :)
+
+Ale w jaki sposób? Istnieje sporo metod refaktoryzacji, które służą wprowadzeniu poprawek w istniejącym kodzie. W najprostszym uogólnieniu, opierają się one na:
 
 *   Grupowaniu i ekstraktowaniu logiki biznesowej do oddzielnych metod lub klas.
 *   Wydzieleniu nowej funkcjonalności do odrębnej metody lub klasy, a następnie wstrzyknięcie jej do starego kodu.
@@ -59,19 +67,23 @@ Mając zidentyfikowane metryki, trzeba obliczyć wartości dla poszczególnych m
 
 Na pytanie, co robić z kodem istniejącym – posprzątać, dopisać testy jednostkowe, ujednolicić względem jednego stylu, usunąć warningi? – najlepszym wydaje się być odpowiedź:
 
-> "Po pierwsze, przestań tworzyć nowy kod legacy" \[[źródło](http://stackoverflow.com/a/146951/297823)\]
+> Po pierwsze, przestań tworzyć nowy kod legacy \[[źródło](http://stackoverflow.com/a/146951/297823)\]
 
-Zasada – nie dotykać istniejącego kodu i pisać testy do nowego/zmienianego kodu jest jedną ze strategii, co nie oznacza że w każdym scenariuszu okazuje się być najlepszą. Jeśli rozważamy natomiast napisanie testów do starego kodu, to warto wziąć pod uwagę ryzyko jakie wiąże się z refaktoryzacją (lub przepisaniem kodu na nowo) i rozważyć poprawę pokrycia kodu, ale testami integracyjnymi lub/i akceptacyjnymi. W przypadku, gdy chcemy obrać inną strategię i zechcemy napisać testy jednostkowe do starego kodu, to warto zidentyfikować metryki, które posłużą w wyborze do której części systemu mamy je pisać.
+Zasada – nie dotykać istniejącego kodu i pisać testy do nowego/zmienianego kodu jest jedną ze strategii, co nie oznacza że w każdym scenariuszu okazuje się być najlepszą. Jeśli rozważamy natomiast napisanie testów do starego kodu, to warto wziąć pod uwagę ryzyko jakie wiąże się z refaktoryzacją (lub przepisaniem kodu na nowo) i rozważyć poprawę pokrycia kodu, ale testami integracyjnymi lub/i akceptacyjnymi.
+
+W przypadku, gdy chcemy obrać inną strategię i zechcemy napisać testy jednostkowe do starego kodu, to warto zidentyfikować metryki, które posłużą w wyborze do której części systemu mamy je pisać.
 
 # P.S. Refaktoryzacja — co warto poczytać
 
 Lekturą obowiązkową przy nauce metod refaktoryzacji jest _Refactoring Effectively with Legacy Code_ Michaela Feathersa. Można również zasięgnąć do:
 
-*   12-stronicowego opracowania Feathersa, napisanego 2 lata przed książką: [http://www.netobjectives.com/system/files/WorkingEffectivelyWithLegacyCode.pdf](http://www.netobjectives.com/system/files/WorkingEffectivelyWithLegacyCode.pdf)
-*   Prezentacji: [http://www.slideshare.net/nashjain/working-effectively-with-legacy-code-presentation](http://www.slideshare.net/nashjain/working-effectively-with-legacy-code-presentation)
-*   30 minutowego wywiadu z Feathersem w formie podcastu: [http://www.hanselminutes.com/165/working-effectively-with-legacy-code-with-michael-feathers\](http://www.hanselminutes.com/165/working-effectively-with-legacy-code-with-michael-feathers)
+*   12-stronicowego opracowania Feathersa, napisanego 2 lata przed książką: [link (PDF)](http://www.netobjectives.com/system/files/WorkingEffectivelyWithLegacyCode.pdf)
+*   Prezentacji: [Working Effectively With Legacy Code (Slideshare)](http://www.slideshare.net/nashjain/working-effectively-with-legacy-code-presentation)
+*   30 minutowego wywiadu z Feathersem w formie podcastu: [Working Effectively with Legacy Code with Michael Feathers](http://www.hanselminutes.com/165/working-effectively-with-legacy-code-with-michael-feathers)
 
-Innym pomocnym źródłem jest katalog refaktoryzacji spisanych przez Martina Fowlera: [http://www.refactoring.com/catalog/](http://www.refactoring.com/catalog/). Oczywiście, nieodzownym narzędziem pomocnym w refaktoryzacji jest ReSharper.
+Innym pomocnym źródłem jest katalog refaktoryzacji spisanych przez Martina Fowlera: [refactoring.com](http://www.refactoring.com/catalog/) oraz strony [Refactoring Guru](https://refactoring.guru/refactoring/catalog).
+
+Oczywiście, nieodzownym narzędziem pomocnym w refaktoryzacji jest narzędzie ReSharper.
 
 # Źródła
 
