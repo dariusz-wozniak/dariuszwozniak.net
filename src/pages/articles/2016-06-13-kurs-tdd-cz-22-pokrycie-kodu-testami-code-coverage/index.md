@@ -13,9 +13,16 @@ description: "Przyjrzymy się bliżej tematowi pokrycia kodu testami (code cover
 
 **Pokrycie kodu (_code coverage_)** testami to:
 
-(liczba wyrażeń pokrytych testami) ÷ (liczba wszystkich wyrażeń) * 100%
+> (liczba wyrażeń pokrytych testami) ÷ (liczba wszystkich wyrażeń) × 100%
 
-Innymi słowy, jest to procentowy współczynnik pokrycia kodu testami. Pokrycie kodu najczęściej mierzy się badając liczbę wyrażeń (_statements_), choć niekiedy spotkać się można z pokryciem kodu opartym o: - ilość linii kodu, - ilość branchy (_branch coverage_), \- ilość stanów (_condition coverage_), \- ilość funkcji, modułów lub metod. Kiedyś w rozmowie jeden z menadżerów chwalił się, że jego zespół utrzymał założone 90% pokrycia kodu testami jednostkowymi. Z rozmowy z członkiem innego zespołu, programista poinformował mnie, że jego zespół ma roczny cel pokrycia nowo pisanego kodu testami jednostkowymi w stopniu 85%. Jest to przykład, który zapewne zna sporo ludzi ze swojego lub bliskiego podwórka. Czy zespół posiadający stopień pokrycia kodu równym 90% jest lepszy, skuteczniejszy, bądź bardziej produktywny niż zespół z pokryciem 85%? Jakie jest minimum i optimum pokrycia kodu testami jednostkowymi? Dlaczego żaden z zespołów nie postawił sobie za cel pokrycia stuprocentowego? Przyjrzymy się bliżej problemowi…
+Innymi słowy, jest to procentowy współczynnik pokrycia kodu testami. Pokrycie kodu najczęściej mierzy się badając liczbę wyrażeń (_statements_), choć niekiedy spotkać się można z pokryciem kodu opartym o:
+
+- ilość linii kodu,
+- ilość branchy (_branch coverage_), 
+- ilość stanów (_condition coverage_),
+- ilość funkcji, modułów lub metod.
+
+Kiedyś w rozmowie jeden z menadżerów chwalił się, że jego zespół utrzymał założone 90% pokrycia kodu testami jednostkowymi. Z rozmowy z członkiem innego zespołu, programista poinformował mnie, że jego zespół ma roczny cel pokrycia nowo pisanego kodu testami jednostkowymi w stopniu 85%. Jest to przykład, który zapewne zna sporo ludzi ze swojego lub bliskiego podwórka. Czy zespół posiadający stopień pokrycia kodu równym 90% jest lepszy, skuteczniejszy, bądź bardziej produktywny niż zespół z pokryciem 85%? Jakie jest minimum i optimum pokrycia kodu testami jednostkowymi? Dlaczego żaden z zespołów nie postawił sobie za cel pokrycia stuprocentowego? Przyjrzymy się bliżej problemowi…
 
 ---
 
@@ -23,10 +30,34 @@ Innymi słowy, jest to procentowy współczynnik pokrycia kodu testami. Pokrycie
 
 ---
 
-Pokrycie kodu testami jednostkowymi w 100% brzmi jak utopia. Jak to jednak najczęściej bywa, utopijne wizje zmieniają się bardzo szybko w piekło… Pierwszy przykład: Nasze testy jednostkowe nie posiadają żadnych asercji, a ich pokrycie wynosi właśnie sto procent. Pożytek z takich testów jest żaden, jednak samo pokrycie jest "idealne". Drugi absurd: spójrzmy na przykładową metodę dzielenia— \[code language="csharp"\] public float Divide(int dividend, int divisor) { return (float)dividend / divisor; } 
+Pokrycie kodu testami jednostkowymi w 100% brzmi jak utopia. Jak to jednak najczęściej bywa, utopijne wizje zmieniają się bardzo szybko w piekło…
+
+Pierwszy przykład: Nasze testy jednostkowe nie posiadają żadnych asercji, a ich pokrycie wynosi właśnie sto procent. Pożytek z takich testów jest żaden, jednak samo pokrycie jest "idealne".
+
+Drugi prz... absurd – spójrzmy na przykładową metodę dzielenia:
+
+```csharp
+public float Divide(int dividend, int divisor)
+{
+    return (float)dividend / divisor;
+}
 ```
- Tutaj, 100% pokrycia uzyskamy podstawiając dwie dowolne liczby. Samo pokrycie kodu testami jednostkowymi nie powie nam o jakości parametrów testowych, a w powyższym przypadku istnieje sporo przypadków brzegowych, które nie zostają uwzględnione w tej metryce. Przykład numer 3. Spójrzmy na kod: \[code language="csharp"\] public class CustomerValidator {     public bool Validate(ICustomer customer)     {         if (customer.Age < 18) return false; return true;     } } 
+
+ Tutaj, 100% pokrycia uzyskamy podstawiając dwie dowolne liczby. Samo pokrycie kodu testami jednostkowymi nie powie nam o jakości parametrów testowych, a w powyższym przypadku istnieje sporo przypadków brzegowych, które nie zostają uwzględnione w tej metryce.
+ 
+ Przykład numer 3. Spójrzmy na kod:
+ 
+ ```csharp
+public class CustomerValidator
+{
+    public bool Validate(ICustomer customer)
+    {
+        if (customer.Age < 18) return false;
+        return true;
+    }
+}
 ```
+
  Powyższa metoda wydaje się być na pierwszy rzut oka całkiem w porządku. Co jeśli natomiast podstawimy za zmienną customer wartość null? Nasze testy, pomimo pełnego pokrycia nie wskażą na ten problem. I pytanie do tego przykładu, która sytuacja jest korzystniejsza – czy lepiej jest zostawić kod taki jak powyżej, ale ze stuprocentowym pokryciem czy może lepiej jest obsłużyć przypadek nullowy kosztem pokrycia kodu?
 
 ---
@@ -35,7 +66,9 @@ Pokrycie kodu testami jednostkowymi w 100% brzmi jak utopia. Jak to jednak najcz
 
 ---
 
-Czy posiadając upragione 100% możemy być pewni, że nasz kod jest równie wysoko wolny od błędów? Rozważamy cały czas przypadek testów jednostkowych, a jak wiemy, testy takie wykonywane są w izolacji. Jak się okazuje, blisko 35% defektów w oprogramowaniu powstaje przez brakujące ścieżki logiczne, a 40% na wskutek wykonania unikalnej ich kombinacji. Sto procent pokrycia kodu testami jednostkowymi nie wykryje nam tej klasy błędów. Błędy wynikające z interakcji między obiektami nie mogą być pokryte w pełni przez testy jednostkowe. Rozwiązaniem tego problemu mogą być testy interakcyjne, akceptacyjne lub manualne.
+Czy posiadając upragione 100% możemy być pewni, że nasz kod jest równie wysoko wolny od błędów? Rozważamy cały czas przypadek testów jednostkowych, a jak wiemy, testy takie wykonywane są w izolacji. Jak się okazuje, blisko 35% defektów w oprogramowaniu powstaje przez brakujące ścieżki logiczne, a 40% na wskutek wykonania unikalnej ich kombinacji. Sto procent pokrycia kodu testami jednostkowymi nie wykryje nam tej klasy błędów.
+
+Błędy wynikające z interakcji między obiektami nie mogą być pokryte w pełni przez testy jednostkowe. Rozwiązaniem tego problemu mogą być testy interakcyjne, akceptacyjne lub manualne.
 
 # 80%, 85% czy 90%?
 
@@ -47,7 +80,9 @@ Samo pokrycie kodu testami to… doskonała metryka. Metryka, która pozwala zna
 
 # Podsumowanie
 
-Nie używaj metryki pokrycia kodu jako celu zespołowego. Nie ma korelacji między jakością kodu, a pokryciem kodu testami jednostkowymi. Wprowadzenie tej metryki może przyczynić się nawet do spadku jakości kodu. Pokrycie kodu pozwala jednak w prosty sposób zidentyfikować obszar kodu niewytestowanego.
+Nie używaj metryki pokrycia kodu jako celu zespołowego. Nie ma korelacji między jakością kodu, a pokryciem kodu testami jednostkowymi. Wprowadzenie tej metryki może przyczynić się nawet do spadku jakości kodu.
+
+Pokrycie kodu pozwala jednak w prosty sposób zidentyfikować obszar kodu niewytestowanego.
 
 # Czytaj dalej
 
