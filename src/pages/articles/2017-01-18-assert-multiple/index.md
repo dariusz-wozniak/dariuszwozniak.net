@@ -53,8 +53,8 @@ But was: 4
 
 Czy to jest nowość w świecie frameworków do testowania? Nie. Analogiczną funkcjonalność w Świętej Pamięci MbUnicie można zastosować przez nałożenie atrybutu MultipleAsserts. **Kiedy stosować?**
 
-*   Dla testów sparametryzowanych, w dalszym ciągu pozostałbym przy [dotychczasowych rozwiązaniach (np. TestCase)](http://dariuszwozniak.net/2014/10/03/kurs-tdd-cz-8-testy-parametryzowane-2/).
+*   Dla testów sparametryzowanych, w dalszym ciągu pozostałbym przy [dotychczasowych rozwiązaniach (np. `TestCase`)](/posts/kurs-tdd-8-testy-parametryzowane).
 *   Jedna z zasad testowania jednostkowego, mówi nam aby stosować jedną asercję (logiczną) per test. Przykładowo, przy zwracaniu złożonego obiektu, możemy posłużyć się wieloma asercjami, aby poznać które asercje są spełnione, a które nie.
-*   Assert.Multiple nadaje się też do testów niejednostkowych, np. integracyjnych, akceptacyjnych, itp., tam gdzie to rozwiązanie daje nam pełniejszy obraz danego testu.
+*   `Assert.Multiple` nadaje się też do testów niejednostkowych, np. integracyjnych, akceptacyjnych, itp., tam gdzie to rozwiązanie daje nam pełniejszy obraz danego testu.
 
-Po więcej, odsyłam do oficjalnej dokumentacji: [https://github.com/nunit/docs/wiki/Multiple-Asserts-Spec](https://github.com/nunit/docs/wiki/Multiple-Asserts-Spec).
+Po więcej, odsyłam do oficjalnej dokumentacji: https://github.com/nunit/docs/wiki/Multiple-Asserts.
