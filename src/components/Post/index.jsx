@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import moment from 'moment'
+import 'moment/locale/pl'
 import './style.scss'
 
 class Post extends React.Component {
@@ -36,7 +37,7 @@ class Post extends React.Component {
         </h2>
         <p className="post__description">{description}</p>
         <Link className="post__readmore" to={slug}>
-          Read
+          Czytaj dalej...
         </Link>
       </div>
     )
