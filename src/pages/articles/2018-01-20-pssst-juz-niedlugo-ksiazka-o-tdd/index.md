@@ -4,7 +4,7 @@ date: "2018-01-20T17:58:32.000Z"
 layout: post
 draft: false
 path: "/posts/pssst-juz-niedlug-ksiazka-o-tdd/"
-category: "Książki"
+category: "Meta"
 tags:
   - "TDD"
   - "Książki"

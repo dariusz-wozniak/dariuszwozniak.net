@@ -9,6 +9,7 @@ tags:
   - "TDD"
   - "Kurs TDD"
   - "C#"
+  - "NSubstitute"
 description: "Pora przyjrzeć się trzeciemu najpopularniejszemu darmowemu frameworkowi do tworzenia atrap w .NET – NSubstitute."
 ---
 

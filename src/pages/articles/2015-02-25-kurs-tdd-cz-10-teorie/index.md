@@ -9,6 +9,7 @@ tags:
   - "TDD"
   - "Kurs TDD"
   - "C#"
+  - "NUnit"
 description: "Teoria jest specjalnym rodzajem testu, w którym weryfikujemy dane twierdzenie przy pomocy założeń (assumptions)."
 ---
 

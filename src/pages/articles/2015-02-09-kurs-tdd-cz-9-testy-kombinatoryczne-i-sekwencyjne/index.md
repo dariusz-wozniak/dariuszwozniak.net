@@ -9,6 +9,7 @@ tags:
   - "TDD"
   - "Kurs TDD"
   - "C#"
+  - "NUnit"
 description: "Naturalnym krokiem po omówieniu testów parametryzowanych jest przejście do testów kombinatorycznych i sekwencyjnych. Do dyspozycji mamy dwa atrybuty NUnita — [Combinatorial] oraz [Sequential]."
 ---
 

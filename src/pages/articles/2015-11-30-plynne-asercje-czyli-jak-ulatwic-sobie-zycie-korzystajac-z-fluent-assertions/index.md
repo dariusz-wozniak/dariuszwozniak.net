@@ -8,6 +8,7 @@ category: "Programowanie"
 tags:
   - "TDD"
   - "C#"
+  - "FluentAssertions"
 description: "Wzorzec projektowy fluent interface (polski odpowiednik... płynny interfejs?) przyjął się w środowisku .NET-owym bardzo dobrze. I słusznie! \"Płynna syntaktyka\" znacznie poprawia czytelność pisanego kodu. Jednym z sztandarowych przykładów jej użycia są asercje w testach, np. przy wsparciu biblioteki Fluent Assertions"
 ---
 

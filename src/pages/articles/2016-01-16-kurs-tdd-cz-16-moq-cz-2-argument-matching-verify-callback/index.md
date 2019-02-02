@@ -9,6 +9,7 @@ tags:
   - "TDD"
   - "Kurs TDD"
   - "C#"
+  - "Moq"
 description: "W tym artykule przyjrzymy się ciut bardziej zaawansowanym technikom tworzenia atrap przy pomocy Moq: argument matching, verify, callback."
 ---
 
@@ -126,19 +127,19 @@ public void WhenTryingToAddMultipleCustomers_ThenOnlyValidatedOnesAreAdded()
 Matcher `It.IsIn` sprawdza czy porównywana wartość występuje na liście zdefiniowanych wartości, np.: 
 
 ```csharp
- mock.Setup(x => x.HasInventory(It.IsIn(1, 2, 3))).Returns(false); 
+mock.Setup(x => x.HasInventory(It.IsIn(1, 2, 3))).Returns(false); 
 ```
 
  Matcher `It.IsInRange` sprawdza czy zadana wartość jest w podanym zakresie, np.: 
 
 ```csharp
- mock.Setup(foo => foo.Add(It.IsInRange<int>(0, 10, Range.Inclusive))).Returns(true); 
+mock.Setup(foo => foo.Add(It.IsInRange<int>(0, 10, Range.Inclusive))).Returns(true); 
 ```
 
  I, jak się można domyślać, matcher regeksowy sprawdza poprawność względem wyrażenia regularnego, np.: 
 
 ```csharp
- mock.Setup(x => x.DoSomething(It.IsRegex("\[a-d\]+", RegexOptions.IgnoreCase))).Returns("foo"); 
+mock.Setup(x => x.DoSomething(It.IsRegex("\[a-d\]+", RegexOptions.IgnoreCase))).Returns("foo"); 
 ```
 
 # `Verify`
@@ -171,7 +172,7 @@ public void WhenAddingCustomer_ThenValidateMethodOfValidatorIsCalledOnce()
  Jeśli chcemy zweryfikować zdarzenie względem atrapy stworzonej w sposób funkcyjny (`Mock.Of<>`), to musimy naszą atrapę otoczyć metodą `Mock.Get`: 
 
 ```csharp
- Mock
+Mock
   .Get(customerValidatorMock)
   .Verify(validator =>
     validator.Validate(It.Is<ICustomer>(customer =>

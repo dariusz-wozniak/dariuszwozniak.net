@@ -9,6 +9,7 @@ tags:
   - "TDD"
   - "Kurs TDD"
   - "C#"
+  - "Moq"
 description: "Moq to najpopularniejszy framework do tworzenia atrap w .NET. W tej części kursu poznamy jego składnię i podstawowe możliwości."
 ---
 

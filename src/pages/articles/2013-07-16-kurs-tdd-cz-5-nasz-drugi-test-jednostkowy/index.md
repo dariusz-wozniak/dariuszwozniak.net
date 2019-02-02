@@ -9,6 +9,7 @@ tags:
   - "TDD"
   - "Kurs TDD"
   - "C#"
+  - "NUnit"
 description: "W tej części omówię jak wykonać kilka prostych technik, tj. jak zgrupować testy za pomocą atrybutu [TestCase], testować wyjątki, testować zdarzenia."
 ---
 

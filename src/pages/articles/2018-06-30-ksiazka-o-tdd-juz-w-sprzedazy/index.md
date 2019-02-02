@@ -4,7 +4,7 @@ date: "2018-06-30T12:02:45.000Z"
 layout: post
 draft: false
 path: "/posts/ksiazka-o-tdd-juz-w-sprzedazy/"
-category: "Książki"
+category: "Meta"
 tags:
   - "TDD"
   - "Książki"

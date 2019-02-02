@@ -9,6 +9,7 @@ tags:
   - "TDD"
   - "Kurs TDD"
   - "C#"
+  - "NUnit"
 description: "Celem testów parametryzowanych jest przekazanie zestawu wartości danych do metody testowej. Każdy zestaw danych jest traktowany jako osobny test."
 ---
 

@@ -9,6 +9,7 @@ tags:
   - "TDD"
   - "Kurs TDD"
   - "C#"
+  - "FakeItEasy"
 description: "Dziś w kursie TDD przyjrzymy się frameworkowi do tworzenia atrap, konkurencyjnemu do wcześniej poznanego Moq. FakeItEasy, bo o nim mowa, jest darmowy, łatwy w nauce, ma wsparcie dla C# i VB.NET, różni się od innych bibliotek nie tylko semantyką, ale także nieco innym podejściem do tematu tworzenia atrap."
 ---
 

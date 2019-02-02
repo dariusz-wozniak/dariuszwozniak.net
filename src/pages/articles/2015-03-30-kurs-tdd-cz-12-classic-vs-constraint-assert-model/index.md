@@ -9,6 +9,7 @@ tags:
   - "TDD"
   - "Kurs TDD"
   - "C#"
+  - "NUnit"
 description: "Rzecz być może dla niektórych mało istotna, dla niektórych w ogóle nie istotna, ale niezależnie od istotności sprawy – myślę, że warta wpisu na blogu. NUnit posiada dwa modele asercji: Classic Assert Model oraz Constraint-Based Assert Model."
 ---
 

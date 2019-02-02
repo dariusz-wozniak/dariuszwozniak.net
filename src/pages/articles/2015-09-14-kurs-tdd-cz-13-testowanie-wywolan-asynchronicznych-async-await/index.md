@@ -9,6 +9,7 @@ tags:
   - "TDD"
   - "Kurs TDD"
   - "C#"
+  - "NUnit"
 description: "C# 5.0 wniósł wiele dobroci, m.in. obsługę wywołań asynchronicznych za pomocą słów kluczowych async i await. Rozwiązanie, ze względu na prostotę obsługi i skuteczność, cieszy się do dziś sporą popularnością. Jak testować wywołania asynchroniczne? Tego dowiemy się w tym odcinku!"
 ---
 

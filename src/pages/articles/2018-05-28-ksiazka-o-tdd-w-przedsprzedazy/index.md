@@ -4,7 +4,7 @@ date: "2018-05-28T20:37:33.000Z"
 layout: post
 draft: false
 path: "/posts/ksiazka-o-tdd-w-przedsprzedazy/"
-category: "Książki"
+category: "Meta"
 tags:
   - "TDD"
   - "Książki"

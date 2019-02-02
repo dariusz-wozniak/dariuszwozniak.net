@@ -8,6 +8,7 @@ category: "Programowanie"
 tags:
   - "TDD"
   - "Kurs TDD"
+  - "Moq"
 description: "Jedną z największych trudności dla osoby zaczynającej przygodę z testami jednostkowymi są metody i klasy statyczne oraz niederministyczne lub/i niepowtarzalne zależności. Testy jednostkowe muszą być deterministyczne i powtarzalne. Musimy przyjąć zatem strategię wstrzykiwania alternatywnej implementacji dla wywołań DateTime.Now, funkcji losującej, itp. W tym artykule przedstawię jedną ze strategii tworzenia atrap dla tego typu zależności."
 ---
 

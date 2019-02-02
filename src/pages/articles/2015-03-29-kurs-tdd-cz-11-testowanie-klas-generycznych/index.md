@@ -9,6 +9,7 @@ tags:
   - "TDD"
   - "Kurs TDD"
   - "C#"
+  - "NUnit"
 description: "W niniejszym artykule przyjrzymy się w jaki sposób możemy przetestować klasy generyczne za pomocą funkcjonalności NUnita pod nazwą Generic Test Fixture."
 ---
 
