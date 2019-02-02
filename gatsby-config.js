@@ -42,6 +42,7 @@ module.exports = {
     ],
     author: {
       name: 'Dariusz Woźniak',
+      email: '#',
       telegram: '#',
       twitter: '#',
       github: '#',

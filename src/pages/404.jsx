@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React from 'react'
 import { graphql } from 'gatsby'
 import Sidebar from '../components/Sidebar'
@@ -15,7 +16,7 @@ class NotFoundRoute extends React.Component {
                 <h1 className="page__title">404</h1>
                 <div className="page__body">
                   <p>
-                    Ups... nic tu nie ma 😉
+                    Ups... nic tu nie ma ;)
                   </p>
                 </div>
               </div>
@@ -42,12 +43,6 @@ export const pageQuery = graphql`
         }
         author {
           name
-          email
-          telegram
-          twitter
-          github
-          rss
-          vk
         }
       }
     }
