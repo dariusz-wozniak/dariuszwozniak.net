@@ -5,18 +5,34 @@ const pxtorem = require('postcss-pxtorem')
 module.exports = {
   siteMetadata: {
     url: 'https://dariusz-wozniak.github.io',
-    title: 'Blog by dw2',
+    title: 'Dariusz Woźniak — Blog',
     subtitle:
-      'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+      'Blog o programowaniu, m.in. C#, .NET i TDD.',
     copyright: '© All rights reserved.',
     disqusShortname: '',
     menu: [
       {
-        label: 'Articles',
+        label: 'Wpisy',
         path: '/',
       },
       {
-        label: 'About me',
+        label: 'Kategorie',
+        path: '/categories/',
+      },
+      {
+        label: 'Tagi',
+        path: '/tags/',
+      },
+      {
+        label: 'Kurs TDD',
+        path: '/kurs-tdd/',
+      },
+      {
+        label: 'Książka TDD',
+        path: '/ksiazka-tdd/',
+      },
+      {
+        label: 'O mnie',
         path: '/about/',
       },
       {
@@ -25,12 +41,11 @@ module.exports = {
       },
     ],
     author: {
-      name: 'John Doe',
-      email: '#',
+      name: 'Dariusz Woźniak',
       telegram: '#',
       twitter: '#',
       github: '#',
-      rss: '#',
+      rss: '',
       vk: '#',
     },
   },
