@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const lost = require('lost')
 const pxtorem = require('postcss-pxtorem')
 
@@ -8,7 +7,7 @@ module.exports = {
     title: 'Dariusz Woźniak — Blog',
     subtitle:
       'Blog o programowaniu, m.in. C#, .NET i TDD.',
-    copyright: '© All rights reserved.',
+    copyright: '©',
     disqusShortname: '',
     menu: [
       {
@@ -33,21 +32,20 @@ module.exports = {
       },
       {
         label: 'O mnie',
-        path: '/about/',
-      },
-      {
-        label: 'Contact me',
-        path: '/contact/',
+        path: '/about-me/',
       },
     ],
     author: {
       name: 'Dariusz Woźniak',
-      email: '#',
-      telegram: '#',
-      twitter: '#',
-      github: '#',
-      rss: '',
-      vk: '#',
+      twitter: 'https://twitter.com/dwozn',
+      github: 'https://github.com/dariusz-wozniak',
+      linkedin: 'https://www.linkedin.com/in/wozniakdariusz/',
+      instagram: 'https://www.instagram.com/dariusz.wozniak.75/',
+      flickr: 'https://www.flickr.com/photos/dariuszwozniak/albums',
+      goodreads: 'https://www.goodreads.com/author/show/18135947.Dariusz_Wo_niak',
+      stackoverflow: 'https://stackoverflow.com/users/297823/dariusz-wo%C5%BAniak',
+      stackexchange: 'https://stackexchange.com/users/112989/dariusz-wo%c5%baniak?tab=accounts',
+      rss: '/rss.xml',
     },
   },
   plugins: [
