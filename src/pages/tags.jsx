@@ -59,12 +59,15 @@ export const pageQuery = graphql`
         }
         author {
           name
-          email
-          telegram
           twitter
           github
+          linkedin
+          instagram
+          flickr
+          goodreads
+          stackoverflow
+          stackexchange
           rss
-          vk
         }
       }
     }

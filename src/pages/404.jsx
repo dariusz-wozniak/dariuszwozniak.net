@@ -43,6 +43,15 @@ export const pageQuery = graphql`
         }
         author {
           name
+          twitter
+          github
+          linkedin
+          instagram
+          flickr
+          goodreads
+          stackoverflow
+          stackexchange
+          rss
         }
       }
     }
