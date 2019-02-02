@@ -9,6 +9,9 @@ tags:
   - "TDD"
   - "C#"
   - "IntelliTest"
+  - "NUnit"
+  - "xUnit.net"
+  - "MSTest"
 description: "IntelliTest to wewnętrzna funkcjonalność Visual Studio, która służy do generowania tabeli danych wejściowych oraz zestawu testów jednostkowych. Dla danej metody generowane są dane wejściowe, w oparciu których mogą zostać wygenerowane testy jednostkowe. Przypadki testowe tworzone są w oparciu o analizę każdego skoku warunkowego (conditional branch)."
 ---
 
