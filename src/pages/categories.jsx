@@ -13,7 +13,7 @@ class CategoriesRoute extends React.Component {
     return (
       <Layout>
         <div>
-          <Helmet title={`All Categories - ${title}`} />
+          <Helmet title={`Kategorie - ${title}`} />
           <Sidebar {...this.props} />
           <div className="content">
             <div className="content__inner">
@@ -65,11 +65,8 @@ export const pageQuery = graphql`
         author {
           name
           email
-          telegram
           twitter
           github
-          rss
-          vk
         }
       }
     }
