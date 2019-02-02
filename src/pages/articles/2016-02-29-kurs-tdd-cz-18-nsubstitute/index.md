@@ -12,7 +12,7 @@ tags:
 description: "Pora przyjrzeć się trzeciemu najpopularniejszemu darmowemu frameworkowi do tworzenia atrap w .NET – NSubstitute."
 ---
 
-Pora przyjrzeć się trzeciemu najpopularniejszemu darmowemu frameworkowi, obok [Moq](http://dariuszwozniak.net/2016/01/09/kurs-tdd-cz-15-wstep-do-moq/) i [FakeItEasy](http://dariuszwozniak.net/2016/02/20/kurs-tdd-cz-17-fakeiteasy/), do tworzenia atrap w .NET – **NSubstitute**.
+Pora przyjrzeć się trzeciemu najpopularniejszemu darmowemu frameworkowi, obok [Moq](/posts/kurs-tdd-15-wstep-do-moq) i [FakeItEasy](/posts/kurs-tdd-17-fakeiteasy), do tworzenia atrap w .NET – **NSubstitute**.
 
 ![NSubstitute](a9167cc8-6910-4d03-afc7-eecefc8fd33b.png)
 

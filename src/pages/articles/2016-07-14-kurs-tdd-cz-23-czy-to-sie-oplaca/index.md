@@ -12,7 +12,7 @@ tags:
 description: "Test-Driven Development ma niezaprzeczalnie bardzo pokaźną liczbę zalet, jednak jednym z problemów stojących na przeszkodzie we wdrożeniu i stosowaniu tej techniki jest fakt, że pisanie testów jednostkowych wymaga większego nakładu czasowego programisty. Nie licząc czasu na zmianę sposobu myślenia oraz naukę zespołu, pisanie testów jednostkowych może trwać nawet dwukrotnie dłużej niż w sposób "beztestowy". Warto więc zadać podstawowe pytanie: Czy TDD się opłaca? Spójrzmy na TDD okiem biznesowym…"
 ---
 
-**Test-Driven Development** ma niezaprzeczalnie [bardzo pokaźną liczbę zalet](https://dariuszwozniak.net/2013/04/20/kurs-tdd-czesc-1-wstep/), jednak jednym z problemów stojących na przeszkodzie we wdrożeniu i stosowaniu tej techniki jest fakt, że pisanie testów jednostkowych wymaga większego nakładu czasowego programisty. Nie licząc czasu na zmianę sposobu myślenia oraz naukę zespołu, pisanie testów jednostkowych może trwać nawet dwukrotnie dłużej niż w sposób "beztestowy".
+**Test-Driven Development** ma niezaprzeczalnie [bardzo pokaźną liczbę zalet](/posts/kurs-tdd-1-wstep/), jednak jednym z problemów stojących na przeszkodzie we wdrożeniu i stosowaniu tej techniki jest fakt, że pisanie testów jednostkowych wymaga większego nakładu czasowego programisty. Nie licząc czasu na zmianę sposobu myślenia oraz naukę zespołu, pisanie testów jednostkowych może trwać nawet dwukrotnie dłużej niż w sposób "beztestowy".
 
 Warto więc zadać podstawowe pytanie: Czy TDD się opłaca?
 
