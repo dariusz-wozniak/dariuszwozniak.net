@@ -25,7 +25,7 @@ public class Calculator
     }
 }
 ```
- Pamiętamy, że w Test-Driven Development [testy piszemy w kroku pierwszym](http://dariuszwozniak.net/2013/04/20/kurs-tdd-czesc-1-wstep/ "Kurs TDD część 1: Wstęp"); dopiero później implementujemy kod i refaktoryzujemy.
+ Pamiętamy, że w Test-Driven Development [testy piszemy w kroku pierwszym](/posts/kurs-tdd-1-wstep/ "Kurs TDD część 1: Wstęp"); dopiero później implementujemy kod i refaktoryzujemy.
 
 # Ruszamy!
 
@@ -45,7 +45,7 @@ Zwróć uwagę na nazewnictwo projektu i klas. Nieformalna zasada mówi, że pro
 
 ## Dodajemy NUnit
 
-Kolejnym krokiem jest dodanie biblioteki NUnit do naszego projektu. Możemy to zrobić na dwa sposoby. Jednym z nich jest ściągnięcie DLL-ki z oficjalnej strony. Ten krok jest niemal niezbędny dla tych, którzy nie mają zainstalowanego ReSharpera. Drugim sposobem jest dodanie referencji przez NuGet. Jeśli NuGet jest Ci obcy, polecam mimo wszystko ten krok, gdyż jest bajecznie łatwy i sporo szybszy.
+Kolejnym krokiem jest dodanie biblioteki NUnit do naszego projektu. Możemy to zrobić za pomocą NuGet. Jeśli NuGet jest Ci obcy, polecam mimo wszystko ten krok, gdyż jest bajecznie łatwy i sporo szybszy.
 
 Nie będę opisywać ręcznego dodawania biblioteki, gdyż jest to nie rekomendowany sposób pracy z bibliotekami zewnętrznymi
 
@@ -54,9 +54,9 @@ Komentarz: Pamiętaj, że prócz NUnita są też inne frameworki do testowania, 
 ### Dodajemy referencję przez NuGet
 
 1.  Odpalamy NuGet w Visual Studio: _Tools > Library Package Manager > Package Manager Console._
-1.  W oknie Package Manager Console ustawiamy domyślny projekt (_Default project_) `CalculatorDemo.Tests`.
-1.  W tym samym oknie wpisujemy **Install-Package NUnit**.
-1.  Jeśli wszystko się powiedzie, to dostaniemy komunikat: _Successfully added 'NUnit (wersja NUnita)' to CalculatorDemo.Tests._
+2.  W oknie Package Manager Console ustawiamy domyślny projekt (_Default project_) `CalculatorDemo.Tests`.
+3.  W tym samym oknie wpisujemy **Install-Package NUnit**.
+4.  Jeśli wszystko się powiedzie, to dostaniemy komunikat: _Successfully added 'NUnit (wersja NUnita)' to CalculatorDemo.Tests._
 
 Alternatywnie, jeśli nie chcemy instalować biblioteki z linii komend, a wolimy UI, to w oknie Solution Explorer można kliknąć prawym przyciskiem myszy na opcję Manage NuGet Packages i zainstalować NUnita z zakładki _Browse_.
 
