@@ -4,7 +4,7 @@ date: "2016-12-09T21:06:48.000Z"
 layout: post
 draft: false
 path: "/posts/czym-sa-story-pointy/"
-category: "Agile"
+category: "Programowanie"
 tags:
   - "Agile"
   - "Estymacja"

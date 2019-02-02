@@ -4,7 +4,7 @@ date: "2016-11-20T20:43:27.000Z"
 layout: post
 draft: false
 path: "/posts/estymacja-czasowa-godzinowa/"
-category: "Agile"
+category: "Programowanie"
 tags:
   - "Agile"
   - "Estymacja"
