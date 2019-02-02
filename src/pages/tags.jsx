@@ -18,7 +18,7 @@ class TagsRoute extends React.Component {
           <div className="content">
             <div className="content__inner">
               <div className="page">
-                <h1 className="page__title">Tags</h1>
+                <h1 className="page__title">Tagi</h1>
                 <div className="page__body">
                   <div className="tags">
                     <ul className="tags__list">

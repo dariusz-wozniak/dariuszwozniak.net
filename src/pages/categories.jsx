@@ -18,7 +18,7 @@ class CategoriesRoute extends React.Component {
           <div className="content">
             <div className="content__inner">
               <div className="page">
-                <h1 className="page__title">Categories</h1>
+                <h1 className="page__title">Kategorie</h1>
                 <div className="page__body">
                   <div className="categories">
                     <ul className="categories__list">
