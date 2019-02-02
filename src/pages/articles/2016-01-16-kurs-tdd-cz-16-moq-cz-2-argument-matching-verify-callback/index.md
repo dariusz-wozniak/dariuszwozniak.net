@@ -23,7 +23,7 @@ Wszystkie przykłady zostaną zaprezentowane przy użyciu Moq, jednak konkurency
 Aby zobrazować przykład wykorzystania "argument matcherów", weryfikacji i "callbacków" stwórzmy klasę `CustomerRepository`, która posiada metodę Add przyjmującą obiekt klasy implementującej interfejs `ICustomer` (lub w skrócie: klient). Jeśli walidacja przejdzie poprawnie, to klient zostanie dodany do kolekcji `AllCustomers` w klasie repozytorium. Interfejs repozytorium wygląda następująco: 
 
 ```csharp
- public interface ICustomerRepository
+public interface ICustomerRepository
 {
     IReadOnlyList<ICustomer> AllCustomers { get; }
     bool Add(ICustomer customer);
@@ -33,7 +33,7 @@ Aby zobrazować przykład wykorzystania "argument matcherów", weryfikacji i "ca
 Konstruktor klasy implementującej interfejs `ICustomerRepository` pozwala na wstrzyknięcie walidatora interfejsu `ICustomerValidator`: 
 
 ```csharp
- public CustomerRepository(ICustomerValidator customerValidator) 
+public CustomerRepository(ICustomerValidator customerValidator) 
 ```
 
  Pełny kod repozytorium jest podany na końcu wpisu. Zachęcam jednak do tworzenia logiki biznesowej wraz z testami przy użyciu TDD i podanych scenariuszy, które pojawiają się sukcesywnie w tym wpisie.
@@ -55,7 +55,7 @@ Jako pierwszy test jednostkowy, zdefiniujmy scenariusz w którym:
 - Asercja: Lista `AllCustomers` pozostaje pusta. `ICustomerValidator.Validate` przyjmuje jako parametr interfejs `ICustomer`. W naszym przypadku chcemy przekazać wartość nie-null-ową, a przy tym właściwości tej klasy mogą być dowolne. Przy tworzeniu atrapy dla walidatora, możemy posłużyć się matcherem `It.IsAny`: 
 
 ```csharp
- var customerValidatorMock = 
+var customerValidatorMock = 
   Mock.Of<ICustomerValidator>(validator => 
     validator.Validate(It.IsAny<ICustomer>()) == false); 
 ```
