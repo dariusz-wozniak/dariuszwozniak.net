@@ -12,7 +12,7 @@ tags:
 description: "Teoria jest specjalnym rodzajem testu, w którym weryfikujemy dane twierdzenie przy pomocy założeń (assumptions)."
 ---
 
-Doskonałym uzupełnieniem wpisów o [testach parametryzowanych](/posts/kurs-tdd-8-testy-parametryzowane"Kurs TDD cz. 8: Testy parametryzowane") i [kombinatorycznych](/posts/kurs-tdd-9-testy-kombinatoryczne-i-sekwencyjne "Kurs TDD cz. 9: Testy kombinatoryczne i sekwencyjne") jest omówienie tzw. "teorii". Teoria jest specjalnym rodzajem testu, w którym weryfikujemy dane twierdzenie przy pomocy założeń (ang. _assumptions_). Dla porównania:
+Doskonałym uzupełnieniem wpisów o [testach parametryzowanych](/posts/kurs-tdd-8-testy-parametryzowane "Kurs TDD cz. 8: Testy parametryzowane") i [kombinatorycznych](/posts/kurs-tdd-9-testy-kombinatoryczne-i-sekwencyjne "Kurs TDD cz. 9: Testy kombinatoryczne i sekwencyjne") jest omówienie tzw. "teorii". Teoria jest specjalnym rodzajem testu, w którym weryfikujemy dane twierdzenie przy pomocy założeń (ang. _assumptions_). Dla porównania:
 
 *   W **zwykłym teście** dostarczamy zbiór danych wejściowych metodzie testowanej, a następnie weryfikujemy zbiór danych wyjściowych ze zbiorem danych wyjściowych oczekiwanych.
 *   **Teoria** ma na celu weryfikację ogólnego twierdzenia dla danych wejściowych spełniających żądane kryteria.
