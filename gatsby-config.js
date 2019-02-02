@@ -7,11 +7,10 @@ module.exports = {
     title: 'Dariusz Woźniak — Blog',
     subtitle:
       'Blog o programowaniu',
-    copyright: '©',
     disqusShortname: '',
     menu: [
       {
-        label: 'Wpisy',
+        label: 'Blog',
         path: '/',
       },
       {
