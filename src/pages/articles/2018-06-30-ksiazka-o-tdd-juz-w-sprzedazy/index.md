@@ -8,7 +8,7 @@ category: "Książki"
 tags:
   - "TDD"
   - "Książki"
-description: "Moja książka pt. \"TDD. Techniki programowania sterowanego testami\" jest już w sprzedaży."
+description: "Moja książka pt. „TDD. Techniki programowania sterowanego testami” jest już w sprzedaży."
 ---
 
 Czołem! Tym razem bardzo krótko: Moja książka o TDD jest już w sprzedaży. Gorąco zachęcam do przyjrzenia się, zakupu, recenzji i dawania feedbacku. Książka jest dostępna w dwóch formatach - papierowa i ebook. Więcej informacji na stronie Helion: https://helion.pl/ksiazki/tdd-techniki-programowania-sterowanego-testami-dariusz-wozniak,tddppr.htm.
