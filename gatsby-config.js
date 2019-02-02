@@ -6,7 +6,7 @@ module.exports = {
     url: 'https://dariusz-wozniak.github.io',
     title: 'Dariusz Woźniak — Blog',
     subtitle:
-      'Blog o programowaniu, m.in. C#, .NET i TDD.',
+      'Blog o programowaniu',
     copyright: '©',
     disqusShortname: '',
     menu: [
@@ -15,20 +15,20 @@ module.exports = {
         path: '/',
       },
       {
-        label: 'Kategorie',
-        path: '/categories/',
-      },
-      {
-        label: 'Tagi',
-        path: '/tags/',
-      },
-      {
         label: 'Kurs TDD',
         path: '/kurs-tdd/',
       },
       {
         label: 'Książka TDD',
         path: '/ksiazka-tdd/',
+      },
+      {
+        label: 'Kategorie',
+        path: '/categories/',
+      },
+      {
+        label: 'Tagi',
+        path: '/tags/',
       },
       {
         label: 'O mnie',
