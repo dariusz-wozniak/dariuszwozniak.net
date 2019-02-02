@@ -59,7 +59,7 @@ W teście jednostkowym testujemy nasze atomiczne elementy (klasy, metody) w izol
 
 W teście integracyjnym testujemy wiele lub wszystkie moduły naszego systemu:
 
-[![IntegrationTest](addc32e6-a4f9-48d6-83bb-7475e39ac6b0.jpg "test integracyjny")](http://dariuszwozniaknet.files.wordpress.com/2013/05/crashtest.jpg)
+![IntegrationTest](addc32e6-a4f9-48d6-83bb-7475e39ac6b0.jpg "test integracyjny")
 
 Źródła zdjęć: 
 

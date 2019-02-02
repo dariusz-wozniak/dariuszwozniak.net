@@ -63,7 +63,7 @@ Z tabeli wynika, że czas spędzony na napisanie jednego posta to mniej więcej 
 
 # Czy to koniec kursu?
 
-Tak, jest to koniec kursu z podstawowymi informacjami, które powinien znać każdy przy nauce podstaw TDD. Tematów do kursu było więcej, jednak odrzuciłem te które są mniej istotne. Jeśli będę o nich pisał, to wrzucę je do działu [Kurs TDD](https://dariuszwozniak.net/kurs-tdd/).
+Tak, jest to koniec kursu z podstawowymi informacjami, które powinien znać każdy przy nauce podstaw TDD. Tematów do kursu było więcej, jednak odrzuciłem te które są mniej istotne. Jeśli będę o nich pisał, to wrzucę je do działu [Kurs TDD](/kurs-tdd/).
 
 # Posłowie
 

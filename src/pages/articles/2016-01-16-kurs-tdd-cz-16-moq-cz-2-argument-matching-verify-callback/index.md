@@ -42,7 +42,7 @@ Konstruktor klasy implementującej interfejs `ICustomerRepository` pozwala na ws
 
 Do tej pory mockowanie metody było znacznie ułatwione, gdyż żadna testowana metoda nie posiadała parametru. Co w przypadku, gdy mockowana metoda je jednak posiada posiada? W Moq, aby zdefiniować parametry metody, możemy posłużyć się tzw. _argument matching_ (z ang. "dopasowanie argumentów"). Dostępne są następujące "matchery":
 
-[![ItIs](https://dariuszwozniaknet.files.wordpress.com/2016/01/itis.jpg)](8e3d59fb-8db1-4f16-987c-ca589120d1bd.jpg)      
+![ItIs](8e3d59fb-8db1-4f16-987c-ca589120d1bd.jpg)
 
 ## `It.IsAny`
 
