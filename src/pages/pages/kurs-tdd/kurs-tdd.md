@@ -16,7 +16,7 @@ Spis treści:
 
 # Część I: Testy jednostkowe – wstęp
 
-1. [Wstęp](/posts/kurs-tdd-1-wstep/)
+1. [Wstęp do TDD](/posts/kurs-tdd-1-wstep/)
 1. [Testy jednostkowe, a integracyjne](/posts/kurs-tdd-2-testy-jednostkowe-a-testy-integracyjne/)
 1. [Struktura testu, czyli Arrange-Act-Assert](/posts/kurs-tdd-3-struktura-test-czyli-arrange-act-assert)
 1. [Nasz pierwszy test jednostkowy](/posts/kurs-tdd-4-nasz-pierwszy-test-jednostkowy)
@@ -28,8 +28,7 @@ Spis treści:
 1. [Teorie](/posts/kurs-tdd-10-teorie)
 1. [Testowanie klas generycznych](/posts/kurs-tdd-11-testowanie-klas-generycznych)
 1. [Classic vs. Constraint Assert Model](/posts/kurs-tdd-12-classic-vs-constraint-assert-model)
-1. [Testowanie wywołań asynchronicznych (async await)](/posts/kurs-tdd-13-testowanie-wywolan-asynchronicznych-async-await
-)
+1. [Testowanie wywołań asynchronicznych (async await)](/posts/kurs-tdd-13-testowanie-wywolan-asynchronicznych-async-await)
 
 # Część II: Atrapy obiektów
 
@@ -42,7 +41,7 @@ Spis treści:
 1. [Mockowanie DateTime.Now, random, static, itp.](/posts/kurs-tdd-20-mockowanie-datetime-now-random-static-itp)
 1. [Rodzaje frameworków do tworzenia atrap](/posts/kurs-tdd-21-rodzaje-frameworkow-do-tworzenia-atrap/)
 
-# Teoria
+# Część III: Teoria
 
 22. [Pokrycie kodu testami (Code Coverage)](/posts/kurs-tdd-22-pokrycie-kodu-testami-code-coverage/)
 1. [Czy to się opłaca?](/posts/kurs-tdd-23-czy-to-sie-oplaca/)

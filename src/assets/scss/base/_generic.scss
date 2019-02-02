@@ -142,6 +142,15 @@ figcaption {
     text-align: center;
 }
 
+.boxBorder {
+    background-color: #fcfcfc;
+    border: 1px solid;
+    border-color: #c6c6c6;
+    padding: 41px;
+    font-size: $typographic-small-font-size;
+  }
+
+
 .layout {
     lost-center: $layout-width;
 }
@@ -150,6 +159,14 @@ figcaption {
     &__inner {
         padding: 25px 20px;
     }
+}
+
+.row {
+    display: flex;
+  }
+  
+.column {
+    flex: 50%;
 }
 
 @include breakpoint-sm {
