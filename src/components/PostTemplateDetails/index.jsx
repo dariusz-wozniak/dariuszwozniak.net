@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import moment from 'moment'
+import 'moment/locale/pl'
 import Disqus from '../Disqus/Disqus'
 import './style.scss'
 
@@ -13,7 +14,7 @@ class PostTemplateDetails extends React.Component {
     const homeBlock = (
       <div>
         <Link className="post-single__home-button" to="/">
-          All Articles
+         Powrót
         </Link>
       </div>
     )
@@ -55,7 +56,7 @@ class PostTemplateDetails extends React.Component {
             />
             <div className="post-single__date">
               <em>
-                Published {moment(post.frontmatter.date).format('D MMM YYYY')}
+                Opublikowano {moment(post.frontmatter.date).format('D MMMM YYYY')}
               </em>
             </div>
           </div>
@@ -63,13 +64,35 @@ class PostTemplateDetails extends React.Component {
             {tagsBlock}
             <hr />
             <p className="post-single__footer-text">
-              {subtitle}
+              {subtitle}<br />
+              <strong>{author.name}</strong>
+              &nbsp;&middot;&nbsp;
               <a
-                href={`https://twitter.com/${author.twitter}`}
+                href={`${author.github}`}
                 target="_blank"
                 rel="noopener noreferrer"
-              >
-                <br /> <strong>{author.name}</strong> on Twitter
+              >GitHub
+              </a>
+              &nbsp;&middot;&nbsp;
+              <a
+                href={`${author.linkedin}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >LinkedIn
+              </a>
+              &nbsp;&middot;&nbsp;
+              <a
+                href={`${author.twitter}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >Twitter
+              </a>
+              &nbsp;&middot;&nbsp;
+              <a
+                href={`${author.goodreads}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >Goodreads
               </a>
             </p>
             {commentsBlock}
