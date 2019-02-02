@@ -5,8 +5,8 @@ module.exports = {
   siteMetadata: {
     url: 'https://dariusz-wozniak.github.io',
     title: 'Dariusz Woźniak — Blog',
-    subtitle:
-      'Blog o programowaniu',
+    copyright: '©',
+    subtitle: 'Blog o programowaniu',
     disqusShortname: '',
     menu: [
       {
