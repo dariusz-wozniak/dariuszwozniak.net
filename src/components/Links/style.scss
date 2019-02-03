@@ -9,8 +9,8 @@
         padding: 0;
         margin: 10px -3px;
         &-item {
-            padding: 0;
-            margin: 0 3px;
+            padding: 2 2;
+            margin: 0 5px;
             height: 25px;
             width: 25px;
             line-height: 24px;
@@ -20,7 +20,7 @@
             & a {
                 border: 0;
                 & i {
-                    font-size: 20px;
+                    font-size: 18px;
                     color: lighten($color-base, 35%);
                 }
                 &:hover,
