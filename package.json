@@ -1,7 +1,7 @@
 {
   "version": "3.0.0",
-  "name": "gatsby-v2-starter-lumen",
-  "description": "Simple starter for Gatsby",
+  "name": "dariusz-wozniak.github.io",
+  "description": "Dariusz Woźniak blog",
   "main": "n/a",
   "scripts": {
     "develop": "gatsby develop",
@@ -13,15 +13,14 @@
     "format": "prettier --write './*.js' 'src/**/*.js' 'src/**/*.jsx'",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public -b master"
   },
-  "repository": "git+https://github.com/alxshelepenok/gatsby-starter-lumen.git",
+  "repository": "git+https://github.com/dariusz-wozniak/dariusz-wozniak.github.io",
   "keywords": [
-    "gatsby",
     "blog",
-    "react",
-    "theme",
-    "starter"
+    "dariusz",
+    "wozniak",
+    "tdd"
   ],
-  "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
+  "author": "Dariusz Woźniak <dariusz.wozniak@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.5.1",
@@ -30,11 +29,13 @@
     "gatsby-plugin-feed": "^2.0.8",
     "gatsby-plugin-google-analytics": "^2.0.6",
     "gatsby-plugin-google-fonts": "latest",
+    "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-offline": "^2.0.6",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-sass": "^2.0.1",
     "gatsby-plugin-sharp": "^2.0.6",
     "gatsby-plugin-sitemap": "^2.0.1",
+    "gatsby-redirect-from": "^0.1.1",
     "gatsby-remark-copy-linked-files": "^2.0.5",
     "gatsby-remark-images": "^2.0.4",
     "gatsby-remark-prismjs": "^3.0.2",
