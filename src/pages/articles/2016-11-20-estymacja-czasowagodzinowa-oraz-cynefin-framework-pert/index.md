@@ -1,5 +1,7 @@
 ---
 title: Estymacja czasowa/godzinowa (oraz Cynefin Framework i PERT)
+redirect_from:
+    - "/2016/11/20/estymacja-czasowagodzinowa-oraz-cynefin-framework-pert/"
 date: "2016-11-20T20:43:27.000Z"
 layout: post
 draft: false

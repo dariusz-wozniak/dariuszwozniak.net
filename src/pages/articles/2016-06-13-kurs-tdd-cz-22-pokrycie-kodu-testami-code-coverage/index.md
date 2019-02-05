@@ -1,5 +1,7 @@
 ---
 title: "Kurs TDD cz. 22 — Pokrycie kodu testami (code coverage)"
+redirect_from:
+    - "/2016/06/13/kurs-tdd-cz-22-pokrycie-kodu-testami-code-coverage/"
 date: "2016-06-13T19:56:51.000Z"
 layout: post
 draft: false

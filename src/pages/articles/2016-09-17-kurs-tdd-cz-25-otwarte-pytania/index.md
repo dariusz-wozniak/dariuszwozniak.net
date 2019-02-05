@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 25 — Otwarte pytania
+redirect_from:
+    - "/2016/09/17/kurs-tdd-cz-25-otwarte-pytania/"
 date: "2016-09-17T17:25:00.000Z"
 layout: post
 draft: false

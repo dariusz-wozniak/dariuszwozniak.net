@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 21 — Rodzaje frameworków do tworzenia atrap
+redirect_from:
+    - "/2016/04/11/kurs-tdd-cz-21-rodzaje-frameworkow-do-tworzenia-atrap/"
 date: "2016-04-11T16:52:10.000Z"
 layout: post
 draft: false

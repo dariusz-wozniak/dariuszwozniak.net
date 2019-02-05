@@ -1,5 +1,7 @@
 ---
 title: Automatyczne generowanie testów jednostkowych — IntelliTest
+redirect_from: 
+  - "/2015/11/21/automatyczne-generowanie-testow-jednostkowych-intellitest/"
 date: "2015-11-21T14:21:15.000Z"
 layout: post
 draft: false

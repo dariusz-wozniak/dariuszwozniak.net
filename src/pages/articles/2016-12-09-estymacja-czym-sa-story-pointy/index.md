@@ -1,5 +1,7 @@
 ---
 title: Czym są Story Pointy?
+redirect_from:
+    - "/2016/12/09/estymacja-czym-sa-story-pointy/"
 date: "2016-12-09T21:06:48.000Z"
 layout: post
 draft: false

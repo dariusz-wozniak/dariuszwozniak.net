@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 17 — FakeItEasy
+redirect_from:
+    - "/2016/02/20/kurs-tdd-cz-17-fakeiteasy/"
 date: "2016-02-20T18:27:29.000Z"
 layout: post
 draft: false

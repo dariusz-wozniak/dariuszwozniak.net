@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 16 — zaawansowane techniki Moq (Argument Matching, Verify, Callback)
+redirect_from:
+    - "/2016/01/16/kurs-tdd-cz-16-moq-cz-2-argument-matching-verify-callback/"
 date: "2016-01-16T16:13:09.000Z"
 layout: post
 draft: false

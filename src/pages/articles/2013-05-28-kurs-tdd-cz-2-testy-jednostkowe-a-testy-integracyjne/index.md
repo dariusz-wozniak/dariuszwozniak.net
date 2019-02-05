@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 2 — Testy jednostkowe a testy integracyjne — różnice
+redirect_from: 
+  - "/2013/05/28/kurs-tdd-czesc-2-testy-jednostkowe-a-testy-integracyjne/"
 date: "2013-05-28T21:19:04.000Z"
 layout: post
 draft: false

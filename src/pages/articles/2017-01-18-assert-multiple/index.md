@@ -1,5 +1,7 @@
 ---
 title: NUnit — Assert.Multiple
+redirect_from:
+    - "/2017/01/18/assert-multiple/"
 date: "2017-01-18T19:37:25.000Z"
 layout: post
 draft: false

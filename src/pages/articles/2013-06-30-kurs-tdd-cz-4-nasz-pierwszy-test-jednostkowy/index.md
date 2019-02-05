@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 4 — Nasz pierwszy test jednostkowy
+redirect_from: 
+  - "/2013/06/30/kurs-tdd-czesc-4-nasz-pierwszy-test-jednostkowy/"
 date: "2013-06-30T20:48:30.000Z"
 layout: post
 draft: false

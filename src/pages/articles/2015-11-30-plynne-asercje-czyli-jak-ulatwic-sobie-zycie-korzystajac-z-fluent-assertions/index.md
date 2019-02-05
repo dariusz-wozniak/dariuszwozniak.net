@@ -1,5 +1,7 @@
 ---
 title: „Płynne asercje”, czyli jak ułatwić sobie życie korzystając z Fluent Assertions?
+redirect_from: 
+  - "/2015/11/30/plynne-asercje-czyli-jak-ulatwic-sobie-zycie-korzystajac-z-fluent-assertions/"
 date: "2015-11-30T20:21:19.000Z"
 layout: post
 draft: false

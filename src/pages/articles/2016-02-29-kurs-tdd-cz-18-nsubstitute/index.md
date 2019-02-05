@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 18 — NSubstitute
+redirect_from:
+    - "/2016/02/29/kurs-tdd-cz-18-nsubstitute/"
 date: "2016-02-29T17:39:10.000Z"
 layout: post
 draft: false

@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 8 — Testy parametryzowane
+redirect_from: 
+  - "/2014/10/03/kurs-tdd-cz-8-testy-parametryzowane-2/"
 date: "2014-10-03T19:44:17.000Z"
 layout: post
 draft: false

@@ -2,6 +2,8 @@
 title: "O mnie 😊"
 layout: page
 path: "/about-me/"
+redirect_from:
+    - "/about/"
 ---
 
 Cześć, jestem Darek!

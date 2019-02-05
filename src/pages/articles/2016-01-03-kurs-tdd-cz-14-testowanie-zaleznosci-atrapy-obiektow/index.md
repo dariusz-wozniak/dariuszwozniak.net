@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 14 — Testowanie zależności (atrapy obiektów)
+redirect_from:
+    - "/2016/01/03/kurs-tdd-cz-14-testowanie-zaleznosci-atrapy-obiektow/"
 date: "2016-01-03T18:22:34.000Z"
 layout: post
 draft: false

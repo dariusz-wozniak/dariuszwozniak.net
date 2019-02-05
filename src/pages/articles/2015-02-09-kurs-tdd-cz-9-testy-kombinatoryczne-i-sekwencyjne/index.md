@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 9 — Testy kombinatoryczne i sekwencyjne
+redirect_from: 
+  - "/2015/02/09/kurs-tdd-cz-9-testy-kombinatoryczne-i-sekwencyjne/"
 date: "2015-02-09T19:45:09.000Z"
 layout: post
 draft: false

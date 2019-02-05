@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 24 — Czy pisać testy jednostkowe do istniejącego kodu (legacy code)?
+redirect_from:
+    - "/2016/08/22/kurs-tdd-cz-24-czy-pisac-testy-jednostkowe-do-istniejacego-kodu-legacy-code/"
 date: "2016-08-22T19:52:44.000Z"
 layout: post
 draft: false

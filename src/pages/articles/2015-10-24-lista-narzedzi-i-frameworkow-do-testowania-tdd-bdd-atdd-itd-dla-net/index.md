@@ -1,5 +1,7 @@
 ---
 title: Lista narzędzi i frameworków do testowania (TDD / BDD / ATDD / itd.) dla .NET
+redirect_from: 
+  - "/2015/10/24/lista-narzedzi-i-frameworkow-do-testowania-tdd-bdd-atdd-itd-dla-net/"
 date: "2015-10-24T17:30:50.000Z"
 layout: post
 draft: false

@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 13 — Testowanie wywołań asynchronicznych (async await)
+redirect_from: 
+  - "/2015/09/14/kurs-tdd-cz-13-testowanie-wywolan-asynchronicznych-async-await/"
 date: "2015-09-14T18:01:36.000Z"
 layout: post
 draft: false

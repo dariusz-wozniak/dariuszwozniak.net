@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 7 — Inicjalizacja i czyszczenie danych (SetUp i TearDown)
+redirect_from: 
+  - "/2014/03/27/kurs-tdd-cz-7-inicjalizacja-i-czyszczenie-danych-setup-i-teardown/"
 date: "2014-03-27T14:51:40.000Z"
 layout: post
 draft: false

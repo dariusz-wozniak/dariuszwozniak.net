@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 20 — Mockowanie DateTime.Now, random, static, itp.
+redirect_from:
+    - "/2016/03/29/kurs-tdd-cz-20-mockowanie-datetime-now-random-static-itp/"
 date: "2016-03-29T18:41:45.000Z"
 layout: post
 draft: false

@@ -1,5 +1,7 @@
 ---
 title: "TDD — Technika, metoda, metodologia czy metodyka?"
+redirect_from:
+    - "/2016/12/14/tdd-technika-metoda-metodologia-czy-metodyka/"
 date: "2016-12-14T18:55:27.000Z"
 layout: post
 draft: false

@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 12 — Classic vs. Constraint Assert Model
+redirect_from: 
+  - "/2015/03/30/kurs-tdd-cz-12-classic-vs-constraint-assert-model/"
 date: "2015-03-30T15:00:48.000Z"
 layout: post
 draft: false

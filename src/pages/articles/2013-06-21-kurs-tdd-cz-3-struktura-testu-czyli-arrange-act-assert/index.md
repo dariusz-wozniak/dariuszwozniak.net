@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 3 — Struktura testu, czyli Arrange-Act-Assert
+redirect_from: 
+  - "/2013/06/21/kurs-tdd-czesc-3-struktura-testu-czyli-arrange-act-assert/"
 date: "2013-06-21T19:59:27.000Z"
 layout: post
 draft: false

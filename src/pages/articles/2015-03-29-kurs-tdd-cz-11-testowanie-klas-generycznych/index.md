@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 11 — Testowanie klas generycznych
+redirect_from: 
+  - "/2015/03/29/kurs-tdd-cz-11-testowanie-klas-generycznych/"
 date: "2015-03-29T12:48:16.000Z"
 layout: post
 draft: false

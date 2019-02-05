@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 19 — Mock, stub, fake, spy, dummy
+redirect_from:
+    - "/2016/03/26/kurs-tdd-cz-19-mock-stub-fake-spy-dummy/"
 date: "2016-03-26T19:15:03.000Z"
 layout: post
 draft: false

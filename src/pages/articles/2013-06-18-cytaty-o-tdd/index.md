@@ -1,5 +1,7 @@
 ---
 title: Cytaty o TDD
+redirect_from: 
+  - "/2013/06/18/cytaty-o-tdd/"
 date: "2013-06-18T11:55:04.000Z"
 layout: post
 draft: false

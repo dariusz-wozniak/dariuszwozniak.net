@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 23 — Czy to się opłaca?
+redirect_from:
+    - "/2016/07/15/kurs-tdd-cz-23-czy-to-sie-oplaca/"
 date: "2016-07-14T22:19:14.000Z"
 layout: post
 draft: false

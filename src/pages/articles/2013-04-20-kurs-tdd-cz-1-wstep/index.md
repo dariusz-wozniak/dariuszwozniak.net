@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 1 — Wstęp do TDD
+redirect_from: 
+  - "/2013/04/20/kurs-tdd-czesc-1-wstep/"
 date: "2013-04-20T17:54:27.000Z"
 layout: post
 draft: false
@@ -20,8 +22,8 @@ W tym kursie znajdzie się miejsce na przedstawienie czym jest TDD, jak powinno 
 Na początek bardzo ważna kwestia, która może być niezwykle myląca – wbrew swojej nazwie, Test-Driven Development **nie jest techniką służącą testowaniu**. Nie chodzi o samo w sobie pisanie testów do kodu czy też powielanie pracy testera. **TDD jest techniką programowania**, jest techniką pisania i budowania kodu. W następnych akapitach wyjaśnię dlaczego. Głównym celem _test-driven_ jest:
 
 1.  Zachowanie wysokiej jakości designu w swoich klasach.
-1.  Uniknięcie złej interpretacji wymagań biznesowych.
-1.  Zachowanie prostoty w kodzie: YAGNI + KISS.
+2.  Uniknięcie złej interpretacji wymagań biznesowych.
+3.  Zachowanie prostoty w kodzie: YAGNI + KISS.
 
 W TDD nie chodzi o testowanie. Testowalny kod, a w konsekwencji automatyczny i natychmiastowy _feedback_ o błędzie w systemie jest w TDD rzeczą dodatkową, ale nie nadrzędną. Kluczowym aspektem TDD jest pisanie testu przed napisaniem docelowego kodu. Można pisać testy równolegle w trakcie pisania logiki biznesowej, można też pisać testy po implementacji, ale to już wtedy nie jest Test-Driven Development. W TDD testy piszemy zawsze jako pierwsze, przed kodem. Przyjrzyjmy się jeszcze raz powyższym trzem celom i rozwińmy je w kontekście tego co zostało już powiedziane.
 

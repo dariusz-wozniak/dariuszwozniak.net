@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 10 — Teorie
+redirect_from: 
+  - "/2015/02/25/kurs-tdd-cz-10-teorie/"
 date: "2015-02-25T20:03:22.000Z"
 layout: post
 draft: false

@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 6 — Dobre i złe praktyki testów jednostkowych
+redirect_from: 
+  - "/2013/11/18/kurs-tdd-czesc-6-dobre-i-zle-praktyki-testow-jednostkowych/"
 date: "2013-11-17T23:36:56.000Z"
 layout: post
 draft: false

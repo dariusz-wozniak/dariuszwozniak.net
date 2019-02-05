@@ -2,6 +2,8 @@
 title: "Książka o Test-Driven Development"
 layout: page
 path: "/ksiazka-tdd/"
+redirect_from:
+    - "/ksiazka-o-tdd/"
 ---
 
 Zapraszam do zapoznania się (i z przeczytaniem! 🙂) z książką pt. „TDD. Techniki programowania sterowanego testami”, której jestem autorem, a która została wydana przez wydawnictwo Helion.

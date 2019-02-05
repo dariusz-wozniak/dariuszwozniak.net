@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 5 — Nasz drugi test jednostkowy
+redirect_from: 
+  - "/2013/07/16/kurs-tdd-czesc-5-nasz-drugi-test-jednostkowy/"
 date: "2013-07-16T17:46:48.000Z"
 layout: post
 draft: false

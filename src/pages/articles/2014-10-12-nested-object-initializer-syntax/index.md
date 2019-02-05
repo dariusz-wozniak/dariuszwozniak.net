@@ -1,5 +1,7 @@
 ---
 title: C# — Nested object initializer syntax
+redirect_from: 
+  - "/2014/10/12/c-pro-tip-nested-object-initializer-syntax/"
 date: "2014-10-12T16:43:19.000Z"
 layout: post
 draft: false

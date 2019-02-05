@@ -1,5 +1,7 @@
 ---
 title: Podsumowanie kursu TDD
+redirect_from:
+    - "/2016/09/26/podsumowanie-kursu-tdd/"
 date: "2016-09-26T20:09:30.000Z"
 layout: post
 draft: false

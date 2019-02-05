@@ -1,5 +1,7 @@
 ---
 title: Migracja bloga
+redirect_from:
+    - 
 date: "2019-02-05T16:37:25.000Z"
 layout: post
 draft: false

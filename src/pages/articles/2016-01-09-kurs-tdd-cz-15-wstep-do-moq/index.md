@@ -1,5 +1,7 @@
 ---
 title: Kurs TDD cz. 15 — Wstęp do Moq
+redirect_from:
+    - "/2016/01/09/kurs-tdd-cz-15-wstep-do-moq/"
 date: "2016-01-09T20:28:07.000Z"
 layout: post
 draft: false
