@@ -14,7 +14,7 @@ description: "Właśnie niedawno zakończyłem migrację bloga z Wordpressa do G
 
 Właśnie niedawno zakończyłem migrację bloga z Wordpressa do [GitHub Pages](https://pages.github.com/)...
 
-Decyzję tę podyktowałem kilkoma kwestiami, głównie są to:
+Decyzja ta podyktowana jest kilkoma kwestiami, głównie są to:
 
 - Wordpress jest kosztowny. Utrzymanie domeny i bloga to dodatkowe koszty, a zatem przenosiny pozwolą na oszczędności związane z płatną wersją WP.
 - Wordpress nie jest darmowy, a co za tym idzie — w przypadku jego rezygnacji, tracę płatne funkcje tego portalu. Zaletą przejścia na GitHub Pages jest darmowe archiwum uniezależnione od czynników zewnętrznych. Posty będą dostępne niezależnie od tego, czy np. autor żyje.
@@ -38,7 +38,7 @@ W stosunku do Wordpress, jest jednak kilka mniejszych lub większych niedogodno�
 Ogółem, jestem bardzo zadowolony z migracji. Wordpress oferuje całą platformę do blogowania (włączając statystyki/SEO/reklamy/itd.) i jest to niewątpliwy plus, ale jeśli chcemy mieć większą kontrolę nad tworzoną treścią i chcemy odchudzić naszą stronę, to opcja przejścia na GitHuba jest zdecydowanie warta rozważenia.
 
 Blog dostępny jest pod dwoma adresami:
-- https://dariuszwozniak.net,
+- https://dariuszwozniak.net
 - https://dariusz-wozniak.github.io
 - https://dariuszwozniak.netlify.com
 
