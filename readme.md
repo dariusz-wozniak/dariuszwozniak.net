@@ -2,5 +2,5 @@
 
 Kod źródłowy do bloga http://dariusz-wozniak.github.io.
 
-- Artykuły: https://github.com/dariusz-wozniak/dariusz-wozniak.github.io/tree/content/src/pages/articles.
-- Użyty starter: [gatsby-v2-starter-lumen](https://github.com/GatsbyCentral/gatsby-v2-starter-lumen).
+- Artykuły: https://github.com/dariusz-wozniak/dariusz-wozniak.github.io/tree/content/src/pages/articles
+- Użyty starter: [gatsby-v2-starter-lumen](https://github.com/GatsbyCentral/gatsby-v2-starter-lumen)
