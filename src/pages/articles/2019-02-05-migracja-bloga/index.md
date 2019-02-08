@@ -17,7 +17,7 @@ Właśnie niedawno zakończyłem migrację bloga z Wordpressa do [GitHub Pages](
 Decyzja ta podyktowana jest kilkoma kwestiami, głównie są to:
 
 - Wordpress jest kosztowny. Utrzymanie domeny i bloga to dodatkowe koszty, a zatem przenosiny pozwolą na oszczędności związane z płatną wersją WP.
-- Wordpress nie jest darmowy, a co za tym idzie — w przypadku jego rezygnacji, tracę płatne funkcje tego portalu. Zaletą przejścia na GitHub Pages jest darmowe archiwum uniezależnione od czynników zewnętrznych. Posty będą dostępne niezależnie od tego, czy np. autor żyje.
+- Wordpress nie jest darmowy, a co za tym idzie – w przypadku jego rezygnacji, tracę płatne funkcje tego portalu. Zaletą przejścia na GitHub Pages jest darmowe archiwum uniezależnione od czynników zewnętrznych. Posty będą dostępne niezależnie od tego, czy np. autor żyje.
 - Markdown. Co prawda, Wordpress obsługuje Markdown, ale praca jest utrudniona w przypadku kodu. Przykładowo, bywa że operatory lambda czy znaki porównawcze były zastępywane przez HTML-owe odpowiedniki.
 - Dużo kontrola nad stroną. Wordpress posiada widgety i tematy, ale ich customizacja jest ograniczona. O wiele przystępniej pracuje mi się z [Gatsby](https://www.gatsbyjs.org/).
 - Minimalizm. Teraz blog wygląda teraz zgodnie z moją wizją, czyli – minimalistycznie.
