@@ -24,7 +24,7 @@ Decyzja ta podyktowana jest kilkoma kwestiami, głównie są to:
 - Kontrola wersji. Git pozwala na bardziej intuicyjną (zwłaszcza dla programisty) pracę nad zawartością strony. Pull requesty pozwalają na wysyłanie poprawek przez czytelników.
 - Szybkość działania. Gatsby, jako Static Progressive Web App, jest bardzo szybki i wymaga o wiele mniej miejsca niż WP.
 - Nowszy stack technologiczny. JS + React + GraphQL w miejsce PHP.
-- HTTPS - WP działał na HTTP i nie udało mi się skonfigurować go w trybie wyłącznym dla HTTPS. Po migracji, używam tylko HTTPS.
+- HTTPS – Wordpress działał na HTTP i nie udało mi się skonfigurować go w trybie wyłącznym dla HTTPS. Po migracji, używam tylko HTTPS.
 
 W stosunku do Wordpress, jest jednak kilka mniejszych lub większych niedogodności. Przy migracji lub tworzeniu bloga na GitHub pages z Gatsby należy wziąć pod uwagę następujące kwestie:
 
