@@ -37,10 +37,9 @@ W stosunku do Wordpress, jest jednak kilka mniejszych lub większych niedogodno�
 
 Ogółem, jestem bardzo zadowolony z migracji. Wordpress oferuje całą platformę do blogowania (włączając statystyki/SEO/reklamy/itd.) i jest to niewątpliwy plus, ale jeśli chcemy mieć większą kontrolę nad tworzoną treścią i chcemy odchudzić naszą stronę, to opcja przejścia na GitHuba jest zdecydowanie warta rozważenia.
 
-Blog dostępny jest pod dwoma adresami:
+Blog dostępny jest pod adresem:
 - https://dariuszwozniak.net
-- https://dariusz-wozniak.github.io
-- https://dariuszwozniak.netlify.com
+- Mirror: https://dariuszwozniak.netlify.com
 
 Repozytorium z kodem źródłowym bloga dostępne jest na stronie:
 - https://github.com/dariusz-wozniak/dariusz-wozniak.github.io
