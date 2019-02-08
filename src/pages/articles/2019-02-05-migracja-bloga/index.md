@@ -22,7 +22,7 @@ Decyzja ta podyktowana jest kilkoma kwestiami, głównie są to:
 - Dużo kontrola nad stroną. Wordpress posiada widgety i tematy, ale ich customizacja jest ograniczona. O wiele przystępniej pracuje mi się z [Gatsby](https://www.gatsbyjs.org/).
 - Minimalizm. Teraz blog wygląda teraz zgodnie z moją wizją, czyli – minimalistycznie.
 - Kontrola wersji. Git pozwala na bardziej intuicyjną (zwłaszcza dla programisty) pracę nad zawartością strony. Pull requesty pozwalają na wysyłanie poprawek przez czytelników.
-- Szybkość działania. Gatsby, jako Static Progressive Web App, jest bardzo szybki i wymaga o wiele mniej miejsca niż WP.
+- Szybkość działania. Gatsby, jako Static Progressive Web App, jest bardzo szybki i wymaga o wiele mniej miejsca niż Wordpress.
 - Nowszy stack technologiczny. JS + React + GraphQL w miejsce PHP.
 - HTTPS – Wordpress działał na HTTP i nie udało mi się skonfigurować go w trybie wyłącznym dla HTTPS. Po migracji, używam tylko HTTPS.
 
