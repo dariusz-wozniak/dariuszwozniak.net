@@ -17,9 +17,6 @@ class PostTemplate extends React.Component {
           <Helmet>
             <title>{`${postTitle} - ${title}`}</title>
             <meta name="description" content={description} />
-            <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-            <meta httpEquiv="Pragma" content="no-cache" />
-            <meta httpEquiv="Expires" content="0" />
           </Helmet>
           <PostTemplateDetails {...this.props} />
         </div>
