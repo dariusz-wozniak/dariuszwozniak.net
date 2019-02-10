@@ -32,7 +32,7 @@ W stosunku do Wordpress, jest jednak kilka mniejszych lub większych niedogodno�
 - W Gatsby wszystkie zmiany trzeba deployować. To trwa + coś może pójść nie tak. Dla mnie akceptowalne, ale wymaga przynajmniej podstawowej wiedzy programistycznej w zakresie JS i Reacta.
 - Migracja z WP do Markdown. Istnieją narzędzia do migracji, jak np. [Wordpress-Gatsby-Migrator](https://github.com/weiran/wordpress-gatsby-migrator), choć poprawki i customizacja to kilka godzin pracy.
 - SEO. Wydaje mi się, że WP lepiej funkcjonuje w kontekście SEO. Dla mnie nie jest to priorytet.
-- Migracja komentarzy. Niestety, nie udało mi się zmigrować komentarzy z WP do GitHub Pages. Po migracji przeniosłem się na Disqus, co powinno być plusem.
+- Migracja komentarzy. Niestety, nie udało mi się zmigrować komentarzy z Wordpressa do GitHub Pages. Po migracji przeniosłem się na Disqus, co powinno być plusem.
 - Problem z RSS. Jeszcze tego nie rozwiązałem po migracji...
 
 Ogółem, jestem bardzo zadowolony z migracji. Wordpress oferuje całą platformę do blogowania (włączając statystyki/SEO/reklamy/itd.) i jest to niewątpliwy plus, ale jeśli chcemy mieć większą kontrolę nad tworzoną treścią i chcemy odchudzić naszą stronę, to opcja przejścia na GitHuba jest zdecydowanie warta rozważenia.
