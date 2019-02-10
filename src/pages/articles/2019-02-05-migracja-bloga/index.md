@@ -39,7 +39,7 @@ Ogółem, jestem bardzo zadowolony z migracji. Wordpress oferuje całą platform
 
 Blog dostępny jest pod adresem:
 - https://dariuszwozniak.net
-- Mirror: https://dariuszwozniak.netlify.com
+- mirror: https://dariuszwozniak.netlify.com
 
 Repozytorium z kodem źródłowym bloga dostępne jest na stronie:
 - https://github.com/dariusz-wozniak/dariusz-wozniak.github.io
