@@ -1,6 +1,6 @@
 {
   "version": "3.0.0",
-  "name": "dariusz-wozniak.github.io",
+  "name": "dariuszwozniak.net",
   "description": "Dariusz Woźniak blog",
   "main": "n/a",
   "scripts": {
@@ -13,7 +13,7 @@
     "format": "prettier --write './*.js' 'src/**/*.js' 'src/**/*.jsx'",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public -b master"
   },
-  "repository": "git+https://github.com/dariusz-wozniak/dariusz-wozniak.github.io",
+  "repository": "git+https://github.com/dariusz-wozniak/dariuszwozniak.net",
   "keywords": [
     "blog",
     "dariusz",

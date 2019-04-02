@@ -42,4 +42,5 @@ Blog dostępny jest pod adresem:
 - mirror: https://dariuszwozniak.netlify.com
 
 Repozytorium z kodem źródłowym bloga dostępne jest na stronie:
-- https://github.com/dariusz-wozniak/dariusz-wozniak.github.io
+- https://github.com/dariusz-wozniak/dariuszwozniak.net
+

@@ -3,7 +3,7 @@ const pxtorem = require('postcss-pxtorem')
 
 module.exports = {
   siteMetadata: {
-    url: 'https://dariusz-wozniak.github.io',
+    url: 'https://dariuszwozniak.net',
     title: 'Dariusz Woźniak — Blog',
     copyright: '©',
     subtitle: 'Blog o programowaniu',
@@ -41,9 +41,12 @@ module.exports = {
       linkedin: 'https://www.linkedin.com/in/wozniakdariusz/',
       instagram: 'https://www.instagram.com/dariusz.wozniak.75/',
       flickr: 'https://www.flickr.com/photos/dariuszwozniak/albums',
-      goodreads: 'https://www.goodreads.com/author/show/18135947.Dariusz_Wo_niak',
-      stackoverflow: 'https://stackoverflow.com/users/297823/dariusz-wo%C5%BAniak',
-      stackexchange: 'https://stackexchange.com/users/112989/dariusz-wo%c5%baniak?tab=accounts',
+      goodreads:
+        'https://www.goodreads.com/author/show/18135947.Dariusz_Wo_niak',
+      stackoverflow:
+        'https://stackoverflow.com/users/297823/dariusz-wo%C5%BAniak',
+      stackexchange:
+        'https://stackexchange.com/users/112989/dariusz-wo%c5%baniak?tab=accounts',
       rss: '/rss.xml',
     },
   },
