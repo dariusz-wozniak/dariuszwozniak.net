@@ -17,7 +17,10 @@ class PostTemplate extends React.Component {
           <Helmet>
             <title>{`${postTitle} - ${title}`}</title>
             <meta name="description" content={description} />
-            <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+            <meta
+              httpEquiv="Cache-Control"
+              content="no-cache, no-store, must-revalidate"
+            />
             <meta httpEquiv="Pragma" content="no-cache" />
             <meta httpEquiv="Expires" content="0" />
           </Helmet>
@@ -58,6 +61,7 @@ export const pageQuery = graphql`
       html
       fields {
         tagSlugs
+        slug
       }
       frontmatter {
         title
