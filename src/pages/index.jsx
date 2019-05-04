@@ -20,7 +20,10 @@ class IndexRoute extends React.Component {
           <Helmet>
             <title>{title}</title>
             <meta name="description" content={subtitle} />
-            <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+            <meta
+              httpEquiv="Cache-Control"
+              content="no-cache, no-store, must-revalidate"
+            />
             <meta httpEquiv="Pragma" content="no-cache" />
             <meta httpEquiv="Expires" content="0" />
           </Helmet>
@@ -53,7 +56,6 @@ export const pageQuery = graphql`
           github
           linkedin
           instagram
-          flickr
           goodreads
           stackoverflow
           stackexchange

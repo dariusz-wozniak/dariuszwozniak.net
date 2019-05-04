@@ -79,15 +79,6 @@ class Links extends React.Component {
           </li>
           <li className="links__list-item">
             <a
-              href={`${links.flickr}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="icon-flickr" />
-            </a>
-          </li>
-          <li className="links__list-item">
-            <a
               href={`${links.instagram}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -98,10 +89,7 @@ class Links extends React.Component {
         </ul>
         <ul className="links__list">
           <li className="links__list-item">
-            <a
-              href={`${links.rss}`}
-              rel="noopener noreferrer"
-            >
+            <a href={`${links.rss}`} rel="noopener noreferrer">
               <i className="icon-rss" />
             </a>
           </li>

@@ -63,7 +63,6 @@ export const pageQuery = graphql`
           github
           linkedin
           instagram
-          flickr
           goodreads
           stackoverflow
           stackexchange
