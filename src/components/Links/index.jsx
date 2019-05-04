@@ -86,8 +86,6 @@ class Links extends React.Component {
               <i className="icon-instagram" />
             </a>
           </li>
-        </ul>
-        <ul className="links__list">
           <li className="links__list-item">
             <a href={`${links.rss}`} rel="noopener noreferrer">
               <i className="icon-rss" />
