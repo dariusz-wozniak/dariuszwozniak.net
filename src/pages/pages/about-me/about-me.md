@@ -16,7 +16,7 @@ Prócz samego programowania, uwielbiam podróże, a w szczególności do mniej z
 
 <div style="text-align: center"><small>Kaliningrad</small></div>
 
-Pasjonuje się również [uliczną fotografią](http://erickimphotography.com/blog/2013/08/07/what-is-street-photography-2/), a przez to jestem też [flânerem](https://en.wikipedia.org/wiki/Fl%C3%A2neur). Swoje zdjęcia uliczne i podróżnicze publikuję na [Flickrze](https://www.flickr.com/photos/dariuszwozniak/albums) i, od stosunkowo niedawna, [Instagramie](https://www.instagram.com/dariusz.wozniak.75) (zapraszam!).
+Pasjonuje się również [uliczną fotografią](http://erickimphotography.com/blog/2013/08/07/what-is-street-photography-2/), a przez to jestem też [flânerem](https://en.wikipedia.org/wiki/Fl%C3%A2neur). Swoje zdjęcia uliczne i podróżnicze publikuję na [Instagramie](https://www.instagram.com/the.darek.wozniak) (zapraszam!).
 
 Staram się maksymalnie wykorzystać wolny czas również na inne zajęcia, w tym jazdę na rowerze i squash, ale także na [dobry sen](http://routineexcellence.com/why-we-sleep-book-review-summary/) i medytację.
 
