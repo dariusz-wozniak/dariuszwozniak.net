@@ -57,9 +57,9 @@ Komentarz: Pamiętaj, że prócz NUnita są też inne frameworki do testowania, 
 ### Dodajemy referencję przez NuGet
 
 1.  Odpalamy NuGet w Visual Studio: _Tools > Library Package Manager > Package Manager Console._
-2.  W oknie Package Manager Console ustawiamy domyślny projekt (_Default project_) `CalculatorDemo.Tests`.
-3.  W tym samym oknie wpisujemy **Install-Package NUnit**.
-4.  Jeśli wszystko się powiedzie, to dostaniemy komunikat: _Successfully added 'NUnit (wersja NUnita)' to CalculatorDemo.Tests._
+1.  W oknie Package Manager Console ustawiamy domyślny projekt (_Default project_) `Calculator.Tests`.
+1.  W tym samym oknie wpisujemy **Install-Package NUnit**.
+1.  Jeśli wszystko się powiedzie, to dostaniemy komunikat: _Successfully added 'NUnit (wersja NUnita)' to Calculator.Tests._
 
 Alternatywnie, jeśli nie chcemy instalować biblioteki z linii komend, a wolimy UI, to w oknie Solution Explorer można kliknąć prawym przyciskiem myszy na opcję Manage NuGet Packages i zainstalować NUnita z zakładki _Browse_.
 
@@ -89,7 +89,7 @@ Przykładowo, do parametrów metody CheckPassword, wprowadzamy poprawną nazwę 
 [Test]
 public void Add_AddsTwoPositiveNumbers_Calculated()
 {
-    var calc = new Calculator();
+    var calc = new Calculator.Calculator();
     int sum = calc.Add(2, 2);
     Assert.AreEqual(4, sum);
 } 
