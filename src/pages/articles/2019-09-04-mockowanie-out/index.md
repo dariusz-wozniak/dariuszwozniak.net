@@ -63,7 +63,7 @@ public void Test()
 private delegate bool TryParse(string s, out INumber n);
 ```
 
-Drugi sposób to utworzenie nowego mocka i przypisanie wartości w metodzie `Callback`.
+Drugi sposób to utworzenie nowego mocka i przypisanie wartości w metodzie `Callback`:
 
 ```csharp
 [Test]
