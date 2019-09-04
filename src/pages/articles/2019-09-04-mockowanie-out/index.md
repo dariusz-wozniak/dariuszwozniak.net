@@ -63,4 +63,31 @@ public void Test()
 private delegate bool TryParse(string s, out INumber n);
 ```
 
+Drugi sposób to utworzenie nowego mocka i przypisanie wartości w metodzie `Callback`.
+
+```csharp
+[Test]
+public void Test2()
+{
+    // Setup the mocking of out:
+    var numberConverter = Mock.Of<INumberParser>();
+
+    var mockedNumber = Mock.Of<INumber>();
+
+    Mock.Get(numberConverter)
+        .Setup(x => x.TryParse(It.IsAny<string>(), out mockedNumber))
+        .Callback(() => mockedNumber.Int32 = 456)
+        .Returns(true);
+
+    // We can try to test our now...:
+    var tryGet = numberConverter.TryParse("any number", out var number);
+
+    // ...and check if values are properly set:
+    Assert.That(tryGet, Is.True);
+    Assert.That(number.Int32, Is.EqualTo(456));
+}
+```
+
+Która metoda jest lepsza? Pierwsza jest nieco bardziej skomplikowana, ale bardziej ekspresywna, a z kolei druga, prostsza, nie wymaga użycia bardziej zaawansowanych technik typu matcher dla `Ref` czy definicja delegata w kontekście zwracania wartości. Wybór pozostawiam Tobie 😊
+
 Cały przykład jest do ściągnięcia tutaj: https://github.com/dariusz-wozniak/MockingOutDemo
