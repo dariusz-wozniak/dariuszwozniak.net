@@ -100,4 +100,4 @@ Jak widzimy, możemy sobie w bardzo prosty zautomatyzować testy konstruktorów 
 
 Pytanie — Czy aby na pewno potrzebujemy testować _null-checki_ w konstruktorach? Tak! _Guard clause_ mają na celu tzw. _fail fast_, czyli zgłosić błąd jak najszybciej. Jeśli parametr konstruktora będzie nullem, a kod będzie wymagać tego parametru, to dzięki defensywnemu podejściu, dostaniemy szybciej informację zwrotną o błędzie. Późniejszy błąd może mieć również skutki uboczne, jeśli na przykład przed wystąpieniem błędu zmutowano stan obiektu. A zatem, skoro sam kod jest potrzebny, testy tym bardziej!
 
-Kod źródłowy do przykładu znajduje się na GitHubie: https://github.com/dariusz-wozniak/AutoTestGuardClauses
+Kod źródłowy do przykładu znajduje się na GitHubie: https://github.com/dariusz-wozniak/AutoTestGuardClausesDemo
