@@ -57,7 +57,9 @@ public class Tests
 }
 ```
 
-Gdzie klasa `SomeClass` to <sub>(dla poniższego kodu powyższy test będzie zielony ✅)</sub>:
+Gdzie klasa `SomeClass` to:
+
+<sup>(dla poniższego kodu powyższy test będzie zielony ✅)</sup>
 
 ```csharp
 public class SomeClass
