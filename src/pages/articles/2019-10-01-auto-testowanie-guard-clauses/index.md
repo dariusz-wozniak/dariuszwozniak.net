@@ -98,7 +98,7 @@ Jeśli zabraknie nam _null-checków_, to test wyrzuci bardzo jasny komunikat:
 AutoFixture.Idioms.GuardClauseException : An attempt was made to assign the value null to the parameter "i1" of the method ".ctor", and no Guard Clause prevented this. Are you missing a Guard Clause?
 ```
 
-Jak widzimy, możemy sobie w bardzo prosty zautomatyzować testy konstruktorów i definiować wszystkie klasy z konstruktorami wymagającymi _null-checki_ w jednym miejscu.
+Jak widać, możemy sobie w bardzo prosty zautomatyzować testy konstruktorów i definiować wszystkie klasy z konstruktorami wymagającymi _null-checki_ w jednym miejscu.
 
 Pytanie — Czy aby na pewno potrzebujemy testować _null-checki_ w konstruktorach? Tak! _Guard clause_ mają na celu tzw. _fail fast_, czyli zgłosić błąd jak najszybciej. Jeśli parametr konstruktora będzie nullem, a kod będzie wymagać tego parametru, to dzięki defensywnemu podejściu, dostaniemy szybciej informację zwrotną o błędzie. Późniejszy błąd może mieć również skutki uboczne, jeśli na przykład przed wystąpieniem błędu zmutowano stan obiektu. A zatem, skoro sam kod jest potrzebny, testy tym bardziej!
 
