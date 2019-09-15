@@ -2,7 +2,7 @@
 title: Automatyczne testowanie guard clauses w konstruktorach
 redirect_from:
     -
-date: "2019-10-01T08:01:00.000Z"
+date: "2019-09-14T13:00:00.000Z"
 layout: post
 draft: false
 path: "/posts/automatyczne-testowanie-guard-clauses"
