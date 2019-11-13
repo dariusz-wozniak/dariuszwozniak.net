@@ -11,7 +11,7 @@ tags:
   - "TeamCity"
   - "DevOps"
   - "Git"
-description: "Ostatnio miałem potrzebę stworzenia konfiguracji w TeamCity, w której build jest triggerowany, gdy tworzymy nowego taga. Przydaje się to w szczególności na branchu master, gdy nie chcemy tworzyć builda lub/i kalkulować nowej wersji podczas każdego commita, a jedynie wtedy kiedy sami, w sposób explicite, stworzymy nowy tag (wersję). Niestety, aktualnie TeamCity nie wspiera jeszcze tej funkcji, ale jest na to _workaround_. Poniżej podaję gotowy przepis na tę konfigurację".
+description: "Ostatnio miałem potrzebę stworzenia konfiguracji w TeamCity, w której build jest triggerowany, gdy tworzymy nowego taga. Przydaje się to w szczególności na branchu master, gdy nie chcemy tworzyć builda lub/i kalkulować nowej wersji podczas każdego commita, a jedynie wtedy kiedy sami, w sposób explicite, stworzymy nowy tag (wersję). Niestety, aktualnie TeamCity nie wspiera jeszcze tej funkcji, ale jest na to workaround. Poniżej podaję gotowy przepis na tę konfigurację".
 ---
 
 Aby build triggerował się tylko i wyłącznie podczas stworzenia nowego taga należy zastosować następujące ustawienia:
