@@ -13,7 +13,7 @@ tags:
   - "Auto-Mocking"
   - "AutoFixture"
   - "Moq"
-description: "W testach bardzo często mamy do czynienia z powtarzaniem tego samego kodu. Tak samo ma się sprawa z testowaniem _null-checków_ (zw. inaczej jako _guard clauses_) w konstruktorach. Jeśli chcemy napisać test dla takiego przypadku, to zazwyczaj jest on napisany jako osobna metoda. Jak możemy sobie uprościć życie? Z pomocą przychodzi biblioteka AutoFixture.Idioms."
+description: "W testach bardzo często mamy do czynienia z powtarzaniem tego samego kodu. Tak samo ma się sprawa z testowaniem null-checków (zw. inaczej jako guard clauses) w konstruktorach. Jeśli chcemy napisać test dla takiego przypadku, to zazwyczaj jest on napisany jako osobna metoda. Jak możemy sobie uprościć życie? Z pomocą przychodzi biblioteka AutoFixture.Idioms."
 ---
 
 W testach bardzo często mamy do czynienia z powtarzaniem tego samego kodu. Tak samo ma się sprawa z testowaniem _null-checków_ (zw. inaczej jako _guard clauses_) w konstruktorach. Jeśli chcemy napisać test dla takiego przypadku, to zazwyczaj jest on napisany jako osobna metoda. Jak możemy sobie uprościć życie? Z pomocą przychodzi biblioteka AutoFixture.Idioms.
