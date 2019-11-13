@@ -1,5 +1,5 @@
 ---
-title: TeamCity – triggerowanie builda po stworzeniu taga
+title: TeamCity — triggerowanie builda po stworzeniu taga
 redirect_from:
     -
 date: "2019-11-13T19:10:00.000Z"
