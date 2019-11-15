@@ -42,6 +42,8 @@ Aby build triggerował się tylko i wyłącznie podczas stworzenia nowego taga n
 
 * Branch filter: _(nic)_
 
+Dodatkowo, musimy dodać następujący parametr: `teamcity.vcsTrigger.runBuildInNewEmptyBranch` z wartością _true_.
+
 Jeśli nie korzystamy z prefiksów w taga dla wersji, to możemy też ustawić wersję bezpośrednio z taga:
 
 **Build number format:** `%teamcity.build.branch%`
