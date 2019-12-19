@@ -51,11 +51,11 @@ public void Test()
             n = Mock.Of<INumber>(num => num.Int32 == 456);
             return true;
         }));
-
-    // We can try to test our now...:
+        
+    // Act:
     var tryGet = numberConverter.TryParse("any number", out var number);
 
-    // ...and check if values are properly set:
+    // Assert that values are properly set:
     Assert.That(tryGet, Is.True);
     Assert.That(number.Int32, Is.EqualTo(456));
 }
@@ -79,10 +79,10 @@ public void Test2()
         .Callback(() => mockedNumber.Int32 = 456)
         .Returns(true);
 
-    // We can try to test our now...:
+    // Act:
     var tryGet = numberConverter.TryParse("any number", out var number);
 
-    // ...and check if values are properly set:
+    // Assert that values are properly set:
     Assert.That(tryGet, Is.True);
     Assert.That(number.Int32, Is.EqualTo(456));
 }
