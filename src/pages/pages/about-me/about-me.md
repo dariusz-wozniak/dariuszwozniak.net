@@ -18,6 +18,6 @@ Prócz samego programowania, uwielbiam podróże, a w szczególności do mniej z
 
 Pasjonuje się również [uliczną fotografią](http://erickimphotography.com/blog/2013/08/07/what-is-street-photography-2/), a przez to jestem też [flânerem](https://en.wikipedia.org/wiki/Fl%C3%A2neur). Swoje zdjęcia uliczne i podróżnicze publikuję na [Instagramie](https://www.instagram.com/the.darek.wozniak) (zapraszam!).
 
-Staram się maksymalnie wykorzystać wolny czas również na inne zajęcia, w tym jazdę na rowerze i squash, ale także na [dobry sen](http://routineexcellence.com/why-we-sleep-book-review-summary/) i medytację.
+Staram się maksymalnie wykorzystać wolny czas również na inne zajęcia, w tym jazdę na rowerze i squash, ale także na dobry sen i medytację.
 
 Jeśli pragniesz się ze mną skontaktować, to pisz śmiało na mój adres mailowy: dariusz.wozniak \[at\] gmail.com.
