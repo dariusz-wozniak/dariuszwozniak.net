@@ -39,7 +39,7 @@ module.exports = {
       twitter: 'https://twitter.com/dwozn',
       github: 'https://github.com/dariusz-wozniak',
       linkedin: 'https://www.linkedin.com/in/wozniakdariusz/',
-      instagram: 'https://www.instagram.com/the.darek.wozniak/',
+      instagram: 'https://www.instagram.com/darek_wozn/',
       flickr: 'https://www.flickr.com/photos/dariuszwozniak/albums',
       goodreads:
         'https://www.goodreads.com/author/show/18135947.Dariusz_Wo_niak',
