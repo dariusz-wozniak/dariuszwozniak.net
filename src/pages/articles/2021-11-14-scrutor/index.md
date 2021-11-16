@@ -26,7 +26,7 @@ Przykładowo, jeśli w naszym assembly chcemy:
 
 ... to możemy dodać do naszego pliku `Startup.cs` kod:
 
-```
+```csharp
 private static readonly Type AssemblyMarkerType = typeof(Startup);
 
 // ...
