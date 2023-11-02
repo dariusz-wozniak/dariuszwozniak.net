@@ -1,4 +1,4 @@
-Kod źródłowy do wersji v1 bloga dariuszwozniak.net:
+Kod źródłowy do wersji v1 bloga dariuszwozniak.net.
 
 * v1 - blog w języku polskim, nieaktywny, tylko do odczytu: **https://dariuszwozniak.netlify.app**
 * v2 - blog po angielsku: https://dariuszwozniak.net
