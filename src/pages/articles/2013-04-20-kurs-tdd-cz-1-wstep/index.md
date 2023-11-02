@@ -46,7 +46,7 @@ Kluczowym aspektem TDD jest cykl pisania testów. Najpierw piszemy testy, nastę
     1.  Po refaktoryzacji, uruchamiamy wszystkie testy by sprawdzić czy czegoś nie zepsuliśmy.
     2.  Ten punkt jest często lekceważony lub pomijany w procesie. Nie zapominajmy o tym, równie ważnym co dwa poprzednie, elemencie.
 
-![red-green-refactor-diagram](53dbe337-da6d-407c-9260-3bea47b6057b.png)
+![red-green-refactor-diagram](rgd.png)
 <div style="text-align: center">Diagram Red-Green-Refactor</div>
 
 # Zalety i wady TDD
