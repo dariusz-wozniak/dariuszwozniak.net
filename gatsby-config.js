@@ -4,9 +4,9 @@ const pxtorem = require('postcss-pxtorem')
 module.exports = {
   siteMetadata: {
     url: 'https://dariuszwozniak.net',
-    title: 'Dariusz Woźniak — Blog',
+    title: 'Dariusz Woźniak — Blog (archiwum 2013-2021)',
     copyright: '©',
-    subtitle: 'Blog o programowaniu',
+    subtitle: 'Blog o programowaniu (archiwum)',
     disqusShortname: 'dariuszwozniaknet',
     menu: [
       {
